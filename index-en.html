@@ -19,6 +19,12 @@
     
     <!-- Theme color -->
     <meta name="theme-color" content="#1a1a1a">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
@@ -27,20 +33,24 @@
         }
 
         :root {
-            --primary: #1a1a1a;
+            --primary: #0a0a0a;
             --secondary: #d4a259;
-            --gold: #d4a259;
-            --dark-gold: #b8904d;
-            --light-grey: #f5f5f5;
+            --gold: #c9a961;
+            --dark-gold: #b08d48;
+            --light-gold: #e8d7b5;
+            --light-grey: #f8f8f8;
             --medium-grey: #666;
             --white: #ffffff;
-            --text-dark: #333;
+            --text-dark: #2c2c2c;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --shadow-medium: rgba(0, 0, 0, 0.2);
+            --shadow-heavy: rgba(0, 0, 0, 0.4);
         }
 
         body {
-            font-family: 'Arial', 'Helvetica', sans-serif;
+            font-family: 'Roboto', sans-serif;
             color: var(--text-dark);
-            line-height: 1.6;
+            line-height: 1.7;
             overflow-x: hidden;
         }
 
@@ -134,13 +144,25 @@
         }
 
         .hero h1 {
-            font-size: 4rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            letter-spacing: 4px;
             color: var(--gold);
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            text-shadow: 3px 3px 20px rgba(0, 0, 0, 0.7);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .hero p {
@@ -176,15 +198,23 @@
         }
 
         .section-title {
-            font-size: 2.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
             color: var(--primary);
             margin-bottom: 1rem;
             text-align: center;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            font-weight: 700;
+            letter-spacing: 1px;
             position: relative;
-            padding-bottom: 1rem;
+            padding-bottom: 1.5rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .section-title.fade-in {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .section-title::after {
@@ -250,10 +280,16 @@
         }
 
         .stat-box h4 {
-            font-size: 3rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
             color: var(--gold);
-            font-weight: bold;
+            font-weight: 700;
             margin-bottom: 0.5rem;
+            counter-reset: stat-counter;
+        }
+
+        .stat-box h4 .counter {
+            display: inline-block;
         }
 
         .stat-box p {
@@ -285,31 +321,47 @@
 
         .service-card {
             padding: 3rem 2rem;
-            background: var(--light-grey);
-            border-radius: 10px;
+            background: var(--white);
+            border-radius: 15px;
             text-align: center;
-            transition: all 0.3s ease;
-            border-top: 4px solid var(--gold);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-left: 5px solid var(--gold);
+            box-shadow: 0 5px 20px var(--shadow-light);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .service-card.fade-in {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-            border-top-color: var(--dark-gold);
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px var(--shadow-medium);
+            border-left-color: var(--dark-gold);
+            background: linear-gradient(135deg, var(--white) 0%, var(--light-grey) 100%);
         }
 
         .service-icon {
-            font-size: 3rem;
+            font-size: 3.5rem;
             color: var(--gold);
             margin-bottom: 1.5rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotateY(360deg);
+            color: var(--dark-gold);
         }
 
         .service-card h3 {
-            font-size: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
             color: var(--primary);
             margin-bottom: 1rem;
-            font-weight: bold;
+            font-weight: 600;
         }
 
         .service-card p {
@@ -331,16 +383,24 @@
 
         .project-card {
             position: relative;
-            height: 400px;
-            border-radius: 10px;
+            height: 450px;
+            border-radius: 15px;
             overflow: hidden;
             cursor: pointer;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
+            box-shadow: 0 10px 40px var(--shadow-medium);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        .project-card.fade-in {
+            opacity: 1;
+            transform: scale(1);
         }
 
         .project-card:hover {
-            transform: scale(1.05);
+            transform: scale(1.03) translateY(-10px);
+            box-shadow: 0 25px 60px var(--shadow-heavy);
         }
 
         .project-card img {
@@ -415,6 +475,50 @@
 
         .lightbox-close:hover {
             color: var(--gold);
+        }
+
+        /* Certifications Section */
+        .cert-box {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: var(--light-grey);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .cert-box.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .cert-box:hover {
+            border-color: var(--gold);
+            background: var(--white);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px var(--shadow-light);
+        }
+
+        .cert-icon {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .cert-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .cert-box p {
+            color: var(--medium-grey);
+            font-size: 0.95rem;
         }
 
         /* Contact Section */
@@ -492,20 +596,44 @@
 
         .form-group input,
         .form-group textarea {
-            padding: 1rem;
-            border: 2px solid var(--gold);
-            background: rgba(255, 255, 255, 0.1);
+            padding: 1.2rem;
+            border: 2px solid rgba(201, 169, 97, 0.5);
+            background: rgba(255, 255, 255, 0.08);
             color: var(--white);
-            border-radius: 5px;
+            border-radius: 8px;
             font-size: 1rem;
+            font-family: 'Roboto', sans-serif;
             transition: all 0.3s ease;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.5);
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            background: rgba(255, 255, 255, 0.15);
-            border-color: var(--dark-gold);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.2);
+        }
+
+        .form-group input:valid,
+        .form-group textarea:valid {
+            border-color: var(--gold);
+        }
+
+        .form-group input.error,
+        .form-group textarea.error {
+            border-color: #ff6b6b;
+            animation: shake 0.3s;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
         }
 
         .form-group textarea {
@@ -514,24 +642,54 @@
         }
 
         .submit-btn {
-            padding: 1rem 2rem;
-            background: var(--gold);
+            padding: 1.2rem 2.5rem;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
             color: var(--primary);
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             font-size: 1.1rem;
-            font-weight: bold;
+            font-weight: 700;
+            font-family: 'Roboto', sans-serif;
             text-transform: uppercase;
             letter-spacing: 2px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(212, 162, 89, 0.3);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 8px 25px rgba(201, 169, 97, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .submit-btn:hover::before {
+            width: 300px;
+            height: 300px;
         }
 
         .submit-btn:hover {
-            background: var(--dark-gold);
             transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(212, 162, 89, 0.5);
+            box-shadow: 0 12px 35px rgba(201, 169, 97, 0.6);
+        }
+
+        .submit-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .submit-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.6;
+            transform: none;
         }
 
         /* Footer */
@@ -679,19 +837,19 @@
                 </div>
                 <div class="about-stats">
                     <div class="stat-box">
-                        <h4>500+</h4>
+                        <h4><span class="counter" data-target="500" data-suffix="+">0</span></h4>
                         <p>Projects Completed</p>
                     </div>
                     <div class="stat-box">
-                        <h4>40+</h4>
+                        <h4><span class="counter" data-target="40" data-suffix="+">0</span></h4>
                         <p>Years Experience</p>
                     </div>
                     <div class="stat-box">
-                        <h4>100%</h4>
+                        <h4><span class="counter" data-target="100" data-suffix="%">0</span></h4>
                         <p>Client Satisfaction</p>
                     </div>
                     <div class="stat-box">
-                        <h4>200+</h4>
+                        <h4><span class="counter" data-target="200" data-suffix="+">0</span></h4>
                         <p>Expert Team</p>
                     </div>
                 </div>
@@ -707,32 +865,32 @@
         
         <div class="services-grid">
             <div class="service-card">
-                <div class="service-icon">🏢</div>
+                <div class="service-icon">■</div>
                 <h3>Commercial Construction</h3>
                 <p>Office buildings, shopping centers, and commercial complexes designed for functionality and aesthetic appeal.</p>
             </div>
             <div class="service-card">
-                <div class="service-icon">🏠</div>
+                <div class="service-icon">▲</div>
                 <h3>Residential Projects</h3>
                 <p>Luxury homes, apartment complexes, and residential communities built with attention to detail.</p>
             </div>
             <div class="service-card">
-                <div class="service-icon">🏗️</div>
+                <div class="service-icon">⬢</div>
                 <h3>Industrial Facilities</h3>
                 <p>Warehouses, factories, and industrial complexes engineered for maximum efficiency and safety.</p>
             </div>
             <div class="service-card">
-                <div class="service-icon">🔧</div>
+                <div class="service-icon">◆</div>
                 <h3>Renovation & Restoration</h3>
                 <p>Modernization and restoration of existing structures while preserving their character.</p>
             </div>
             <div class="service-card">
-                <div class="service-icon">🏛️</div>
+                <div class="service-icon">⬣</div>
                 <h3>Infrastructure</h3>
                 <p>Roads, bridges, and public works that strengthen communities and connectivity.</p>
             </div>
             <div class="service-card">
-                <div class="service-icon">⚡</div>
+                <div class="service-icon">✦</div>
                 <h3>Project Management</h3>
                 <p>Comprehensive oversight from conception to completion, ensuring quality and timelines.</p>
             </div>
@@ -765,6 +923,35 @@
                     <h3>Mitilini Airport Overview</h3>
                     <p>Complete airport construction project</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" style="background: var(--white); padding: 5rem 10%;">
+        <h2 class="section-title">Certifications & Awards</h2>
+        <p class="section-subtitle">Recognition of Our Excellence</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-top: 3rem;">
+            <div class="cert-box">
+                <div class="cert-icon">✓</div>
+                <h3>ISO 9001:2015</h3>
+                <p>Quality Management</p>
+            </div>
+            <div class="cert-box">
+                <div class="cert-icon">✓</div>
+                <h3>ISO 14001:2015</h3>
+                <p>Environmental Management</p>
+            </div>
+            <div class="cert-box">
+                <div class="cert-icon">✓</div>
+                <h3>ISO 45001:2018</h3>
+                <p>Health & Safety</p>
+            </div>
+            <div class="cert-box">
+                <div class="cert-icon">✓</div>
+                <h3>SATE Member</h3>
+                <p>Technical Companies Association</p>
             </div>
         </div>
     </section>
@@ -915,6 +1102,60 @@
                 closeLightbox();
             }
         });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements that should animate
+        document.querySelectorAll('.section-title, .service-card, .project-card, .cert-box').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Animated counter for stats
+        function animateCounter(element, target, suffix = '') {
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target + suffix;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current) + suffix;
+                }
+            }, 20);
+        }
+
+        // Trigger counters when stats section is visible
+        const statsObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.counter');
+                    counters.forEach(counter => {
+                        const target = parseInt(counter.getAttribute('data-target'));
+                        const suffix = counter.getAttribute('data-suffix') || '';
+                        animateCounter(counter, target, suffix);
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsSection = document.querySelector('.about-stats');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
     </script>
 </body>
 </html>

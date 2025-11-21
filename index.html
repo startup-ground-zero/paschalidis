@@ -75,6 +75,12 @@
             font-weight: bold;
             letter-spacing: 2px;
             text-transform: uppercase;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-logo:hover {
+            color: var(--dark-gold);
         }
 
         .nav-links {
@@ -128,11 +134,11 @@
         }
 
         .hero h1 {
-            font-family: 'Playfair Display', serif;
             font-size: 5rem;
             font-weight: 900;
             margin-bottom: 1.5rem;
-            letter-spacing: 4px;
+            letter-spacing: 8px;
+            text-transform: uppercase;
             color: var(--gold);
             text-shadow: 3px 3px 20px rgba(0, 0, 0, 0.7);
             animation: fadeInUp 1s ease-out;
@@ -151,9 +157,10 @@
 
         .hero p {
             font-size: 1.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: 0;
             max-width: 800px;
             font-weight: 300;
+            animation: fadeInUp 1.2s ease-out;
         }
 
         .hero-btn {
@@ -579,7 +586,8 @@
         }
 
         .form-group input,
-        .form-group textarea {
+        .form-group textarea,
+        .form-group select {
             padding: 1.2rem;
             border: 2px solid rgba(201, 169, 97, 0.5);
             background: rgba(255, 255, 255, 0.08);
@@ -590,13 +598,51 @@
             transition: all 0.3s ease;
         }
 
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23c9a961' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            padding-right: 3rem;
+        }
+
+        .form-group select option {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.5rem;
+        }
+
+        .form-group input[type="file"] {
+            padding: 0.8rem;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .form-group input[type="file"]::file-selector-button {
+            padding: 0.6rem 1.2rem;
+            background: var(--gold);
+            color: var(--primary);
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-right: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input[type="file"]::file-selector-button:hover {
+            background: var(--dark-gold);
+        }
+
         .form-group input::placeholder,
         .form-group textarea::placeholder {
             color: rgba(255, 255, 255, 0.5);
         }
 
         .form-group input:focus,
-        .form-group textarea:focus {
+        .form-group textarea:focus,
+        .form-group select:focus {
             outline: none;
             background: rgba(255, 255, 255, 0.12);
             border-color: var(--gold);
@@ -604,12 +650,14 @@
         }
 
         .form-group input:valid,
-        .form-group textarea:valid {
+        .form-group textarea:valid,
+        .form-group select:valid {
             border-color: var(--gold);
         }
 
         .form-group input.error,
-        .form-group textarea.error {
+        .form-group textarea.error,
+        .form-group select.error {
             border-color: #ff6b6b;
             animation: shake 0.3s;
         }
@@ -776,18 +824,18 @@
 <body>
     <!-- Navigation -->
     <nav role="navigation" aria-label="Main navigation">
-        <div class="nav-logo">ΠΑΣΧΑΛΙΔΗΣ</div>
+        <a href="index.html" class="nav-logo">ΠΑΣΧΑΛΙΔΗΣ</a>
         <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle mobile menu" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
         </button>
         <ul class="nav-links" id="navLinks">
-            <li><a href="#home">Αρχική</a></li>
-            <li><a href="#about">Εταιρεία</a></li>
-            <li><a href="#services">Υπηρεσίες</a></li>
-            <li><a href="#projects">Έργα</a></li>
-            <li><a href="#contact">Επικοινωνία</a></li>
+            <li><a href="index.html">Αρχική</a></li>
+            <li><a href="about.html">Εταιρεία</a></li>
+            <li><a href="services.html">Υπηρεσίες</a></li>
+            <li><a href="projects.html">Έργα</a></li>
+            <li><a href="contact.html">Επικοινωνία</a></li>
             <li><a href="index-en.html" class="lang-switch">🇬🇧 EN</a></li>
         </ul>
     </nav>
@@ -796,7 +844,6 @@
     <section id="home" class="hero">
         <h1>ΠΑΣΧΑΛΙΔΗΣ</h1>
         <p>Χτίζοντας Αριστεία από Δεκαετίες | Η Κορυφαία Κατασκευαστική Εταιρεία της Ελλάδας</p>
-        <a href="#contact" class="hero-btn">Ζητήστε Προσφορά</a>
     </section>
 
     <!-- About Section -->
@@ -968,28 +1015,24 @@
         <div class="contact-content">
             <div class="contact-info">
                 <div class="contact-item">
-                    <div class="contact-icon">📍</div>
                     <div>
                         <h3>Κεντρικά Γραφεία</h3>
                         <p>Αθήνα, Ελλάδα<br>Τ.Κ.: 10000</p>
                     </div>
                 </div>
                 <div class="contact-item">
-                    <div class="contact-icon">📞</div>
                     <div>
                         <h3>Τηλέφωνο</h3>
                         <p><a href="tel:+302101234567">+30 210 123 4567</a></p>
                     </div>
                 </div>
                 <div class="contact-item">
-                    <div class="contact-icon">📧</div>
                     <div>
                         <h3>Email</h3>
                         <p><a href="mailto:info@paschalidis.gr">info@paschalidis.gr</a></p>
                     </div>
                 </div>
                 <div class="contact-item">
-                    <div class="contact-icon">⏰</div>
                     <div>
                         <h3>Ώρες Λειτουργίας</h3>
                         <p>Δευτέρα - Παρασκευή: 8:00 π.μ. - 6:00 μ.μ.<br>Σάββατο: 9:00 π.μ. - 2:00 μ.μ.</p>
@@ -997,26 +1040,76 @@
                 </div>
             </div>
 
-            <form class="contact-form" action="https://formsubmit.co/your-email@example.com" method="POST" id="contactForm">
-                <input type="hidden" name="_subject" value="Νέο αίτημα από την ιστοσελίδα Paschalidis">
+            <form class="contact-form" action="https://formsubmit.co/your-email@example.com" method="POST" id="contactForm" enctype="multipart/form-data">
+                <input type="hidden" name="_subject" value="Νέο αίτημα από την ιστοσελίδα ΠΑΣΧΑΛΙΔΗΣ">
                 <input type="hidden" name="_captcha" value="false">
                 
                 <div class="form-group">
-                    <label for="name">Ονοματεπώνυμο</label>
-                    <input type="text" id="name" name="name" required>
+                    <label for="name">Ονοματεπώνυμο *</label>
+                    <input type="text" id="name" name="name" placeholder="π.χ. Γιάννης Παπαδόπουλος" required>
                 </div>
+                
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" placeholder="email@example.com" required>
                 </div>
+                
                 <div class="form-group">
-                    <label for="phone">Τηλέφωνο</label>
-                    <input type="tel" id="phone" name="phone">
+                    <label for="phone">Τηλέφωνο *</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+30 210 123 4567" required>
                 </div>
+                
                 <div class="form-group">
-                    <label for="message">Λεπτομέρειες Έργου</label>
-                    <textarea id="message" name="message" required></textarea>
+                    <label for="company">Εταιρεία</label>
+                    <input type="text" id="company" name="company" placeholder="Όνομα εταιρείας (προαιρετικό)">
                 </div>
+                
+                <div class="form-group">
+                    <label for="location">Τοποθεσία Έργου *</label>
+                    <input type="text" id="location" name="location" placeholder="π.χ. Αθήνα, Κέντρο" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="project-type">Τύπος Έργου *</label>
+                    <select id="project-type" name="project_type" required>
+                        <option value="">Επιλέξτε τύπο έργου</option>
+                        <option value="Εμπορικό">Εμπορικό</option>
+                        <option value="Οικιστικό">Οικιστικό</option>
+                        <option value="Βιομηχανικό">Βιομηχανικό</option>
+                        <option value="Άλλο">Άλλο</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="inquiry-type">Τύπος Αιτήματος *</label>
+                    <select id="inquiry-type" name="inquiry_type" required>
+                        <option value="">Επιλέξτε τύπο αιτήματος</option>
+                        <option value="Νέο Έργο">Νέο Έργο</option>
+                        <option value="Προσφορά Προμηθευτή">Προσφορά Προμηθευτή</option>
+                        <option value="Ζήτηση Πληροφοριών">Ζήτηση Πληροφοριών</option>
+                        <option value="Συνεργασία">Συνεργασία</option>
+                        <option value="Άλλο">Άλλο</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="project-description">Περιγραφή Έργου *</label>
+                    <textarea id="project-description" name="project_description" rows="4" placeholder="Περιγράψτε το έργο σας..." required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Πρόσθετες Λεπτομέρειες</label>
+                    <textarea id="message" name="message" rows="3" placeholder="Οποιεσδήποτε άλλες πληροφορίες..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="attachments">Συνημμένα Αρχεία</label>
+                    <input type="file" id="attachments" name="attachment" accept=".pdf,.doc,.docx,.dwg,.jpg,.jpeg,.png" multiple>
+                    <small style="color: rgba(255,255,255,0.7); font-size: 0.85rem; margin-top: 0.5rem; display: block;">
+                        Μπορείτε να ανεβάσετε σχέδια, κατόψεις ή άλλα σχετικά αρχεία (PDF, DOC, DWG, JPG, PNG)
+                    </small>
+                </div>
+                
                 <button type="submit" class="submit-btn" id="submitBtn">Αποστολή Αιτήματος</button>
             </form>
         </div>
@@ -1122,6 +1215,7 @@
 
         // Animated counter for stats
         function animateCounter(element, target, suffix = '') {
+            element.textContent = '0';
             let current = 0;
             const increment = target / 100;
             const timer = setInterval(() => {
@@ -1135,16 +1229,21 @@
             }, 20);
         }
 
-        // Trigger counters when stats section is visible
+        // Function to trigger counter animation
+        function triggerCounters() {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const suffix = counter.getAttribute('data-suffix') || '';
+                animateCounter(counter, target, suffix);
+            });
+        }
+
+        // Trigger counters when stats section is visible (first time)
         const statsObserver = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const counters = entry.target.querySelectorAll('.counter');
-                    counters.forEach(counter => {
-                        const target = parseInt(counter.getAttribute('data-target'));
-                        const suffix = counter.getAttribute('data-suffix') || '';
-                        animateCounter(counter, target, suffix);
-                    });
+                    triggerCounters();
                     statsObserver.unobserve(entry.target);
                 }
             });
@@ -1154,6 +1253,15 @@
         if (statsSection) {
             statsObserver.observe(statsSection);
         }
+
+        // Re-trigger counters when clicking "About" link
+        document.querySelectorAll('a[href="#about"]').forEach(link => {
+            link.addEventListener('click', function() {
+                setTimeout(() => {
+                    triggerCounters();
+                }, 800); // Wait for scroll animation to complete
+            });
+        });
     </script>
 </body>
 </html>

@@ -75,6 +75,12 @@
             font-weight: bold;
             letter-spacing: 2px;
             text-transform: uppercase;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-logo:hover {
+            color: var(--dark-gold);
         }
 
         .nav-links {
@@ -144,11 +150,11 @@
         }
 
         .hero h1 {
-            font-family: 'Playfair Display', serif;
             font-size: 5rem;
             font-weight: 900;
             margin-bottom: 1.5rem;
-            letter-spacing: 4px;
+            letter-spacing: 8px;
+            text-transform: uppercase;
             color: var(--gold);
             text-shadow: 3px 3px 20px rgba(0, 0, 0, 0.7);
             animation: fadeInUp 1s ease-out;
@@ -167,9 +173,10 @@
 
         .hero p {
             font-size: 1.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: 0;
             max-width: 800px;
             font-weight: 300;
+            animation: fadeInUp 1.2s ease-out;
         }
 
         .hero-btn {
@@ -595,7 +602,8 @@
         }
 
         .form-group input,
-        .form-group textarea {
+        .form-group textarea,
+        .form-group select {
             padding: 1.2rem;
             border: 2px solid rgba(201, 169, 97, 0.5);
             background: rgba(255, 255, 255, 0.08);
@@ -606,13 +614,51 @@
             transition: all 0.3s ease;
         }
 
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23c9a961' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            padding-right: 3rem;
+        }
+
+        .form-group select option {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.5rem;
+        }
+
+        .form-group input[type="file"] {
+            padding: 0.8rem;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .form-group input[type="file"]::file-selector-button {
+            padding: 0.6rem 1.2rem;
+            background: var(--gold);
+            color: var(--primary);
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-right: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input[type="file"]::file-selector-button:hover {
+            background: var(--dark-gold);
+        }
+
         .form-group input::placeholder,
         .form-group textarea::placeholder {
             color: rgba(255, 255, 255, 0.5);
         }
 
         .form-group input:focus,
-        .form-group textarea:focus {
+        .form-group textarea:focus,
+        .form-group select:focus {
             outline: none;
             background: rgba(255, 255, 255, 0.12);
             border-color: var(--gold);
@@ -620,12 +666,14 @@
         }
 
         .form-group input:valid,
-        .form-group textarea:valid {
+        .form-group textarea:valid,
+        .form-group select:valid {
             border-color: var(--gold);
         }
 
         .form-group input.error,
-        .form-group textarea.error {
+        .form-group textarea.error,
+        .form-group select.error {
             border-color: #ff6b6b;
             animation: shake 0.3s;
         }
@@ -792,14 +840,14 @@
 <body>
     <!-- Navigation -->
     <nav role="navigation" aria-label="Main navigation">
-        <div class="nav-logo">Paschalidis</div>
+        <a href="index-en.html" class="nav-logo">PASCHALIDIS</a>
         <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle mobile menu" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
         </button>
         <ul class="nav-links" id="navLinks">
-            <li><a href="#home">Home</a></li>
+            <li><a href="index-en.html">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#projects">Projects</a></li>
@@ -810,9 +858,8 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <h1>Paschalidis</h1>
+        <h1>PASCHALIDIS</h1>
         <p>Building Excellence Since Decades | Greece's Premier Construction Company</p>
-        <a href="#contact" class="hero-btn">Get A Quote</a>
     </section>
 
     <!-- About Section -->
@@ -970,28 +1017,24 @@
         <div class="contact-content">
             <div class="contact-info">
                 <div class="contact-item">
-                    <div class="contact-icon">📍</div>
                     <div>
                         <h3>Head Office</h3>
                         <p>Athens, Greece<br>Postal Code: 10000</p>
                     </div>
                 </div>
                 <div class="contact-item">
-                    <div class="contact-icon">📞</div>
                     <div>
                         <h3>Phone</h3>
                         <p><a href="tel:+302101234567">+30 210 123 4567</a></p>
                     </div>
                 </div>
                 <div class="contact-item">
-                    <div class="contact-icon">📧</div>
                     <div>
                         <h3>Email</h3>
                         <p><a href="mailto:info@paschalidis.gr">info@paschalidis.gr</a></p>
                     </div>
                 </div>
                 <div class="contact-item">
-                    <div class="contact-icon">⏰</div>
                     <div>
                         <h3>Working Hours</h3>
                         <p>Monday - Friday: 8:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 2:00 PM</p>
@@ -999,26 +1042,76 @@
                 </div>
             </div>
 
-            <form class="contact-form" action="https://formsubmit.co/your-email@example.com" method="POST" id="contactForm">
-                <input type="hidden" name="_subject" value="New inquiry from Paschalidis website">
+            <form class="contact-form" action="https://formsubmit.co/your-email@example.com" method="POST" id="contactForm" enctype="multipart/form-data">
+                <input type="hidden" name="_subject" value="New inquiry from PASCHALIDIS website">
                 <input type="hidden" name="_captcha" value="false">
                 
                 <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required>
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" placeholder="e.g. John Smith" required>
                 </div>
+                
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" placeholder="email@example.com" required>
                 </div>
+                
                 <div class="form-group">
-                    <label for="phone">Phone</label>
-                    <input type="tel" id="phone" name="phone">
+                    <label for="phone">Phone *</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+30 210 123 4567" required>
                 </div>
+                
                 <div class="form-group">
-                    <label for="message">Project Details</label>
-                    <textarea id="message" name="message" required></textarea>
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" name="company" placeholder="Company name (optional)">
                 </div>
+                
+                <div class="form-group">
+                    <label for="location">Project Location *</label>
+                    <input type="text" id="location" name="location" placeholder="e.g. Athens, Center" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="project-type">Type of Project *</label>
+                    <select id="project-type" name="project_type" required>
+                        <option value="">Select project type</option>
+                        <option value="Commercial">Commercial</option>
+                        <option value="Residential">Residential</option>
+                        <option value="Industrial">Industrial</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="inquiry-type">Inquiry Type *</label>
+                    <select id="inquiry-type" name="inquiry_type" required>
+                        <option value="">Select inquiry type</option>
+                        <option value="New Project">New Project Inquiry</option>
+                        <option value="Supplier Bid">Supplier Bid</option>
+                        <option value="Request Information">Request Information</option>
+                        <option value="Partnership">Partnership</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="project-description">Project Description *</label>
+                    <textarea id="project-description" name="project_description" rows="4" placeholder="Describe your project..." required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Additional Details</label>
+                    <textarea id="message" name="message" rows="3" placeholder="Any other information..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="attachments">Attachments</label>
+                    <input type="file" id="attachments" name="attachment" accept=".pdf,.doc,.docx,.dwg,.jpg,.jpeg,.png" multiple>
+                    <small style="color: rgba(255,255,255,0.7); font-size: 0.85rem; margin-top: 0.5rem; display: block;">
+                        You can upload blueprints, site plans, or other relevant files (PDF, DOC, DWG, JPG, PNG)
+                    </small>
+                </div>
+                
                 <button type="submit" class="submit-btn" id="submitBtn">Send Inquiry</button>
             </form>
         </div>
@@ -1124,6 +1217,7 @@
 
         // Animated counter for stats
         function animateCounter(element, target, suffix = '') {
+            element.textContent = '0';
             let current = 0;
             const increment = target / 100;
             const timer = setInterval(() => {
@@ -1137,16 +1231,21 @@
             }, 20);
         }
 
-        // Trigger counters when stats section is visible
+        // Function to trigger counter animation
+        function triggerCounters() {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const suffix = counter.getAttribute('data-suffix') || '';
+                animateCounter(counter, target, suffix);
+            });
+        }
+
+        // Trigger counters when stats section is visible (first time)
         const statsObserver = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const counters = entry.target.querySelectorAll('.counter');
-                    counters.forEach(counter => {
-                        const target = parseInt(counter.getAttribute('data-target'));
-                        const suffix = counter.getAttribute('data-suffix') || '';
-                        animateCounter(counter, target, suffix);
-                    });
+                    triggerCounters();
                     statsObserver.unobserve(entry.target);
                 }
             });
@@ -1156,6 +1255,15 @@
         if (statsSection) {
             statsObserver.observe(statsSection);
         }
+
+        // Re-trigger counters when clicking "About" link
+        document.querySelectorAll('a[href="#about"]').forEach(link => {
+            link.addEventListener('click', function() {
+                setTimeout(() => {
+                    triggerCounters();
+                }, 800); // Wait for scroll animation to complete
+            });
+        });
     </script>
 </body>
 </html>

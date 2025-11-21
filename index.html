@@ -107,7 +107,7 @@
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                        url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1600') center/cover;
+                        url('River West.jpg') center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -357,6 +357,47 @@
         .project-overlay h3 {
             font-size: 1.5rem;
             margin-bottom: 0.5rem;
+            color: var(--gold);
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-size: 3rem;
+            color: var(--white);
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: color 0.3s ease;
+        }
+
+        .lightbox-close:hover {
             color: var(--gold);
         }
 
@@ -688,21 +729,21 @@
         <p class="section-subtitle">Το Χαρτοφυλάκιο της Αριστείας μας</p>
         
         <div class="projects-grid">
-            <div class="project-card">
+            <div class="project-card" onclick="openLightbox('River West.jpg')">
                 <img src="River West.jpg" alt="River West" loading="lazy">
                 <div class="project-overlay">
                     <h3>River West</h3>
                     <p>Επέκταση εμπορικού κέντρου River West - 20.000 m³ οπλισμένου σκυροδέματος!</p>
                 </div>
             </div>
-            <div class="project-card">
+            <div class="project-card" onclick="openLightbox('Mitilini Airport.jpg')">
                 <img src="Mitilini Airport.jpg" alt="Αεροδρόμιο Μυτιλήνης" loading="lazy">
                 <div class="project-overlay">
                     <h3>Αεροδρόμιο Μυτιλήνης</h3>
                     <p>Κατασκευή Αεροδρομίου Μυτιλήνης</p>
                 </div>
             </div>
-            <div class="project-card">
+            <div class="project-card" onclick="openLightbox('Mitilini Airport Overview.jpg')">
                 <img src="Mitilini Airport Overview.jpg" alt="Γενική Άποψη Αεροδρομίου Μυτιλήνης" loading="lazy">
                 <div class="project-overlay">
                     <h3>Γενική Άποψη Αεροδρομίου Μυτιλήνης</h3>
@@ -711,6 +752,12 @@
             </div>
         </div>
     </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <img id="lightbox-img" src="" alt="">
+    </div>
 
     <!-- Contact Section -->
     <section id="contact">
@@ -831,6 +878,26 @@
                     });
                 }
             });
+        });
+
+        // Lightbox functions
+        function openLightbox(imageSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = imageSrc;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+        }
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
         });
     </script>
 </body>

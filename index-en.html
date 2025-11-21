@@ -528,6 +528,822 @@
             font-size: 0.95rem;
         }
 
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .team-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px var(--shadow-light);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .team-card.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px var(--shadow-medium);
+        }
+
+        .team-photo {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: var(--white);
+            font-weight: bold;
+        }
+
+        .team-info {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .team-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-info .position {
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .team-info p {
+            color: var(--medium-grey);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Process Section */
+        .process-timeline {
+            position: relative;
+            margin: 4rem auto;
+            max-width: 1200px;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--gold), var(--dark-gold));
+        }
+
+        .process-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4rem;
+            position: relative;
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease;
+        }
+
+        .process-step.fade-in {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .process-step:nth-child(even) {
+            flex-direction: row-reverse;
+            transform: translateX(50px);
+        }
+
+        .process-step:nth-child(even).fade-in {
+            transform: translateX(0);
+        }
+
+        .process-number {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--white);
+            box-shadow: 0 5px 20px rgba(201, 169, 97, 0.4);
+            z-index: 10;
+        }
+
+        .process-content {
+            width: 45%;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px var(--shadow-light);
+            transition: all 0.3s ease;
+        }
+
+        .process-content:hover {
+            box-shadow: 0 15px 40px var(--shadow-medium);
+            transform: scale(1.03);
+        }
+
+        .process-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .process-content p {
+            color: var(--medium-grey);
+            line-height: 1.8;
+        }
+
+        /* Testimonials Section */
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 3rem 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px var(--shadow-light);
+            position: relative;
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: scale(0.95);
+        }
+
+        .testimonial-card.fade-in {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 50px var(--shadow-medium);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 6rem;
+            color: var(--light-gold);
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            color: var(--medium-grey);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--gold), var(--dark-gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .author-info h4 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            color: var(--gold);
+            font-size: 0.9rem;
+        }
+
+        .rating {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Safety & Sustainability Section */
+        .safety-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .safety-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px var(--shadow-light);
+            text-align: center;
+            transition: all 0.4s ease;
+            border-top: 5px solid var(--gold);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .safety-card.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .safety-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px var(--shadow-medium);
+        }
+
+        .safety-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .safety-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .safety-card p {
+            color: var(--medium-grey);
+            line-height: 1.7;
+        }
+
+        /* Partners Section */
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .partner-logo {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 150px;
+            box-shadow: 0 5px 20px var(--shadow-light);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        .partner-logo.fade-in {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .partner-logo:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 30px var(--shadow-medium);
+        }
+
+        .partner-logo h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--medium-grey);
+            text-align: center;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 900px;
+            margin: 3rem auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px var(--shadow-light);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .faq-item.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .faq-question {
+            padding: 1.5rem 2rem;
+            background: var(--white);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--gold);
+        }
+
+        .faq-question:hover {
+            background: var(--light-grey);
+        }
+
+        .faq-question h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: var(--gold);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background: var(--light-grey);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 1.5rem 2rem;
+        }
+
+        .faq-answer p {
+            color: var(--medium-grey);
+            line-height: 1.8;
+        }
+
+        /* Download Center */
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .download-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px var(--shadow-light);
+            text-align: center;
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .download-card.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .download-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px var(--shadow-medium);
+        }
+
+        .download-icon {
+            font-size: 4rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .download-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .download-card p {
+            color: var(--medium-grey);
+            margin-bottom: 1.5rem;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--gold);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: var(--dark-gold);
+            transform: scale(1.05);
+        }
+
+        /* Careers Section */
+        .careers-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .careers-intro h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .careers-intro p {
+            font-size: 1.1rem;
+            color: var(--medium-grey);
+            line-height: 1.8;
+        }
+
+        .jobs-grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .job-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px var(--shadow-light);
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 2rem;
+            align-items: center;
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+
+        .job-card.fade-in {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .job-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 15px 40px var(--shadow-medium);
+        }
+
+        .job-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .job-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .job-meta span {
+            color: var(--medium-grey);
+            font-size: 0.95rem;
+        }
+
+        .job-meta span strong {
+            color: var(--gold);
+        }
+
+        .job-description {
+            color: var(--medium-grey);
+            line-height: 1.7;
+        }
+
+        .apply-btn {
+            padding: 1rem 2.5rem;
+            background: var(--gold);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .apply-btn:hover {
+            background: var(--dark-gold);
+            transform: scale(1.05);
+        }
+
+        /* Video Section */
+        .video-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 3rem auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px var(--shadow-heavy);
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--medium-grey) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .video-placeholder:hover {
+            transform: scale(1.02);
+        }
+
+        .play-button {
+            width: 100px;
+            height: 100px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .video-placeholder:hover .play-button {
+            background: var(--dark-gold);
+            transform: scale(1.1);
+        }
+
+        .video-placeholder p {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        /* Awards Section */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .award-card {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px var(--shadow-light);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        .award-card.fade-in {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .award-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 50px var(--shadow-medium);
+        }
+
+        .award-icon {
+            font-size: 4rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .award-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .award-year {
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .award-card p {
+            color: var(--medium-grey);
+            font-size: 0.95rem;
+        }
+
+        /* Project Map */
+        .map-container {
+            margin-top: 3rem;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px var(--shadow-medium);
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, var(--light-grey) 0%, var(--white) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: var(--medium-grey);
+        }
+
+        .map-placeholder .map-icon {
+            font-size: 5rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .map-placeholder p {
+            font-size: 1.2rem;
+        }
+
+        /* News/Blog Section */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .news-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px var(--shadow-light);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .news-card.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .news-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px var(--shadow-medium);
+        }
+
+        .news-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--white);
+        }
+
+        .news-content {
+            padding: 2rem;
+        }
+
+        .news-date {
+            color: var(--gold);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .news-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .news-content p {
+            color: var(--medium-grey);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .read-more {
+            color: var(--gold);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: var(--dark-gold);
+            text-decoration: underline;
+        }
+
+        /* Equipment Section */
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .equipment-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px var(--shadow-light);
+            text-align: center;
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: rotateY(20deg);
+        }
+
+        .equipment-card.fade-in {
+            opacity: 1;
+            transform: rotateY(0);
+        }
+
+        .equipment-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px var(--shadow-medium);
+        }
+
+        .equipment-icon {
+            font-size: 4rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .equipment-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .equipment-card p {
+            color: var(--medium-grey);
+            line-height: 1.7;
+        }
+
+        .equipment-count {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1.5rem;
+            background: var(--light-gold);
+            color: var(--primary);
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
         /* Contact Section */
         #contact {
             background: var(--primary);
@@ -756,6 +1572,7 @@
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
+                letter-spacing: 3px;
             }
 
             .hero p {
@@ -780,8 +1597,61 @@
                 padding: 3rem 5%;
             }
 
-            .projects-grid {
+            .projects-grid,
+            .team-grid,
+            .testimonials-container,
+            .safety-grid,
+            .news-grid,
+            .equipment-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .process-timeline::before {
+                left: 30px;
+            }
+
+            .process-step,
+            .process-step:nth-child(even) {
+                flex-direction: column;
+                align-items: flex-start;
+                padding-left: 80px;
+            }
+
+            .process-number {
+                left: 30px;
+                transform: none;
+            }
+
+            .process-content {
+                width: 100%;
+            }
+
+            .job-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .job-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .apply-btn {
+                width: 100%;
+            }
+
+            .awards-grid,
+            .partners-grid,
+            .download-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .video-placeholder {
+                height: 300px;
+            }
+
+            .team-photo {
+                height: 250px;
             }
         }
 
@@ -847,10 +1717,13 @@
             <span></span>
         </button>
         <ul class="nav-links" id="navLinks">
-            <li><a href="index-en.html">Home</a></li>
+            <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><a href="index.html" class="lang-switch">🇬🇷 ΕΛ</a></li>
         </ul>
@@ -994,6 +1867,574 @@
                 <div class="cert-icon">✓</div>
                 <h3>SATE Member</h3>
                 <p>Technical Companies Association</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" style="background: var(--light-grey); padding: 5rem 10%;">
+        <h2 class="section-title">Our Team</h2>
+        <p class="section-subtitle">Experts with Passion & Dedication</p>
+        
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-photo">NP</div>
+                <div class="team-info">
+                    <h3>Nikolaos Paschalidis</h3>
+                    <p class="position">Chief Executive Officer</p>
+                    <p>With 40+ years of experience in the construction industry, Nikolaos leads the company with vision and innovation.</p>
+                </div>
+            </div>
+            
+            <div class="team-card">
+                <div class="team-photo">MK</div>
+                <div class="team-info">
+                    <h3>Maria Konstantinou</h3>
+                    <p class="position">Project Director</p>
+                    <p>Responsible for overseeing all major projects, ensuring the highest quality standards.</p>
+                </div>
+            </div>
+            
+            <div class="team-card">
+                <div class="team-photo">DA</div>
+                <div class="team-info">
+                    <h3>Dimitris Antoniou</h3>
+                    <p class="position">Lead Engineer</p>
+                    <p>Certified civil engineer specializing in modern construction techniques.</p>
+                </div>
+            </div>
+            
+            <div class="team-card">
+                <div class="team-photo">ES</div>
+                <div class="team-info">
+                    <h3>Eleni Savvidou</h3>
+                    <p class="position">Architect</p>
+                    <p>Creative designer with experience in high-end commercial and residential projects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" style="background: var(--white); padding: 5rem 10%;">
+        <h2 class="section-title">Our Process</h2>
+        <p class="section-subtitle">From Vision to Reality - Step by Step</p>
+        
+        <div class="process-timeline">
+            <div class="process-step">
+                <div class="process-number">1</div>
+                <div class="process-content">
+                    <h3>Initial Consultation</h3>
+                    <p>We meet with you to understand your vision, needs, and budget. We assess feasibility and propose optimal solutions.</p>
+                </div>
+            </div>
+            
+            <div class="process-step">
+                <div class="process-number">2</div>
+                <div class="process-content">
+                    <h3>Design & Planning</h3>
+                    <p>Our team of architects and engineers creates detailed plans and 3D visualizations. We ensure compliance with all legal requirements.</p>
+                </div>
+            </div>
+            
+            <div class="process-step">
+                <div class="process-number">3</div>
+                <div class="process-content">
+                    <h3>Budgeting & Scheduling</h3>
+                    <p>We provide transparent cost estimates and realistic timelines. We set milestones and checkpoints for progress tracking.</p>
+                </div>
+            </div>
+            
+            <div class="process-step">
+                <div class="process-number">4</div>
+                <div class="process-content">
+                    <h3>Site Preparation</h3>
+                    <p>We secure permits, prepare the ground, and install necessary infrastructure. Safety is our top priority.</p>
+                </div>
+            </div>
+            
+            <div class="process-step">
+                <div class="process-number">5</div>
+                <div class="process-content">
+                    <h3>Construction</h3>
+                    <p>Our experienced team begins construction with modern equipment and high-quality materials. Continuous supervision and progress reports.</p>
+                </div>
+            </div>
+            
+            <div class="process-step">
+                <div class="process-number">6</div>
+                <div class="process-content">
+                    <h3>Quality Control</h3>
+                    <p>Thorough inspections at every phase. We ensure every detail meets our standards and your expectations.</p>
+                </div>
+            </div>
+            
+            <div class="process-step">
+                <div class="process-number">7</div>
+                <div class="process-content">
+                    <h3>Final Handover</h3>
+                    <p>We complete the project with final inspections, deliver all documentation, and provide maintenance training. Support continues after delivery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety & Sustainability Section -->
+    <section id="safety" style="background: var(--light-grey); padding: 5rem 10%;">
+        <h2 class="section-title">Safety & Sustainability</h2>
+        <p class="section-subtitle">Our Commitment to Safe & Green Construction</p>
+        
+        <div class="safety-grid">
+            <div class="safety-card">
+                <div class="safety-icon">🛡️</div>
+                <h3>Safety Standards</h3>
+                <p>We implement strict ISO 45001 safety protocols. Zero accidents is our goal with continuous training and inspections.</p>
+            </div>
+            
+            <div class="safety-card">
+                <div class="safety-icon">🌱</div>
+                <h3>Green Practices</h3>
+                <p>We use sustainable materials, reduce waste by 70%, and prefer renewable energy sources at our sites.</p>
+            </div>
+            
+            <div class="safety-card">
+                <div class="safety-icon">⚡</div>
+                <h3>Energy Efficiency</h3>
+                <p>We design buildings with reduced energy footprint using modern insulation systems and smart technology.</p>
+            </div>
+            
+            <div class="safety-card">
+                <div class="safety-icon">♻️</div>
+                <h3>Material Recycling</h3>
+                <p>We recycle >80% of construction materials and partner with certified eco-friendly material suppliers.</p>
+            </div>
+            
+            <div class="safety-card">
+                <div class="safety-icon">💧</div>
+                <h3>Water Management</h3>
+                <p>We implement rainwater collection systems and water-saving technologies in all our projects.</p>
+            </div>
+            
+            <div class="safety-card">
+                <div class="safety-icon">🌍</div>
+                <h3>Environmental Certification</h3>
+                <p>Certified with ISO 14001 and targeting LEED/BREEAM certifications for all major projects.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" style="background: var(--white); padding: 5rem 10%;">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <p class="section-subtitle">Real Success Stories & Satisfaction</p>
+        
+        <div class="testimonials-container">
+            <div class="testimonial-card">
+                <div class="rating">★★★★★</div>
+                <p class="testimonial-text">
+                    Paschalidis exceeded our expectations at every level. From initial design to final delivery, 
+                    the professionalism and attention to detail were exceptional. Our new shopping center was delivered 
+                    on time and within budget.
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">GP</div>
+                    <div class="author-info">
+                        <h4>George Papadopoulos</h4>
+                        <p>CEO, Mega Retail Group</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="rating">★★★★★</div>
+                <p class="testimonial-text">
+                    We partnered with Paschalidis for a complex industrial project. Their technical expertise and 
+                    problem-solving abilities were impressive. We recommend them unreservedly for any major project.
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MA</div>
+                    <div class="author-info">
+                        <h4>Maria Antoniou</h4>
+                        <p>Project Director, TechManufacture SA</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="rating">★★★★★</div>
+                <p class="testimonial-text">
+                    When building our new hotel, we needed a partner who understood luxury and detail. Paschalidis not only 
+                    understood our vision but executed it in a way that exceeded our expectations. Incredible results!
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">NK</div>
+                    <div class="author-info">
+                        <h4>Nikos Konstantinidis</h4>
+                        <p>Owner, Luxury Resorts Greece</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards" style="background: var(--light-grey); padding: 5rem 10%;">
+        <h2 class="section-title">Awards & Recognition</h2>
+        <p class="section-subtitle">Acknowledged Excellence in the Industry</p>
+        
+        <div class="awards-grid">
+            <div class="award-card">
+                <div class="award-icon">🏆</div>
+                <h3>Best Construction Company</h3>
+                <p class="award-year">2024</p>
+                <p>Greek Construction Awards</p>
+            </div>
+            
+            <div class="award-card">
+                <div class="award-icon">🥇</div>
+                <h3>Safety Excellence</h3>
+                <p class="award-year">2023</p>
+                <p>European Safety Council</p>
+            </div>
+            
+            <div class="award-card">
+                <div class="award-icon">🌟</div>
+                <h3>Innovation in Construction</h3>
+                <p class="award-year">2023</p>
+                <p>Innovation in Building Summit</p>
+            </div>
+            
+            <div class="award-card">
+                <div class="award-icon">🌿</div>
+                <h3>Green Building</h3>
+                <p class="award-year">2022</p>
+                <p>Sustainability Awards Greece</p>
+            </div>
+            
+            <div class="award-card">
+                <div class="award-icon">⭐</div>
+                <h3>Project of the Year</h3>
+                <p class="award-year">2022</p>
+                <p>Athens Architecture Biennale</p>
+            </div>
+            
+            <div class="award-card">
+                <div class="award-icon">🎖️</div>
+                <h3>Employer of the Year</h3>
+                <p class="award-year">2021</p>
+                <p>Best Workplace Awards</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partners" style="background: var(--white); padding: 5rem 10%;">
+        <h2 class="section-title">Partners & Suppliers</h2>
+        <p class="section-subtitle">Collaborating with the Best in the Industry</p>
+        
+        <div class="partners-grid">
+            <div class="partner-logo">
+                <h4>TITAN Cement</h4>
+            </div>
+            <div class="partner-logo">
+                <h4>Siemens Greece</h4>
+            </div>
+            <div class="partner-logo">
+                <h4>VIOHALCO</h4>
+            </div>
+            <div class="partner-logo">
+                <h4>Lafarge Hellas</h4>
+            </div>
+            <div class="partner-logo">
+                <h4>Schneider Electric</h4>
+            </div>
+            <div class="partner-logo">
+                <h4>HELLENIC CABLES</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipment & Technology Section -->
+    <section id="equipment" style="background: var(--light-grey); padding: 5rem 10%;">
+        <h2 class="section-title">Equipment & Technology</h2>
+        <p class="section-subtitle">Modern Fleet & Advanced Technologies</p>
+        
+        <div class="equipment-grid">
+            <div class="equipment-card">
+                <div class="equipment-icon">🏗️</div>
+                <h3>Heavy Duty Cranes</h3>
+                <p>Latest technology tower cranes for high-rise building projects with maximum safety and efficiency.</p>
+                <span class="equipment-count">15 Units</span>
+            </div>
+            
+            <div class="equipment-card">
+                <div class="equipment-icon">🚜</div>
+                <h3>Construction Machinery</h3>
+                <p>Excavators, loaders, and bulldozers from CAT & Komatsu for all types of earthwork.</p>
+                <span class="equipment-count">40+ Units</span>
+            </div>
+            
+            <div class="equipment-card">
+                <div class="equipment-icon">🚛</div>
+                <h3>Vehicle Fleet</h3>
+                <p>Trucks, concrete mixers, and special vehicles for transporting materials and equipment.</p>
+                <span class="equipment-count">50+ Vehicles</span>
+            </div>
+            
+            <div class="equipment-card">
+                <div class="equipment-icon">📐</div>
+                <h3>3D Design</h3>
+                <p>AutoCAD, Revit, and BIM technology for accurate project design and simulation.</p>
+                <span class="equipment-count">Full Licensing</span>
+            </div>
+            
+            <div class="equipment-card">
+                <div class="equipment-icon">🛰️</div>
+                <h3>Drone Inspection</h3>
+                <p>Using drones for site inspection, photogrammetry, and progress monitoring.</p>
+                <span class="equipment-count">8 Drones</span>
+            </div>
+            
+            <div class="equipment-card">
+                <div class="equipment-icon">💻</div>
+                <h3>Project Management Software</h3>
+                <p>Advanced project management systems for real-time tracking and reporting.</p>
+                <span class="equipment-count">Cloud-Based</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Map Section -->
+    <section id="project-map" style="background: var(--white); padding: 5rem 10%;">
+        <h2 class="section-title">Project Map</h2>
+        <p class="section-subtitle">Our Projects Across Greece</p>
+        
+        <div class="map-container">
+            <div class="map-placeholder">
+                <div class="map-icon">📍</div>
+                <p>Interactive Map with 500+ Completed Projects</p>
+                <p style="font-size: 1rem; margin-top: 1rem;">Athens • Thessaloniki • Patras • Heraklion • Larissa • Mytilene</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="video" style="background: var(--light-grey); padding: 5rem 10%;">
+        <h2 class="section-title">See Us in Action</h2>
+        <p class="section-subtitle">Company Video & Project Timelapse</p>
+        
+        <div class="video-container">
+            <div class="video-placeholder">
+                <div class="play-button">▶</div>
+                <p>Paschalidis Construction - 40 Years of Excellence</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- News/Blog Section -->
+    <section id="news" style="background: var(--white); padding: 5rem 10%;">
+        <h2 class="section-title">News & Updates</h2>
+        <p class="section-subtitle">Latest from the Company & Industry</p>
+        
+        <div class="news-grid">
+            <div class="news-card">
+                <div class="news-image">📰</div>
+                <div class="news-content">
+                    <p class="news-date">November 15, 2024</p>
+                    <h3>New Mega Project at Piraeus Port</h3>
+                    <p>Paschalidis announces the undertaking of the largest project in its history - a modern commercial and entertainment center of 50,000 sq.m. at Pier E1.</p>
+                    <a href="#" class="read-more">Read more →</a>
+                </div>
+            </div>
+            
+            <div class="news-card">
+                <div class="news-image">🌿</div>
+                <div class="news-content">
+                    <p class="news-date">November 3, 2024</p>
+                    <h3>LEED Platinum Certification for River West</h3>
+                    <p>Our River West commercial project received the highest LEED Platinum sustainable construction certification, highlighting our environmental commitment.</p>
+                    <a href="#" class="read-more">Read more →</a>
+                </div>
+            </div>
+            
+            <div class="news-card">
+                <div class="news-image">👷</div>
+                <div class="news-content">
+                    <p class="news-date">October 20, 2024</p>
+                    <h3>Hiring 50 New Engineers</h3>
+                    <p>We're expanding our team! Seeking talented civil engineers, architects, and project managers for new projects in Athens and Thessaloniki.</p>
+                    <a href="#careers" class="read-more">View job openings →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" style="background: var(--light-grey); padding: 5rem 10%;">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Answers to Your Most Common Questions</p>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>What is the minimum and maximum scale of projects you undertake?</h3>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We undertake projects from €100,000 to €50,000,000+. From small renovations to large commercial and industrial complexes. Every project, regardless of size, receives the same attention and dedication.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>How long does it take for a project to start?</h3>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>After initial consultation, design can take 2-8 weeks depending on complexity. Securing permits usually takes 1-3 months. In total, from first meeting to construction start averages 3-5 months.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>Do you provide warranties for your projects?</h3>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! We offer a 10-year warranty on structural elements, 5-year on installations (electrical, plumbing), and 2-year on finishes. Additionally, we provide free maintenance support for the first year.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>Do you work outside of Attica?</h3>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely! We have completed projects throughout Greece - from Thessaloniki and Chalkidiki to Crete and the Aegean islands. We have the infrastructure and experience for projects in remote areas.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>How do you ensure material quality?</h3>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We only partner with certified suppliers (TITAN, Lafarge, Siemens, etc.). All materials have CE certificates and are checked by our Quality Control department. We use materials of higher specifications than the minimum required.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>What does the Project Management service include?</h3>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>It includes: full construction supervision, subcontractor coordination, budget management, weekly progress reports, quality control, change management, and communication with authorities. Dedicated Project Manager for each project.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Center Section -->
+    <section id="downloads" style="background: var(--white); padding: 5rem 10%;">
+        <h2 class="section-title">Download Center</h2>
+        <p class="section-subtitle">Company Materials & Technical Specifications</p>
+        
+        <div class="download-grid">
+            <div class="download-card">
+                <div class="download-icon">📄</div>
+                <h3>Company Brochure</h3>
+                <p>Complete presentation of company, services, and selected projects (PDF, 12MB)</p>
+                <a href="#" class="download-btn">Download PDF</a>
+            </div>
+            
+            <div class="download-card">
+                <div class="download-icon">📊</div>
+                <h3>Capability Statement</h3>
+                <p>Technical capabilities, certifications, and statistics (PDF, 3MB)</p>
+                <a href="#" class="download-btn">Download PDF</a>
+            </div>
+            
+            <div class="download-card">
+                <div class="download-icon">🏆</div>
+                <h3>Project Portfolio</h3>
+                <p>Case studies and photos from completed projects (PDF, 25MB)</p>
+                <a href="#" class="download-btn">Download PDF</a>
+            </div>
+            
+            <div class="download-card">
+                <div class="download-icon">✓</div>
+                <h3>Certificates</h3>
+                <p>ISO 9001, ISO 14001, ISO 45001, and other certifications (ZIP, 5MB)</p>
+                <a href="#" class="download-btn">Download ZIP</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers Section -->
+    <section id="careers" style="background: var(--light-grey); padding: 5rem 10%;">
+        <h2 class="section-title">Careers</h2>
+        <p class="section-subtitle">Join Our Winning Team</p>
+        
+        <div class="careers-intro">
+            <h3>Why Work at Paschalidis?</h3>
+            <p>We offer competitive salaries, continuous training, advancement opportunities, and a dynamic work environment. 
+            Work on projects that make a difference and leave a legacy. Full insurance, performance bonuses, and work-life balance.</p>
+        </div>
+        
+        <div class="jobs-grid">
+            <div class="job-card">
+                <div class="job-info">
+                    <h3>Civil Engineer</h3>
+                    <div class="job-meta">
+                        <span><strong>Location:</strong> Athens</span>
+                        <span><strong>Type:</strong> Full-time</span>
+                        <span><strong>Experience:</strong> 3-5 years</span>
+                    </div>
+                    <p class="job-description">Seeking experienced civil engineer for supervising large construction projects. AutoCAD knowledge and site management required.</p>
+                </div>
+                <a href="#contact" class="apply-btn">Apply Now</a>
+            </div>
+            
+            <div class="job-card">
+                <div class="job-info">
+                    <h3>Architect - Designer</h3>
+                    <div class="job-meta">
+                        <span><strong>Location:</strong> Athens</span>
+                        <span><strong>Type:</strong> Full-time</span>
+                        <span><strong>Experience:</strong> 2-4 years</span>
+                    </div>
+                    <p class="job-description">Creative architect with experience in commercial projects. Excellent knowledge of Revit, 3DS Max, and rendering software required.</p>
+                </div>
+                <a href="#contact" class="apply-btn">Apply Now</a>
+            </div>
+            
+            <div class="job-card">
+                <div class="job-info">
+                    <h3>Project Manager</h3>
+                    <div class="job-meta">
+                        <span><strong>Location:</strong> Thessaloniki</span>
+                        <span><strong>Type:</strong> Full-time</span>
+                        <span><strong>Experience:</strong> 5+ years</span>
+                    </div>
+                    <p class="job-description">Managing multiple projects simultaneously, coordinating teams, and communicating with clients. PMP certification preferred.</p>
+                </div>
+                <a href="#contact" class="apply-btn">Apply Now</a>
+            </div>
+            
+            <div class="job-card">
+                <div class="job-info">
+                    <h3>Site Supervisor</h3>
+                    <div class="job-meta">
+                        <span><strong>Location:</strong> Crete</span>
+                        <span><strong>Type:</strong> Full-time</span>
+                        <span><strong>Experience:</strong> 7+ years</span>
+                    </div>
+                    <p class="job-description">Supervising daily site operations, managing workers, and ensuring compliance with safety standards.</p>
+                </div>
+                <a href="#contact" class="apply-btn">Apply Now</a>
             </div>
         </div>
     </section>
@@ -1257,6 +2698,27 @@
                     triggerCounters();
                 }, 800); // Wait for scroll animation to complete
             });
+        });
+
+        // FAQ Toggle
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const wasActive = faqItem.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Open clicked item if it wasn't active
+            if (!wasActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        // Observe all new animated elements
+        document.querySelectorAll('.team-card, .process-step, .testimonial-card, .safety-card, .partner-logo, .faq-item, .download-card, .job-card, .award-card, .news-card, .equipment-card').forEach(el => {
+            observer.observe(el);
         });
     </script>
 </body>

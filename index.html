@@ -512,6 +512,822 @@
             font-size: 0.95rem;
         }
 
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .team-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px var(--shadow-light);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .team-card.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px var(--shadow-medium);
+        }
+
+        .team-photo {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: var(--white);
+            font-weight: bold;
+        }
+
+        .team-info {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .team-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-info .position {
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .team-info p {
+            color: var(--medium-grey);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Process Section */
+        .process-timeline {
+            position: relative;
+            margin: 4rem auto;
+            max-width: 1200px;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--gold), var(--dark-gold));
+        }
+
+        .process-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4rem;
+            position: relative;
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease;
+        }
+
+        .process-step.fade-in {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .process-step:nth-child(even) {
+            flex-direction: row-reverse;
+            transform: translateX(50px);
+        }
+
+        .process-step:nth-child(even).fade-in {
+            transform: translateX(0);
+        }
+
+        .process-number {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--white);
+            box-shadow: 0 5px 20px rgba(201, 169, 97, 0.4);
+            z-index: 10;
+        }
+
+        .process-content {
+            width: 45%;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px var(--shadow-light);
+            transition: all 0.3s ease;
+        }
+
+        .process-content:hover {
+            box-shadow: 0 15px 40px var(--shadow-medium);
+            transform: scale(1.03);
+        }
+
+        .process-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .process-content p {
+            color: var(--medium-grey);
+            line-height: 1.8;
+        }
+
+        /* Testimonials Section */
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 3rem 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px var(--shadow-light);
+            position: relative;
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: scale(0.95);
+        }
+
+        .testimonial-card.fade-in {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 50px var(--shadow-medium);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 6rem;
+            color: var(--light-gold);
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            color: var(--medium-grey);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--gold), var(--dark-gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .author-info h4 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            color: var(--gold);
+            font-size: 0.9rem;
+        }
+
+        .rating {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Safety & Sustainability Section */
+        .safety-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .safety-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px var(--shadow-light);
+            text-align: center;
+            transition: all 0.4s ease;
+            border-top: 5px solid var(--gold);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .safety-card.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .safety-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px var(--shadow-medium);
+        }
+
+        .safety-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .safety-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .safety-card p {
+            color: var(--medium-grey);
+            line-height: 1.7;
+        }
+
+        /* Partners Section */
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .partner-logo {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 150px;
+            box-shadow: 0 5px 20px var(--shadow-light);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        .partner-logo.fade-in {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .partner-logo:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 30px var(--shadow-medium);
+        }
+
+        .partner-logo h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--medium-grey);
+            text-align: center;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 900px;
+            margin: 3rem auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px var(--shadow-light);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .faq-item.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .faq-question {
+            padding: 1.5rem 2rem;
+            background: var(--white);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--gold);
+        }
+
+        .faq-question:hover {
+            background: var(--light-grey);
+        }
+
+        .faq-question h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: var(--gold);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background: var(--light-grey);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 1.5rem 2rem;
+        }
+
+        .faq-answer p {
+            color: var(--medium-grey);
+            line-height: 1.8;
+        }
+
+        /* Download Center */
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .download-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px var(--shadow-light);
+            text-align: center;
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .download-card.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .download-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px var(--shadow-medium);
+        }
+
+        .download-icon {
+            font-size: 4rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .download-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .download-card p {
+            color: var(--medium-grey);
+            margin-bottom: 1.5rem;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--gold);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: var(--dark-gold);
+            transform: scale(1.05);
+        }
+
+        /* Careers Section */
+        .careers-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .careers-intro h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .careers-intro p {
+            font-size: 1.1rem;
+            color: var(--medium-grey);
+            line-height: 1.8;
+        }
+
+        .jobs-grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .job-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px var(--shadow-light);
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 2rem;
+            align-items: center;
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+
+        .job-card.fade-in {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .job-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 15px 40px var(--shadow-medium);
+        }
+
+        .job-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .job-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .job-meta span {
+            color: var(--medium-grey);
+            font-size: 0.95rem;
+        }
+
+        .job-meta span strong {
+            color: var(--gold);
+        }
+
+        .job-description {
+            color: var(--medium-grey);
+            line-height: 1.7;
+        }
+
+        .apply-btn {
+            padding: 1rem 2.5rem;
+            background: var(--gold);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .apply-btn:hover {
+            background: var(--dark-gold);
+            transform: scale(1.05);
+        }
+
+        /* Video Section */
+        .video-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 3rem auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px var(--shadow-heavy);
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--medium-grey) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .video-placeholder:hover {
+            transform: scale(1.02);
+        }
+
+        .play-button {
+            width: 100px;
+            height: 100px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .video-placeholder:hover .play-button {
+            background: var(--dark-gold);
+            transform: scale(1.1);
+        }
+
+        .video-placeholder p {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        /* Awards Section */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .award-card {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px var(--shadow-light);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        .award-card.fade-in {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .award-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 50px var(--shadow-medium);
+        }
+
+        .award-icon {
+            font-size: 4rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .award-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .award-year {
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .award-card p {
+            color: var(--medium-grey);
+            font-size: 0.95rem;
+        }
+
+        /* Project Map */
+        .map-container {
+            margin-top: 3rem;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px var(--shadow-medium);
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, var(--light-grey) 0%, var(--white) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: var(--medium-grey);
+        }
+
+        .map-placeholder .map-icon {
+            font-size: 5rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .map-placeholder p {
+            font-size: 1.2rem;
+        }
+
+        /* News/Blog Section */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .news-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px var(--shadow-light);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .news-card.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .news-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px var(--shadow-medium);
+        }
+
+        .news-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--white);
+        }
+
+        .news-content {
+            padding: 2rem;
+        }
+
+        .news-date {
+            color: var(--gold);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .news-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .news-content p {
+            color: var(--medium-grey);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .read-more {
+            color: var(--gold);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: var(--dark-gold);
+            text-decoration: underline;
+        }
+
+        /* Equipment Section */
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .equipment-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px var(--shadow-light);
+            text-align: center;
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: rotateY(20deg);
+        }
+
+        .equipment-card.fade-in {
+            opacity: 1;
+            transform: rotateY(0);
+        }
+
+        .equipment-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px var(--shadow-medium);
+        }
+
+        .equipment-icon {
+            font-size: 4rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .equipment-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .equipment-card p {
+            color: var(--medium-grey);
+            line-height: 1.7;
+        }
+
+        .equipment-count {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1.5rem;
+            background: var(--light-gold);
+            color: var(--primary);
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
         /* Contact Section */
         #contact {
             background: var(--primary);
@@ -740,6 +1556,7 @@
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
+                letter-spacing: 3px;
             }
 
             .hero p {
@@ -764,8 +1581,61 @@
                 padding: 3rem 5%;
             }
 
-            .projects-grid {
+            .projects-grid,
+            .team-grid,
+            .testimonials-container,
+            .safety-grid,
+            .news-grid,
+            .equipment-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .process-timeline::before {
+                left: 30px;
+            }
+
+            .process-step,
+            .process-step:nth-child(even) {
+                flex-direction: column;
+                align-items: flex-start;
+                padding-left: 80px;
+            }
+
+            .process-number {
+                left: 30px;
+                transform: none;
+            }
+
+            .process-content {
+                width: 100%;
+            }
+
+            .job-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .job-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .apply-btn {
+                width: 100%;
+            }
+
+            .awards-grid,
+            .partners-grid,
+            .download-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .video-placeholder {
+                height: 300px;
+            }
+
+            .team-photo {
+                height: 250px;
             }
         }
 
@@ -831,11 +1701,14 @@
             <span></span>
         </button>
         <ul class="nav-links" id="navLinks">
-            <li><a href="index.html">Αρχική</a></li>
-            <li><a href="about.html">Εταιρεία</a></li>
-            <li><a href="services.html">Υπηρεσίες</a></li>
-            <li><a href="projects.html">Έργα</a></li>
-            <li><a href="contact.html">Επικοινωνία</a></li>
+            <li><a href="#home">Αρχική</a></li>
+            <li><a href="#about">Εταιρεία</a></li>
+            <li><a href="#services">Υπηρεσίες</a></li>
+            <li><a href="#projects">Έργα</a></li>
+            <li><a href="#team">Ομάδα</a></li>
+            <li><a href="#process">Διαδικασία</a></li>
+            <li><a href="#testimonials">Κριτικές</a></li>
+            <li><a href="#contact">Επικοινωνία</a></li>
             <li><a href="index-en.html" class="lang-switch">🇬🇧 EN</a></li>
         </ul>
     </nav>
@@ -948,6 +1821,575 @@
                 <div class="cert-icon">✓</div>
                 <h3>Μέλος ΣΑΤΕ</h3>
                 <p>Σύνδεσμος Τεχνικών Εταιρειών</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" style="background: var(--light-grey); padding: 5rem 10%;">
+        <h2 class="section-title">Η Ομάδα Μας</h2>
+        <p class="section-subtitle">Εμπειρογνώμονες με Πάθος & Αφοσίωση</p>
+        
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-photo">ΝΠ</div>
+                <div class="team-info">
+                    <h3>Νικόλαος Πασχαλίδης</h3>
+                    <p class="position">Διευθύνων Σύμβουλος</p>
+                    <p>Με 40+ χρόνια εμπειρίας στην κατασκευαστική βιομηχανία, ο Νικόλαος οδηγεί την εταιρεία με όραμα και καινοτομία.</p>
+                </div>
+            </div>
+            
+            <div class="team-card">
+                <div class="team-photo">ΜΚ</div>
+                <div class="team-info">
+                    <h3>Μαρία Κωνσταντίνου</h3>
+                    <p class="position">Διευθύντρια Έργων</p>
+                    <p>Υπεύθυνη για την επίβλεψη όλων των μεγάλων έργων, διασφαλίζοντας τα υψηλότερα πρότυπα ποιότητας.</p>
+                </div>
+            </div>
+            
+            <div class="team-card">
+                <div class="team-photo">ΔΑ</div>
+                <div class="team-info">
+                    <h3>Δημήτρης Αντωνίου</h3>
+                    <p class="position">Επικεφαλής Μηχανικός</p>
+                    <p>Πιστοποιημένος πολιτικός μηχανικός με εξειδίκευση σε σύγχρονες τεχνικές κατασκευής.</p>
+                </div>
+            </div>
+            
+            <div class="team-card">
+                <div class="team-photo">ΕΣ</div>
+                <div class="team-info">
+                    <h3>Ελένη Σαββίδου</h3>
+                    <p class="position">Αρχιτέκτονας</p>
+                    <p>Δημιουργικός σχεδιαστής με εμπειρία σε εμπορικά και οικιστικά έργα υψηλών προδιαγραφών.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" style="background: var(--white); padding: 5rem 10%;">
+        <h2 class="section-title">Η Διαδικασία Μας</h2>
+        <p class="section-subtitle">Από το Όραμα στην Πραγματικότητα - Βήμα προς Βήμα</p>
+        
+        <div class="process-timeline">
+            <div class="process-step">
+                <div class="process-number">1</div>
+                <div class="process-content">
+                    <h3>Αρχική Διαβούλευση</h3>
+                    <p>Συναντιόμαστε μαζί σας για να κατανοήσουμε το όραμα, τις ανάγκες και τον προϋπολογισμό σας. Αξιολογούμε τη βιωσιμότητα και προτείνουμε βέλτιστες λύσεις.</p>
+                </div>
+            </div>
+            
+            <div class="process-step">
+                <div class="process-number">2</div>
+                <div class="process-content">
+                    <h3>Σχεδιασμός & Μελέτη</h3>
+                    <p>Η ομάδα αρχιτεκτόνων και μηχανικών μας δημιουργεί λεπτομερή σχέδια και 3D απεικονίσεις. Διασφαλίζουμε συμμόρφωση με όλες τις νομικές απαιτήσεις.</p>
+                </div>
+            </div>
+            
+            <div class="process-step">
+                <div class="process-number">3</div>
+                <div class="process-content">
+                    <h3>Προϋπολογισμός & Προγραμματισμός</h3>
+                    <p>Παρέχουμε διαφανή κοστολόγηση και ρεαλιστικό χρονοδιάγραμμα. Καθορίζουμε ορόσημα και σημεία ελέγχου για την παρακολούθηση προόδου.</p>
+                </div>
+            </div>
+            
+            <div class="process-step">
+                <div class="process-number">4</div>
+                <div class="process-content">
+                    <h3>Προετοιμασία Εργοταξίου</h3>
+                    <p>Εξασφαλίζουμε άδειες, προετοιμάζουμε το έδαφος και εγκαθιστούμε απαραίτητες υποδομές. Η ασφάλεια είναι πρώτη προτεραιότητα.</p>
+                </div>
+            </div>
+            
+            <div class="process-step">
+                <div class="process-number">5</div>
+                <div class="process-content">
+                    <h3>Κατασκευή</h3>
+                    <p>Η έμπειρη ομάδα μας ξεκινά την κατασκευή με σύγχρονο εξοπλισμό και υλικά υψηλής ποιότητας. Συνεχής επίβλεψη και αναφορές προόδου.</p>
+                </div>
+            </div>
+            
+            <div class="process-step">
+                <div class="process-number">6</div>
+                <div class="process-content">
+                    <h3>Έλεγχος Ποιότητας</h3>
+                    <p>Διεξοδικοί έλεγχοι σε κάθε φάση. Διασφαλίζουμε ότι κάθε λεπτομέρεια πληροί τα πρότυπά μας και τις προσδοκίες σας.</p>
+                </div>
+            </div>
+            
+            <div class="process-step">
+                <div class="process-number">7</div>
+                <div class="process-content">
+                    <h3>Τελική Παράδοση</h3>
+                    <p>Ολοκληρώνουμε το έργο με τελικούς ελέγχους, παραδίδουμε όλα τα έγγραφα και παρέχουμε εκπαίδευση για τη συντήρηση. Η υποστήριξη συνεχίζεται και μετά την παράδοση.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety & Sustainability Section -->
+    <section id="safety" style="background: var(--light-grey); padding: 5rem 10%;">
+        <h2 class="section-title">Ασφάλεια & Βιωσιμότητα</h2>
+        <p class="section-subtitle">Η Δέσμευσή μας για Ασφαλείς & Πράσινες Κατασκευές</p>
+        
+        <div class="safety-grid">
+            <div class="safety-card">
+                <div class="safety-icon">🛡️</div>
+                <h3>Πρότυπα Ασφαλείας</h3>
+                <p>Εφαρμόζουμε αυστηρά πρωτόκολλα ασφαλείας ISO 45001. Μηδενικά ατυχήματα είναι ο στόχος μας με συνεχή εκπαίδευση και επιθεωρήσεις.</p>
+            </div>
+            
+            <div class="safety-card">
+                <div class="safety-icon">🌱</div>
+                <h3>Πράσινες Πρακτικές</h3>
+                <p>Χρησιμοποιούμε βιώσιμα υλικά, μειώνουμε απόβλητα κατά 70% και προτιμούμε ανανεώσιμες πηγές ενέργειας στα εργοτάξιά μας.</p>
+            </div>
+            
+            <div class="safety-card">
+                <div class="safety-icon">⚡</div>
+                <h3>Ενεργειακή Απόδοση</h3>
+                <p>Σχεδιάζουμε κτίρια με μειωμένο ενεργειακό αποτύπωμα, χρησιμοποιώντας σύγχρονα συστήματα μόνωσης και έξυπνη τεχνολογία.</p>
+            </div>
+            
+            <div class="safety-card">
+                <div class="safety-icon">♻️</div>
+                <h3>Ανακύκλωση Υλικών</h3>
+                <p>Ανακυκλώνουμε >80% των υλικών κατασκευής και συνεργαζόμαστε με πιστοποιημένους προμηθευτές οικολογικών υλικών.</p>
+            </div>
+            
+            <div class="safety-card">
+                <div class="safety-icon">💧</div>
+                <h3>Διαχείριση Νερού</h3>
+                <p>Εφαρμόζουμε συστήματα συλλογής όμβριων υδάτων και τεχνολογίες εξοικονόμησης νερού σε όλα τα έργα.</p>
+            </div>
+            
+            <div class="safety-card">
+                <div class="safety-icon">🌍</div>
+                <h3>Περιβαλλοντική Πιστοποίηση</h3>
+                <p>Πιστοποιημένοι με ISO 14001 και στοχεύουμε σε LEED/BREEAM πιστοποιήσεις για όλα τα μεγάλα έργα.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" style="background: var(--white); padding: 5rem 10%;">
+        <h2 class="section-title">Τι Λένε οι Πελάτες μας</h2>
+        <p class="section-subtitle">Αληθινές Ιστορίες Επιτυχίας & Ικανοποίησης</p>
+        
+        <div class="testimonials-container">
+            <div class="testimonial-card">
+                <div class="rating">★★★★★</div>
+                <p class="testimonial-text">
+                    Η Paschalidis ξεπέρασε τις προσδοκίες μας σε κάθε επίπεδο. Από τον αρχικό σχεδιασμό μέχρι την τελική παράδοση, 
+                    η επαγγελματικότητα και η προσοχή στη λεπτομέρεια ήταν εξαιρετική. Το νέο μας εμπορικό κέντρο παραδόθηκε 
+                    εγκαίρως και εντός προϋπολογισμού.
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">ΓΠ</div>
+                    <div class="author-info">
+                        <h4>Γιώργος Παπαδόπουλος</h4>
+                        <p>CEO, Mega Retail Group</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="rating">★★★★★</div>
+                <p class="testimonial-text">
+                    Συνεργαστήκαμε με την Paschalidis για ένα πολύπλοκο βιομηχανικό έργο. Η τεχνική τους εξειδίκευση και 
+                    η ικανότητα επίλυσης προβλημάτων ήταν εντυπωσιακή. Συστήνουμε ανεπιφύλακτα για οποιοδήποτε μεγάλο έργο.
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">ΜΑ</div>
+                    <div class="author-info">
+                        <h4>Μαρία Αντωνίου</h4>
+                        <p>Διευθύντρια Έργων, TechManufacture SA</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="rating">★★★★★</div>
+                <p class="testimonial-text">
+                    Όταν χτίζαμε το νέο μας ξενοδοχείο, χρειαζόμασταν έναν εταίρο που να καταλαβαίνει την πολυτέλεια και 
+                    τη λεπτομέρεια. Η Paschalidis όχι μόνο κατάλαβε το όραμά μας, αλλά το υλοποίησε με τρόπο που ξεπέρασε 
+                    τις προσδοκίες μας. Απίστευτο αποτέλεσμα!
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">ΝΚ</div>
+                    <div class="author-info">
+                        <h4>Νίκος Κωνσταντινίδης</h4>
+                        <p>Ιδιοκτήτης, Luxury Resorts Greece</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards" style="background: var(--light-grey); padding: 5rem 10%;">
+        <h2 class="section-title">Βραβεία & Διακρίσεις</h2>
+        <p class="section-subtitle">Αναγνωρισμένη Αριστεία στον Κλάδο</p>
+        
+        <div class="awards-grid">
+            <div class="award-card">
+                <div class="award-icon">🏆</div>
+                <h3>Καλύτερη Κατασκευαστική Εταιρεία</h3>
+                <p class="award-year">2024</p>
+                <p>Greek Construction Awards</p>
+            </div>
+            
+            <div class="award-card">
+                <div class="award-icon">🥇</div>
+                <h3>Αριστεία στην Ασφάλεια</h3>
+                <p class="award-year">2023</p>
+                <p>European Safety Council</p>
+            </div>
+            
+            <div class="award-card">
+                <div class="award-icon">🌟</div>
+                <h3>Καινοτομία στην Κατασκευή</h3>
+                <p class="award-year">2023</p>
+                <p>Innovation in Building Summit</p>
+            </div>
+            
+            <div class="award-card">
+                <div class="award-icon">🌿</div>
+                <h3>Πράσινη Κατασκευή</h3>
+                <p class="award-year">2022</p>
+                <p>Sustainability Awards Greece</p>
+            </div>
+            
+            <div class="award-card">
+                <div class="award-icon">⭐</div>
+                <h3>Έργο της Χρονιάς</h3>
+                <p class="award-year">2022</p>
+                <p>Athens Architecture Biennale</p>
+            </div>
+            
+            <div class="award-card">
+                <div class="award-icon">🎖️</div>
+                <h3>Εργοδότης της Χρονιάς</h3>
+                <p class="award-year">2021</p>
+                <p>Best Workplace Awards</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partners" style="background: var(--white); padding: 5rem 10%;">
+        <h2 class="section-title">Συνεργάτες & Προμηθευτές</h2>
+        <p class="section-subtitle">Συνεργαζόμαστε με τους Καλύτερους στον Κλάδο</p>
+        
+        <div class="partners-grid">
+            <div class="partner-logo">
+                <h4>ΤΙΤΑΝ Τσιμέντα</h4>
+            </div>
+            <div class="partner-logo">
+                <h4>Siemens Greece</h4>
+            </div>
+            <div class="partner-logo">
+                <h4>ΒΙΟΧΑΛΚΟ</h4>
+            </div>
+            <div class="partner-logo">
+                <h4>Lafarge Hellas</h4>
+            </div>
+            <div class="partner-logo">
+                <h4>Schneider Electric</h4>
+            </div>
+            <div class="partner-logo">
+                <h4>ΕΛΛΗΝΙΚΑ ΚΑΛΩΔΙΑ</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipment & Technology Section -->
+    <section id="equipment" style="background: var(--light-grey); padding: 5rem 10%;">
+        <h2 class="section-title">Εξοπλισμός & Τεχνολογία</h2>
+        <p class="section-subtitle">Σύγχρονος Στόλος & Προηγμένες Τεχνολογίες</p>
+        
+        <div class="equipment-grid">
+            <div class="equipment-card">
+                <div class="equipment-icon">🏗️</div>
+                <h3>Γερανοί Μεγάλης Τονάζ</h3>
+                <p>Tower cranes τελευταίας τεχνολογίας για έργα υψηλών κτιρίων με μέγιστη ασφάλεια και αποδοτικότητα.</p>
+                <span class="equipment-count">15 Μονάδες</span>
+            </div>
+            
+            <div class="equipment-card">
+                <div class="equipment-icon">🚜</div>
+                <h3>Μηχανήματα Έργων</h3>
+                <p>Εκσκαφείς, φορτωτές και bulldozers CAT & Komatsu για κάθε είδους εργασία εδάφους.</p>
+                <span class="equipment-count">40+ Μονάδες</span>
+            </div>
+            
+            <div class="equipment-card">
+                <div class="equipment-icon">🚛</div>
+                <h3>Στόλος Οχημάτων</h3>
+                <p>Φορτηγά, μπετονιέρες και ειδικά οχήματα για μεταφορά υλικών και εξοπλισμού.</p>
+                <span class="equipment-count">50+ Οχήματα</span>
+            </div>
+            
+            <div class="equipment-card">
+                <div class="equipment-icon">📐</div>
+                <h3>3D Σχεδιασμός</h3>
+                <p>AutoCAD, Revit και BIM τεχνολογία για ακριβή σχεδίαση και προσομοίωση έργων.</p>
+                <span class="equipment-count">Πλήρης Αδειοδότηση</span>
+            </div>
+            
+            <div class="equipment-card">
+                <div class="equipment-icon">🛰️</div>
+                <h3>Drone Επιθεώρηση</h3>
+                <p>Χρήση drones για επιθεώρηση εργοταξίων, φωτογραμμετρία και παρακολούθηση προόδου.</p>
+                <span class="equipment-count">8 Drones</span>
+            </div>
+            
+            <div class="equipment-card">
+                <div class="equipment-icon">💻</div>
+                <h3>Project Management Software</h3>
+                <p>Προηγμένα συστήματα διαχείρισης έργων για real-time tracking και αναφορές.</p>
+                <span class="equipment-count">Cloud-Based</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Map Section -->
+    <section id="project-map" style="background: var(--white); padding: 5rem 10%;">
+        <h2 class="section-title">Χάρτης Έργων</h2>
+        <p class="section-subtitle">Τα Έργα μας σε Όλη την Ελλάδα</p>
+        
+        <div class="map-container">
+            <div class="map-placeholder">
+                <div class="map-icon">📍</div>
+                <p>Διαδραστικός Χάρτης με 500+ Ολοκληρωμένα Έργα</p>
+                <p style="font-size: 1rem; margin-top: 1rem;">Αθήνα • Θεσσαλονίκη • Πάτρα • Ηράκλειο • Λάρισα • Μυτιλήνη</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="video" style="background: var(--light-grey); padding: 5rem 10%;">
+        <h2 class="section-title">Δείτε μας στη Δράση</h2>
+        <p class="section-subtitle">Εταιρικό Video & Timelapse Έργων</p>
+        
+        <div class="video-container">
+            <div class="video-placeholder">
+                <div class="play-button">▶</div>
+                <p>Paschalidis Construction - 40 Χρόνια Αριστείας</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- News/Blog Section -->
+    <section id="news" style="background: var(--white); padding: 5rem 10%;">
+        <h2 class="section-title">Νέα & Ενημερώσεις</h2>
+        <p class="section-subtitle">Τα Τελευταία από την Εταιρεία & τον Κλάδο</p>
+        
+        <div class="news-grid">
+            <div class="news-card">
+                <div class="news-image">📰</div>
+                <div class="news-content">
+                    <p class="news-date">15 Νοεμβρίου 2024</p>
+                    <h3>Νέο Mega Project στο Λιμάνι του Πειραιά</h3>
+                    <p>Η Paschalidis ανακοινώνει την ανάληψη του μεγαλύτερου έργου στην ιστορία της - ένα σύγχρονο εμπορικό και ψυχαγωγικό κέντρο 50.000 τ.μ. στην προβλήτα Ε1.</p>
+                    <a href="#" class="read-more">Διαβάστε περισσότερα →</a>
+                </div>
+            </div>
+            
+            <div class="news-card">
+                <div class="news-image">🌿</div>
+                <div class="news-content">
+                    <p class="news-date">3 Νοεμβρίου 2024</p>
+                    <h3>Πιστοποίηση LEED Platinum για το River West</h3>
+                    <p>Το εμπορικό μας έργο River West έλαβε την υψηλότερη πιστοποίηση βιώσιμης κατασκευής LEED Platinum, αναδεικνύοντας τη δέσμευσή μας για το περιβάλλον.</p>
+                    <a href="#" class="read-more">Διαβάστε περισσότερα →</a>
+                </div>
+            </div>
+            
+            <div class="news-card">
+                <div class="news-image">👷</div>
+                <div class="news-content">
+                    <p class="news-date">20 Οκτωβρίου 2024</p>
+                    <h3>Προσλήψεις 50 Νέων Μηχανικών</h3>
+                    <p>Επεκτείνουμε την ομάδα μας! Αναζητούμε ταλαντούχους πολιτικούς μηχανικούς, αρχιτέκτονες και project managers για νέα έργα σε Αθήνα και Θεσσαλονίκη.</p>
+                    <a href="#careers" class="read-more">Δείτε θέσεις εργασίας →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" style="background: var(--light-grey); padding: 5rem 10%;">
+        <h2 class="section-title">Συχνές Ερωτήσεις</h2>
+        <p class="section-subtitle">Απαντήσεις στις πιο Κοινές Ερωτήσεις σας</p>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>Ποια είναι η ελάχιστη και μέγιστη κλίμακα έργων που αναλαμβάνετε;</h3>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Αναλαμβάνουμε έργα από €100.000 έως €50.000.000+. Από μικρές ανακαινίσεις μέχρι μεγάλα εμπορικά και βιομηχανικά συγκροτήματα. Κάθε έργο, ανεξαρτήτως μεγέθους, λαμβάνει την ίδια προσοχή και αφοσίωση.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>Πόσος χρόνος χρειάζεται για να ξεκινήσει ένα έργο;</h3>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Μετά την αρχική διαβούλευση, ο σχεδιασμός μπορεί να διαρκέσει 2-8 εβδομάδες ανάλογα με την πολυπλοκότητα. Η εξασφάλιση αδειών συνήθως παίρνει 1-3 μήνες. Συνολικά, από την πρώτη συνάντηση μέχρι την έναρξη κατασκευής περνούν κατά μέσο όρο 3-5 μήνες.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>Παρέχετε εγγύηση για τα έργα σας;</h3>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Ναι! Προσφέρουμε 10ετή εγγύηση για δομικά στοιχεία, 5ετή για εγκαταστάσεις (ηλεκτρολογικές, υδραυλικές) και 2ετή για φινιρίσματα. Επιπλέον, παρέχουμε δωρεάν υποστήριξη συντήρησης τον πρώτο χρόνο.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>Εργάζεστε και εκτός Αττικής;</h3>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Απολύτως! Έχουμε ολοκληρώσει έργα σε όλη την Ελλάδα - από τη Θεσσαλονίκη και τη Χαλκιδική μέχρι την Κρήτη και τα νησιά του Αιγαίου. Διαθέτουμε την υποδομή και την εμπειρία για έργα σε απομακρυσμένες περιοχές.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>Πώς διασφαλίζετε την ποιότητα των υλικών;</h3>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Συνεργαζόμαστε μόνο με πιστοποιημένους προμηθευτές (ΤΙΤΑΝ, Lafarge, Siemens κ.ά.). Όλα τα υλικά έχουν πιστοποιητικά CE και ελέγχονται από το τμήμα Quality Control μας. Χρησιμοποιούμε υλικά υψηλότερων προδιαγραφών από τα ελάχιστα απαιτούμενα.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>Τι περιλαμβάνει η υπηρεσία Project Management;</h3>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Περιλαμβάνει: πλήρη επίβλεψη κατασκευής, συντονισμό υπεργολάβων, διαχείριση προϋπολογισμού, εβδομαδιαίες αναφορές προόδου, έλεγχο ποιότητας, διαχείριση αλλαγών και επικοινωνία με αρχές. Αφιερωμένος Project Manager για κάθε έργο.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Center Section -->
+    <section id="downloads" style="background: var(--white); padding: 5rem 10%;">
+        <h2 class="section-title">Κέντρο Λήψης Αρχείων</h2>
+        <p class="section-subtitle">Εταιρικό Υλικό & Τεχνικές Προδιαγραφές</p>
+        
+        <div class="download-grid">
+            <div class="download-card">
+                <div class="download-icon">📄</div>
+                <h3>Εταιρικό Brochure</h3>
+                <p>Πλήρης παρουσίαση της εταιρείας, υπηρεσιών και επιλεγμένων έργων (PDF, 12MB)</p>
+                <a href="#" class="download-btn">Λήψη PDF</a>
+            </div>
+            
+            <div class="download-card">
+                <div class="download-icon">📊</div>
+                <h3>Capability Statement</h3>
+                <p>Τεχνικές ικανότητες, πιστοποιήσεις και στατιστικά στοιχεία (PDF, 3MB)</p>
+                <a href="#" class="download-btn">Λήψη PDF</a>
+            </div>
+            
+            <div class="download-card">
+                <div class="download-icon">🏆</div>
+                <h3>Χαρτοφυλάκιο Έργων</h3>
+                <p>Case studies και φωτογραφίες από ολοκληρωμένα έργα (PDF, 25MB)</p>
+                <a href="#" class="download-btn">Λήψη PDF</a>
+            </div>
+            
+            <div class="download-card">
+                <div class="download-icon">✓</div>
+                <h3>Πιστοποιητικά</h3>
+                <p>ISO 9001, ISO 14001, ISO 45001 και άλλες πιστοποιήσεις (ZIP, 5MB)</p>
+                <a href="#" class="download-btn">Λήψη ZIP</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers Section -->
+    <section id="careers" style="background: var(--light-grey); padding: 5rem 10%;">
+        <h2 class="section-title">Καριέρα</h2>
+        <p class="section-subtitle">Γίνε Μέλος της Νικήτριας Ομάδας μας</p>
+        
+        <div class="careers-intro">
+            <h3>Γιατί να Εργαστείς στην Paschalidis;</h3>
+            <p>Προσφέρουμε ανταγωνιστικούς μισθούς, συνεχή εκπαίδευση, ευκαιρίες εξέλιξης και ένα δυναμικό περιβάλλον εργασίας. 
+            Εργάσου σε έργα που κάνουν τη διαφορά και αφήνουν κληρονομιά. Πλήρης ασφάλιση, bonus απόδοσης και work-life balance.</p>
+        </div>
+        
+        <div class="jobs-grid">
+            <div class="job-card">
+                <div class="job-info">
+                    <h3>Πολιτικός Μηχανικός</h3>
+                    <div class="job-meta">
+                        <span><strong>Τοποθεσία:</strong> Αθήνα</span>
+                        <span><strong>Τύπος:</strong> Πλήρης Απασχόληση</span>
+                        <span><strong>Εμπειρία:</strong> 3-5 έτη</span>
+                    </div>
+                    <p class="job-description">Αναζητούμε έμπειρο πολιτικό μηχανικό για την επίβλεψη μεγάλων κατασκευαστικών έργων. Απαραίτητη γνώση AutoCAD και διαχείρισης εργοταξίων.</p>
+                </div>
+                <a href="#contact" class="apply-btn">Υποβολή Αίτησης</a>
+            </div>
+            
+            <div class="job-card">
+                <div class="job-info">
+                    <h3>Αρχιτέκτονας - Σχεδιαστής</h3>
+                    <div class="job-meta">
+                        <span><strong>Τοποθεσία:</strong> Αθήνα</span>
+                        <span><strong>Τύπος:</strong> Πλήρης Απασχόληση</span>
+                        <span><strong>Εμπειρία:</strong> 2-4 έτη</span>
+                    </div>
+                    <p class="job-description">Δημιουργικός αρχιτέκτονας με εμπειρία σε εμπορικά έργα. Απαιτείται άριστη γνώση Revit, 3DS Max και rendering software.</p>
+                </div>
+                <a href="#contact" class="apply-btn">Υποβολή Αίτησης</a>
+            </div>
+            
+            <div class="job-card">
+                <div class="job-info">
+                    <h3>Project Manager</h3>
+                    <div class="job-meta">
+                        <span><strong>Τοποθεσία:</strong> Θεσσαλονίκη</span>
+                        <span><strong>Τύπος:</strong> Πλήρης Απασχόληση</span>
+                        <span><strong>Εμπειρία:</strong> 5+ έτη</span>
+                    </div>
+                    <p class="job-description">Διαχείριση πολλαπλών έργων ταυτόχρονα, συντονισμός ομάδων και επικοινωνία με πελάτες. PMP πιστοποίηση προτιμάται.</p>
+                </div>
+                <a href="#contact" class="apply-btn">Υποβολή Αίτησης</a>
+            </div>
+            
+            <div class="job-card">
+                <div class="job-info">
+                    <h3>Εργοδηγός / Site Supervisor</h3>
+                    <div class="job-meta">
+                        <span><strong>Τοποθεσία:</strong> Κρήτη</span>
+                        <span><strong>Τύπος:</strong> Πλήρης Απασχόληση</span>
+                        <span><strong>Εμπειρία:</strong> 7+ έτη</span>
+                    </div>
+                    <p class="job-description">Επίβλεψη καθημερινών εργασιών εργοταξίου, διαχείριση εργατών και εξασφάλιση τήρησης προτύπων ασφαλείας.</p>
+                </div>
+                <a href="#contact" class="apply-btn">Υποβολή Αίτησης</a>
             </div>
         </div>
     </section>
@@ -1241,6 +2683,27 @@
                     triggerCounters();
                 }, 800); // Wait for scroll animation to complete
             });
+        });
+
+        // FAQ Toggle
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const wasActive = faqItem.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Open clicked item if it wasn't active
+            if (!wasActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        // Observe all new animated elements
+        document.querySelectorAll('.team-card, .process-step, .testimonial-card, .safety-card, .partner-logo, .faq-item, .download-card, .job-card, .award-card, .news-card, .equipment-card').forEach(el => {
+            observer.observe(el);
         });
     </script>
 </body>

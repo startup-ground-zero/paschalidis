@@ -111,13 +111,14 @@
         .preloader {
             position: fixed; inset: 0; background: var(--black); z-index: 10000;
             display: flex; align-items: center; justify-content: center;
-            flex-direction: column; gap: 2rem;
+            flex-direction: column; gap: 1.5rem;
+            padding: 20px;
             transition: opacity .8s var(--ease-smooth), visibility .8s;
         }
         .preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
         .preloader-text {
-            font-family: var(--font-heading); font-size: clamp(1.5rem, 3vw, 2.5rem);
-            color: var(--gold); letter-spacing: 12px; text-transform: uppercase;
+            font-family: var(--font-heading); font-size: clamp(1.2rem, 3vw, 2.5rem);
+            color: var(--gold); letter-spacing: clamp(4px, 1.5vw, 12px); text-transform: uppercase;
             text-align: center;
             opacity: 0;
             animation: preloaderFadeIn 2s var(--ease-smooth) .3s forwards;

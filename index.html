@@ -111,21 +111,28 @@
         .preloader {
             position: fixed; inset: 0; background: var(--black); z-index: 10000;
             display: flex; align-items: center; justify-content: center;
+            flex-direction: column; gap: 2rem;
             transition: opacity .8s var(--ease-smooth), visibility .8s;
         }
         .preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
         .preloader-text {
             font-family: var(--font-heading); font-size: clamp(1.5rem, 3vw, 2.5rem);
             color: var(--gold); letter-spacing: 12px; text-transform: uppercase;
-            overflow: hidden;
+            text-align: center;
+            opacity: 0;
+            animation: preloaderFadeIn 2s var(--ease-smooth) .3s forwards;
         }
         .preloader-text span {
             display: inline-block;
-            animation: preloaderReveal .6s var(--ease-out) forwards;
-            opacity: 0; transform: translateY(100%);
         }
-        @keyframes preloaderReveal {
-            to { opacity: 1; transform: translateY(0); }
+        .preloader-logo {
+            opacity: 0;
+            animation: preloaderFadeIn 2s var(--ease-smooth) .1s forwards;
+        }
+        .preloader-logo img { height: 100px; width: auto; }
+        @keyframes preloaderFadeIn {
+            0% { opacity: 0; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
         }
 
         /* ===== NAVIGATION ===== */
@@ -909,14 +916,17 @@
 
     <!-- Preloader -->
     <div class="preloader" id="preloader">
+        <div class="preloader-logo">
+            <img src="logo_greek.jpg" alt="Paschalidis Group">
+        </div>
         <div class="preloader-text" aria-hidden="true">
-            <span style="animation-delay:.1s">P</span><span style="animation-delay:.15s">A</span><span style="animation-delay:.2s">S</span><span style="animation-delay:.25s">C</span><span style="animation-delay:.3s">H</span><span style="animation-delay:.35s">A</span><span style="animation-delay:.4s">L</span><span style="animation-delay:.45s">I</span><span style="animation-delay:.5s">D</span><span style="animation-delay:.55s">I</span><span style="animation-delay:.6s">S</span>
+            <span style="animation-delay:.1s">P</span><span style="animation-delay:.15s">A</span><span style="animation-delay:.2s">S</span><span style="animation-delay:.25s">C</span><span style="animation-delay:.3s">H</span><span style="animation-delay:.35s">A</span><span style="animation-delay:.4s">L</span><span style="animation-delay:.45s">I</span><span style="animation-delay:.5s">D</span><span style="animation-delay:.55s">I</span><span style="animation-delay:.6s">S</span><span style="animation-delay:.65s">&nbsp;</span><span style="animation-delay:.7s">G</span><span style="animation-delay:.75s">R</span><span style="animation-delay:.8s">O</span><span style="animation-delay:.85s">U</span><span style="animation-delay:.9s">P</span>
         </div>
     </div>
 
     <!-- Navigation -->
     <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
-        <a href="index.html" class="nav-logo"><img src="logo.jpg" alt="Paschalidis Construction"></a>
+        <a href="index.html" class="nav-logo"><img src="logo_greek.jpg" alt="Paschalidis Construction"></a>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
             <span></span><span></span><span></span>
         </button>
@@ -1401,7 +1411,7 @@
             setTimeout(function(){
                 document.getElementById('preloader').classList.add('done');
                 document.querySelector('.hero').classList.add('loaded');
-            }, 1200);
+            }, 3200);
         });
 
         // Nav scroll

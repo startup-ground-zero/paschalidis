@@ -46,14 +46,14 @@
             --dark: #141414;
             --dark-2: #1a1a1a;
             --dark-3: #222;
-            --grey-900: #2a2a2a;
-            --grey-800: #3a3a3a;
-            --grey-700: #555;
-            --grey-600: #777;
-            --grey-500: #999;
-            --grey-400: #aaa;
-            --grey-300: #c0c0c0;
-            --grey-200: #ddd;
+            --grey-900: #0a0a0a;
+            --grey-800: #151515;
+            --grey-700: #1a1a1a;
+            --grey-600: #2a2a2a;
+            --grey-500: #333;
+            --grey-400: #444;
+            --grey-300: #555;
+            --grey-200: #777;
             --grey-100: #eee;
             --cream: #f0ece4;
             --warm-white: #e8e6e1;
@@ -93,7 +93,7 @@
 
         ::selection { background: var(--gold); color: var(--black); }
 
-        img { display: block; max-width: 100%; }
+        img { display: block; max-width: 100%; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
 
         a { color: inherit; text-decoration: none; }
 
@@ -146,17 +146,17 @@
 
         .nav-links { display: flex; gap: clamp(1.5rem, 3vw, 3rem); list-style: none; align-items: center; }
         .nav-links a {
-            font-size: .75rem; font-weight: 500; color: rgba(255,255,255,.6);
+            font-size: .75rem; font-weight: 500; color: rgba(255,255,255,.85);
             letter-spacing: 2px; text-transform: uppercase; transition: color .3s;
             position: relative;
         }
         .nav-links a:hover { color: var(--gold); }
         .nav-links .nav-contact-btn {
             color: var(--black); background: var(--gold); padding: 10px 24px;
-            border-radius: 4px; font-weight: 600; transition: all .3s;
+            border-radius: 0; font-weight: 600; transition: all .3s;
         }
         .nav-links .nav-contact-btn:hover { background: var(--gold-light); transform: translateY(-1px); }
-        .nav-lang { color: rgba(255,255,255,.4) !important; border: 1px solid rgba(255,255,255,.15); padding: 6px 14px; border-radius: 4px; }
+        .nav-lang { color: rgba(255,255,255,.7) !important; border: 1px solid rgba(255,255,255,.35); padding: 6px 14px; border-radius: 4px; }
         .nav-lang:hover { color: var(--gold) !important; border-color: var(--gold); }
 
         /* Hamburger */
@@ -188,8 +188,9 @@
         .hero-slide {
             position: absolute; inset: 0;
             background-size: cover; background-position: center;
-            opacity: 0; transform: scale(1.08);
-            transition: opacity 1.5s var(--ease-smooth), transform 6s linear;
+            opacity: 0; transform: scale(1.03);
+            transition: opacity 1.5s var(--ease-smooth), transform 8s linear;
+            image-rendering: -webkit-optimize-contrast;
         }
         .hero-slide.active {
             opacity: 1; transform: scale(1);
@@ -197,15 +198,15 @@
         .hero-overlay {
             position: absolute; inset: 0;
             background: linear-gradient(180deg,
-                rgba(12,12,12,.3) 0%,
-                rgba(12,12,12,.1) 30%,
-                rgba(12,12,12,.5) 70%,
-                rgba(12,12,12,.85) 100%
+                rgba(12,12,12,.15) 0%,
+                rgba(12,12,12,.05) 30%,
+                rgba(12,12,12,.35) 70%,
+                rgba(12,12,12,.7) 100%
             );
         }
         /* Film grain overlay */
         .hero-grain {
-            position: absolute; inset: 0; opacity: .035; pointer-events: none;
+            position: absolute; inset: 0; opacity: .015; pointer-events: none;
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
         }
 
@@ -353,7 +354,7 @@
 
         .section-desc {
             font-size: clamp(.95rem, 1.1vw, 1.1rem); line-height: 1.9;
-            color: var(--grey-600); max-width: 560px; font-weight: 300;
+            color: var(--black); max-width: 560px; font-weight: 400;
         }
         .section-dark .section-desc { color: rgba(255,255,255,.75); }
 
@@ -372,8 +373,9 @@
         .about-img-wrapper img {
             width: 100%; height: 100%; object-fit: cover;
             transition: transform .8s var(--ease-smooth);
+            image-rendering: -webkit-optimize-contrast;
         }
-        .about-img-wrapper:hover img { transform: scale(1.03); }
+        .about-img-wrapper:hover img { transform: scale(1.02); }
 
         .about-experience-badge {
             position: absolute; bottom: -1px; right: -1px;
@@ -440,14 +442,14 @@
 
         .service-info h3 {
             font-family: var(--font-heading); font-size: clamp(1.3rem, 2.5vw, 2rem);
-            font-weight: 400; color: var(--grey-900); line-height: 1.3;
+            font-weight: 400; color: var(--black); line-height: 1.3;
             transition: color .3s;
         }
         .service-row:hover .service-info h3 { color: var(--gold); }
 
         .service-info p {
-            font-size: .9rem; color: var(--grey-600); margin-top: .4rem;
-            max-width: 500px; line-height: 1.7; font-weight: 300;
+            font-size: .9rem; color: var(--black); margin-top: .4rem;
+            max-width: 500px; line-height: 1.7; font-weight: 400;
         }
 
         .service-arrow {
@@ -473,16 +475,17 @@
         }
         .project-card {
             position: relative; overflow: hidden; cursor: pointer;
-            background: var(--dark-3);
+            background: var(--dark-3); aspect-ratio: 16/10;
         }
         .project-card:first-child {
-            grid-row: 1 / 3;
+            grid-row: 1 / 3; aspect-ratio: auto;
         }
         .project-card img {
             width: 100%; height: 100%; object-fit: cover;
             transition: transform .8s var(--ease-smooth);
+            image-rendering: -webkit-optimize-contrast;
         }
-        .project-card:hover img { transform: scale(1.05); }
+        .project-card:hover img { transform: scale(1.03); }
 
         .project-info {
             position: absolute; inset: 0;
@@ -572,10 +575,11 @@
         .testimonial-right {
             background: url('Mitilini Airport.jpg') center/cover no-repeat;
             position: relative;
+            image-rendering: -webkit-optimize-contrast;
         }
         .testimonial-right::after {
             content: ''; position: absolute; inset: 0;
-            background: rgba(12,12,12,.2);
+            background: rgba(12,12,12,.1);
         }
 
 
@@ -620,10 +624,11 @@
         .careers-cta-right {
             background: url('Mitilini Airport Overview.jpg') center/cover no-repeat;
             position: relative;
+            image-rendering: -webkit-optimize-contrast;
         }
         .careers-cta-right::after {
             content: ''; position: absolute; inset: 0;
-            background: rgba(12,12,12,.15);
+            background: rgba(12,12,12,.08);
         }
 
 
@@ -662,7 +667,7 @@
         .form-field { display: flex; flex-direction: column; }
         .form-field label {
             font-size: .7rem; font-weight: 600; letter-spacing: 2px;
-            text-transform: uppercase; color: rgba(255,255,255,.7);
+            text-transform: uppercase; color: var(--white);
             margin-bottom: .6rem;
         }
         .form-field input, .form-field textarea, .form-field select {
@@ -760,17 +765,6 @@
         .back-top:hover { background: var(--gold-light); }
         .back-top svg { width: 18px; height: 18px; fill: none; stroke: var(--black); stroke-width: 2; }
 
-        /* ===== WHATSAPP ===== */
-        .whatsapp {
-            position: fixed; bottom: 30px; left: 30px;
-            width: 52px; height: 52px; background: #25D366;
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            z-index: 900; box-shadow: 0 4px 20px rgba(37,211,102,.3);
-            transition: transform .3s;
-        }
-        .whatsapp:hover { transform: scale(1.1); }
-        .whatsapp svg { width: 26px; height: 26px; fill: #fff; }
-
         /* ===== COOKIE ===== */
         .cookie-bar {
             position: fixed; bottom: 0; left: 0; right: 0;
@@ -807,7 +801,7 @@
             backdrop-filter: blur(20px);
         }
         .lightbox.active { display: flex; }
-        .lightbox img { max-width: 90%; max-height: 90%; object-fit: contain; }
+        .lightbox img { max-width: 90%; max-height: 90%; object-fit: contain; image-rendering: -webkit-optimize-contrast; }
         .lightbox-close {
             position: absolute; top: 30px; right: 30px;
             width: 48px; height: 48px; background: transparent;
@@ -940,6 +934,10 @@
             <div class="hero-slide active" style="background-image:url('River West.jpg')"></div>
             <div class="hero-slide" style="background-image:url('Mitilini Airport.jpg')"></div>
             <div class="hero-slide" style="background-image:url('Mitilini Airport Overview.jpg')"></div>
+            <div class="hero-slide" style="background-image:url('foundation_parking_Glyfada.jpg')"></div>
+            <div class="hero-slide" style="background-image:url('foundation_parking_Glyfada_I.jpg')"></div>
+            <div class="hero-slide" style="background-image:url('foundation_parking_Glyfada_II.jpg')"></div>
+            <div class="hero-slide" style="background-image:url('foundation_parking_Glyfada_III.jpg')"></div>
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-grain"></div>
@@ -1010,12 +1008,12 @@
     <!-- Stats -->
     <div class="stats section-dark" aria-label="Company statistics">
         <div class="stat-item reveal">
-            <div class="stat-number"><span class="counter" data-target="500">0</span>+</div>
+            <div class="stat-number"><span class="counter" data-target="4000">0</span>+</div>
             <div class="stat-label">Projects Delivered</div>
         </div>
         <div class="stat-item reveal reveal-delay-1">
-            <div class="stat-number"><span class="counter" data-target="200">0</span>+</div>
-            <div class="stat-label">Team Members</div>
+            <div class="stat-number"><span class="counter" data-target="500">0</span>+</div>
+            <div class="stat-label">External Personnel</div>
         </div>
         <div class="stat-item reveal reveal-delay-2">
             <div class="stat-number">100%</div>
@@ -1103,6 +1101,38 @@
                     <p class="project-desc">Full-scope airport construction project</p>
                 </div>
             </div>
+            <div class="project-card" onclick="openLightbox('foundation_parking_Glyfada.jpg')">
+                <img src="foundation_parking_Glyfada.jpg" alt="Foundation & Parking — Glyfada" loading="lazy">
+                <div class="project-info">
+                    <span class="project-tag">Residential</span>
+                    <h3>Foundation &amp; Parking — Glyfada</h3>
+                    <p class="project-desc">Foundation and underground parking construction</p>
+                </div>
+            </div>
+            <div class="project-card" onclick="openLightbox('foundation_parking_Glyfada_I.jpg')">
+                <img src="foundation_parking_Glyfada_I.jpg" alt="Glyfada Parking Construction" loading="lazy">
+                <div class="project-info">
+                    <span class="project-tag">Residential</span>
+                    <h3>Glyfada — Construction</h3>
+                    <p class="project-desc">Reinforced concrete foundation works</p>
+                </div>
+            </div>
+            <div class="project-card" onclick="openLightbox('foundation_parking_Glyfada_II.jpg')">
+                <img src="foundation_parking_Glyfada_II.jpg" alt="Glyfada Parking Progress" loading="lazy">
+                <div class="project-info">
+                    <span class="project-tag">Residential</span>
+                    <h3>Glyfada — Progress</h3>
+                    <p class="project-desc">Structural framework and formwork installation</p>
+                </div>
+            </div>
+            <div class="project-card" onclick="openLightbox('foundation_parking_Glyfada_III.jpg')">
+                <img src="foundation_parking_Glyfada_III.jpg" alt="Glyfada Parking Overview" loading="lazy">
+                <div class="project-info">
+                    <span class="project-tag">Residential</span>
+                    <h3>Glyfada — Overview</h3>
+                    <p class="project-desc">Underground parking facility overview</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1172,7 +1202,7 @@
             <h2 class="section-heading reveal">Join a team<br>that builds <em>legacies</em></h2>
             <p class="section-desc reveal">Competitive salaries, continuous professional development, and the opportunity to work on landmark projects across Greece.</p>
             <a href="#contact" class="btn-gold reveal">
-                View Open Positions
+                Contact Us
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
         </div>
@@ -1241,7 +1271,6 @@
                             <option value="Residential">Residential</option>
                             <option value="Industrial">Industrial</option>
                             <option value="Infrastructure">Infrastructure</option>
-                            <option value="Renovation">Renovation</option>
                             <option value="Other">Other</option>
                         </select>
                     </div>
@@ -1310,11 +1339,6 @@
     <button class="back-top" id="backTop" aria-label="Back to top">
         <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
     </button>
-
-    <!-- WhatsApp -->
-    <a href="https://wa.me/302101234567" class="whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Contact via WhatsApp">
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-    </a>
 
     <!-- Cookie Consent -->
     <div class="cookie-bar" id="cookieBar">

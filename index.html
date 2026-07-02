@@ -113,9 +113,13 @@
             display: flex; align-items: center; justify-content: center;
             flex-direction: column; gap: 1.5rem;
             padding: 20px;
-            transition: opacity .8s var(--ease-smooth), visibility .8s;
+            transition: opacity .4s ease, visibility 0s .4s;
         }
-        .preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
+        .preloader.done {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
         .preloader-text {
             font-family: var(--font-heading); font-size: clamp(1.2rem, 3vw, 2.5rem);
             color: var(--gold); letter-spacing: clamp(4px, 1.5vw, 12px); text-transform: uppercase;
@@ -136,12 +140,32 @@
             100% { opacity: 1; transform: scale(1); }
         }
 
+        /* Box reveal overlay */
+        .reveal-grid {
+            position: fixed; inset: 0; z-index: 9999;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            pointer-events: none;
+        }
+        .reveal-grid.hidden { display: none; }
+        .reveal-box {
+            background: var(--black);
+            transition: transform .5s cubic-bezier(0.645, 0.045, 0.355, 1);
+            transform: scaleY(1);
+            transform-origin: top center;
+        }
+        .reveal-box.open {
+            transform: scaleY(0);
+        }
+
         /* ===== NAVIGATION ===== */
         .nav {
             position: fixed; top: 0; width: 100%; z-index: 1000;
             padding: 0 var(--side-pad); height: var(--nav-h);
             display: flex; align-items: center; justify-content: space-between;
             transition: background .5s var(--ease), box-shadow .5s var(--ease), backdrop-filter .5s;
+            background: rgba(12,12,12,.92); backdrop-filter: blur(30px) saturate(180%);
         }
         .nav.scrolled {
             background: rgba(12,12,12,.92); backdrop-filter: blur(30px) saturate(180%);
@@ -940,6 +964,9 @@
         </div>
     </div>
 
+    <!-- Box reveal grid -->
+    <div class="reveal-grid" id="revealGrid"></div>
+
     <!-- Navigation -->
     <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
         <a href="index.html" class="nav-logo"><img src="logo_greek.jpg" alt="Paschalidis Construction"></a>
@@ -1426,6 +1453,30 @@
         window.addEventListener('load', function(){
             setTimeout(function(){
                 document.getElementById('preloader').classList.add('done');
+                // Start box-by-box reveal
+                var grid = document.getElementById('revealGrid');
+                var boxes = [];
+                for (var i = 0; i < 18; i++) {
+                    var box = document.createElement('div');
+                    box.className = 'reveal-box';
+                    grid.appendChild(box);
+                    boxes.push(box);
+                }
+                // Reveal boxes one by one from bottom-left to top-right
+                var order = [
+                    12, 13, 14, 15, 16, 17,
+                    6, 7, 8, 9, 10, 11,
+                    0, 1, 2, 3, 4, 5
+                ];
+                order.forEach(function(idx, i) {
+                    setTimeout(function() {
+                        boxes[idx].classList.add('open');
+                    }, i * 80);
+                });
+                // Remove grid after animation completes
+                setTimeout(function() {
+                    grid.classList.add('hidden');
+                }, 18 * 80 + 600);
                 document.querySelector('.hero').classList.add('loaded');
             }, 1000);
         });

@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PASCHALIDIS — Construction Excellence Since 1985</title>
-    <meta name="description" content="PASCHALIDIS Construction — Premier construction company in Greece. 40+ years delivering landmark commercial, residential & infrastructure projects with uncompromising quality.">
+    <meta name="description" content="PASCHALIDIS Group — Premier construction company in Greece. 40+ years delivering landmark commercial, residential & infrastructure projects with uncompromising quality.">
     <meta name="keywords" content="construction company Greece, Paschalidis, commercial construction, residential projects, infrastructure, Athens builder">
-    <meta name="author" content="Paschalidis Construction">
+    <meta name="author" content="Paschalidis Group">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://paschalidis.gr/en/">
     <meta property="og:type" content="website">
@@ -27,7 +27,7 @@
     {
         "@context": "https://schema.org",
         "@type": "ConstructionBusiness",
-        "name": "Paschalidis Construction",
+        "name": "Paschalidis Group",
         "url": "https://paschalidis.gr",
         "telephone": "+302101234567",
         "email": "info@paschalidis.gr",
@@ -116,6 +116,13 @@
 
         body.lang-el .nav-links a[data-lang="el"] { display: block !important; }
         body.lang-el button[data-lang="el"] { display: inline-block !important; }
+        body.lang-el span[data-lang="el"] { display: inline !important; }
+        span[data-lang="el"] { display: none !important; }
+        body.lang-el span[data-lang="en"] { display: none !important; }
+        .project-desc[data-lang="el"] { display: none !important; }
+        body.lang-el .project-desc[data-lang="el"] { display: block !important; }
+        body.lang-el .project-desc[data-lang="en"] { display: none !important; }
+        body.lang-el .project-card:hover .project-desc[data-lang="el"] { display: block !important; }
 
         img { display: block; max-width: 100%; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
 
@@ -597,10 +604,16 @@
 
         .process-item .step-num {
             font-family: var(--font-heading); font-size: clamp(3rem, 5vw, 5rem);
-            color: var(--gold); font-weight: 800; line-height: 1;
-            margin-bottom: 1.5rem; transition: color .4s;
+            color: var(--black); font-weight: 800; line-height: 1;
+            margin-bottom: 1.5rem; transition: all .4s;
+            background: var(--gold); display: inline-block; padding: 4px 16px;
         }
-        .process-item:hover .step-num { color: var(--gold-light); }
+        .process-item:hover .step-num { background: var(--gold-light); }
+
+        .green-icon {
+            color: var(--gold); margin-bottom: 1.5rem;
+        }
+        .green-icon svg { width: 48px; height: 48px; }
 
         .process-item h3 {
             font-family: var(--font-heading); font-size: 1.5rem;
@@ -990,7 +1003,7 @@
 
     <!-- Navigation -->
     <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
-        <a href="index.html" class="nav-logo"><img src="logo_greek.svg" alt="Paschalidis Construction"></a>
+        <a href="index.html" class="nav-logo"><img src="logo_greek.svg" alt="Paschalidis Group"></a>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
             <span></span><span></span><span></span>
         </button>
@@ -1008,8 +1021,7 @@
     <!-- Hero -->
     <section class="hero" id="home" role="banner">
         <div class="hero-slides" aria-hidden="true">
-            <div class="hero-slide active" style="background-image:url('foundation_parking_Glyfada.jpg')"></div>
-            <div class="hero-slide" style="background-image:url('foundation_parking_Glyfada_I.jpg')"></div>
+            <div class="hero-slide active" style="background-image:url('foundation_parking_Glyfada_I.jpg')"></div>
             <div class="hero-slide" style="background-image:url('foundation_parking_Glyfada_II.jpg')"></div>
             <div class="hero-slide" style="background-image:url('foundation_parking_Glyfada_III.jpg')"></div>
             <div class="hero-slide" style="background-image:url('ELLINIKO%20Construction.jpg')"></div>
@@ -1095,10 +1107,10 @@
                     Δημιουργούμε ορόσημα<br>που ορίζουν <em>γενιές</em>
                 </h2>
                 <p class="about-text reveal" data-lang="en">
-                    Paschalidis Construction has been a cornerstone of Greece's construction industry for over four decades. We combine the discipline of traditional craftsmanship with the efficiency of modern engineering to deliver projects that stand the test of time.
+                    Paschalidis Group has been a cornerstone of Greece's construction industry for over four decades. We combine the discipline of traditional craftsmanship with the efficiency of modern engineering to deliver projects that stand the test of time.
                 </p>
                 <p class="about-text reveal" data-lang="el">
-                    Η Paschalidis Construction αποτελεί ακρογωνιαίο λίθο της ελληνικής κατασκευαστικής βιομηχανίας για πάνω από τέσσερις δεκαετίες. Συνδυάζουμε την πειθαρχία της παραδοσιακής τεχνογνωσίας με την αποτελεσματικότητα της σύγχρονης μηχανικής για να παραδώσουμε έργα που αντέχουν στον χρόνο.
+                    Η Paschalidis Group αποτελεί ακρογωνιαίο λίθο της ελληνικής κατασκευαστικής βιομηχανίας για πάνω από τέσσερις δεκαετίες. Συνδυάζουμε την πειθαρχία της παραδοσιακής τεχνογνωσίας με την αποτελεσματικότητα της σύγχρονης μηχανικής για να παραδώσουμε έργα που αντέχουν στον χρόνο.
                 </p>
                 <p class="about-text reveal" data-lang="en">
                     From residential buildings and luxury developments to large-scale commercial complexes and critical infrastructure, our commitment to quality, safety, and client satisfaction remains unwavering. We don't simply build structures — we create landmarks that define communities and endure for generations.
@@ -1109,10 +1121,11 @@
             </div>
             <div class="about-right reveal">
                 <div class="about-img-wrapper">
-                    <img src="ELLINIKO%20Construction%204.jpg" alt="Paschalidis Construction — Elliniko project" loading="lazy">
+                    <img src="ELLINIKO%20Construction%204.jpg" alt="Paschalidis Group — Elliniko project" loading="lazy">
                     <div class="about-experience-badge">
                         <span class="num">40+</span>
-                        <span class="label">Years</span>
+                        <span class="label" data-lang="en">Years</span>
+                        <span class="label" data-lang="el">Χρόνια</span>
                     </div>
                 </div>
             </div>
@@ -1263,7 +1276,7 @@
 
         <div class="process-grid">
             <div class="process-item reveal" style="border-color: rgba(255,255,255,.08);">
-                <div class="step-num" style="color:var(--gold);">
+                <div class="green-icon">
                     <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
                 </div>
                 <h3 style="color:var(--white);" data-lang="en">Solar Energy Systems</h3>
@@ -1272,7 +1285,7 @@
                 <p style="color:rgba(255,255,255,.75);" data-lang="el">Εγκαταστάσεις φωτοβολταϊκών για εμπορικά και οικιστικά κτίρια, μεγιστοποιώντας την παραγωγή ενέργειας και την μακροπρόθεσμη εξοικονόμηση.</p>
             </div>
             <div class="process-item reveal reveal-delay-1" style="border-color: rgba(255,255,255,.08);">
-                <div class="step-num" style="color:var(--gold);">
+                <div class="green-icon">
                     <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="12" y2="12"/><line x1="15" y1="15" x2="12" y2="12"/></svg>
                 </div>
                 <h3 style="color:var(--white);" data-lang="en">Energy-Efficient Design</h3>
@@ -1281,7 +1294,7 @@
                 <p style="color:rgba(255,255,255,.75);" data-lang="el">Προηγμένη θερμομόνωση, έξυπνος εξαερισμός και συστήματα διαχείρισης ενέργειας που ελαχιστοποιούν την κατανάλωση.</p>
             </div>
             <div class="process-item reveal reveal-delay-2" style="border-color: rgba(255,255,255,.08);">
-                <div class="step-num" style="color:var(--gold);">
+                <div class="green-icon">
                     <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
                 </div>
                 <h3 style="color:var(--white);" data-lang="en">Green Building Certification</h3>
@@ -1290,7 +1303,7 @@
                 <p style="color:rgba(255,255,255,.75);" data-lang="el">Κατασκευαστικές πρακτικές πιστοποιημένες LEED και ΚΕΝΑΚ, που εξασφαλίζουν τα υψηλότερα περιβαλλοντικά πρότυπα.</p>
             </div>
             <div class="process-item reveal reveal-delay-3" style="border-color: rgba(255,255,255,.08);">
-                <div class="step-num" style="color:var(--gold);">
+                <div class="green-icon">
                     <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 10h-4V4a2 2 0 0 0-4 0v6H6l6 8 6-8z"/><line x1="6" y1="22" x2="18" y2="22"/></svg>
                 </div>
                 <h3 style="color:var(--white);" data-lang="en">Heat Pump &amp; Geothermal</h3>
@@ -1316,97 +1329,121 @@
             <div class="project-card" onclick="openLightbox('foundation_parking_Glyfada.jpg')">
                 <img src="foundation_parking_Glyfada.jpg" alt="Foundation & Parking — Glyfada" loading="lazy">
                 <div class="project-info">
-                    <span class="project-tag">Residential</span>
-                    <h3>Foundation &amp; Parking — Glyfada</h3>
-                    <p class="project-desc">Foundation and underground parking construction</p>
+                    <span class="project-tag" data-lang="en">Residential</span>
+                    <span class="project-tag" data-lang="el">Οικιστικό</span>
+                    <h3 data-lang="en">Foundation &amp; Parking — Glyfada</h3>
+                    <h3 data-lang="el">Θεμελίωση &amp; Parking — Γλυφάδα</h3>
+                    <p class="project-desc" data-lang="en">Foundation and underground parking construction</p>
+                    <p class="project-desc" data-lang="el">Κατασκευή θεμελίωσης και υπόγειου parking</p>
                 </div>
             </div>
             <div class="project-card" onclick="openLightbox('Mitilini%20Airport.jpg')">
                 <img src="Mitilini%20Airport.jpg" alt="Mytilene Airport" loading="lazy">
                 <div class="project-info">
-                    <span class="project-tag">Infrastructure</span>
-                    <h3>Mytilene Airport</h3>
-                    <p class="project-desc">Modern airport terminal construction</p>
+                    <span class="project-tag" data-lang="en">Infrastructure</span>
+                    <span class="project-tag" data-lang="el">Υποδομές</span>
+                    <h3 data-lang="en">Mytilene Airport</h3>
+                    <h3 data-lang="el">Αεροδρόμιο Μυτιλήνης</h3>
+                    <p class="project-desc" data-lang="en">Modern airport terminal construction</p>
+                    <p class="project-desc" data-lang="el">Κατασκευή σύγχρονου αεροσταθμού</p>
                 </div>
             </div>
             <div class="project-card" onclick="openLightbox('Mitilini%20Airport%20Overview.jpg')">
                 <img src="Mitilini%20Airport%20Overview.jpg" alt="Mytilene Airport Overview" loading="lazy">
                 <div class="project-info">
-                    <span class="project-tag">Infrastructure</span>
-                    <h3>Airport — Overview</h3>
-                    <p class="project-desc">Full-scope airport construction project</p>
+                    <span class="project-tag" data-lang="en">Infrastructure</span>
+                    <span class="project-tag" data-lang="el">Υποδομές</span>
+                    <h3 data-lang="en">Airport — Overview</h3>
+                    <h3 data-lang="el">Αεροδρόμιο — Επισκόπηση</h3>
+                    <p class="project-desc" data-lang="en">Full-scope airport construction project</p>
+                    <p class="project-desc" data-lang="el">Ολοκληρωμένο έργο κατασκευής αεροδρομίου</p>
                 </div>
             </div>
             <div class="project-card" onclick="openLightbox('River%20West.jpg')">
                 <img src="River%20West.jpg" alt="River West Shopping Center" loading="lazy">
                 <div class="project-info">
-                    <span class="project-tag">Commercial</span>
+                    <span class="project-tag" data-lang="en">Commercial</span>
+                    <span class="project-tag" data-lang="el">Εμπορικό</span>
                     <h3>River West</h3>
-                    <p class="project-desc">Shopping center expansion — 20,000 m³ reinforced concrete</p>
+                    <p class="project-desc" data-lang="en">Shopping center expansion — 20,000 m³ reinforced concrete</p>
+                    <p class="project-desc" data-lang="el">Επέκταση εμπορικού κέντρου — 20.000 m³ οπλισμένο σκυρόδεμα</p>
                 </div>
             </div>
             <div class="project-card" onclick="openLightbox('foundation_parking_Glyfada_I.jpg')">
                 <img src="foundation_parking_Glyfada_I.jpg" alt="Glyfada Parking Construction" loading="lazy">
                 <div class="project-info">
-                    <span class="project-tag">Residential</span>
-                    <h3>Glyfada Parking Foundation</h3>
-                    <p class="project-desc">Reinforced concrete foundation works</p>
+                    <span class="project-tag" data-lang="en">Residential</span>
+                    <span class="project-tag" data-lang="el">Οικιστικό</span>
+                    <h3 data-lang="en">Glyfada Parking Foundation</h3>
+                    <h3 data-lang="el">Θεμελίωση Parking Γλυφάδας</h3>
+                    <p class="project-desc" data-lang="en">Reinforced concrete foundation works</p>
+                    <p class="project-desc" data-lang="el">Εργασίες θεμελίωσης οπλισμένου σκυροδέματος</p>
                 </div>
             </div>
             <div class="project-card" onclick="openLightbox('foundation_parking_Glyfada_II.jpg')">
                 <img src="foundation_parking_Glyfada_II.jpg" alt="Glyfada Parking Progress" loading="lazy">
                 <div class="project-info">
-                    <span class="project-tag">Residential</span>
-                    <h3>Glyfada Parking Construction Progress</h3>
-                    <p class="project-desc">Structural framework and formwork installation</p>
+                    <span class="project-tag" data-lang="en">Residential</span>
+                    <span class="project-tag" data-lang="el">Οικιστικό</span>
+                    <h3 data-lang="en">Glyfada Parking Construction Progress</h3>
+                    <h3 data-lang="el">Εξέλιξη Κατασκευής Parking Γλυφάδας</h3>
+                    <p class="project-desc" data-lang="en">Structural framework and formwork installation</p>
+                    <p class="project-desc" data-lang="el">Εγκατάσταση δομικού σκελετού και ξυλοτύπων</p>
                 </div>
             </div>
             <div class="project-card" onclick="openLightbox('foundation_parking_Glyfada_III.jpg')">
                 <img src="foundation_parking_Glyfada_III.jpg" alt="Glyfada Parking Overview" loading="lazy">
                 <div class="project-info">
-                    <span class="project-tag">Residential</span>
-                    <h3>Glyfada Parking Overview</h3>
-                    <p class="project-desc">Underground parking facility overview</p>
+                    <span class="project-tag" data-lang="en">Residential</span>
+                    <span class="project-tag" data-lang="el">Οικιστικό</span>
+                    <h3 data-lang="en">Glyfada Parking Overview</h3>
+                    <h3 data-lang="el">Επισκόπηση Parking Γλυφάδας</h3>
+                    <p class="project-desc" data-lang="en">Underground parking facility overview</p>
+                    <p class="project-desc" data-lang="el">Επισκόπηση υπόγειου σταθμού αυτοκινήτων</p>
                 </div>
             </div>
             <div class="project-card" onclick="openLightbox('ELLINIKO%20Construction.jpg')">
                 <img src="ELLINIKO%20Construction.jpg" alt="Elliniko Construction" loading="lazy">
                 <div class="project-info">
-                    <span class="project-tag">Commercial</span>
-                    <h3>Elliniko</h3>
-                    <p class="project-desc">Large-scale construction at the Elliniko development</p>
+                    <span class="project-tag" data-lang="en">Commercial</span>
+                    <span class="project-tag" data-lang="el">Εμπορικό</span>
+                    <h3 data-lang="en">Elliniko</h3>
+                    <h3 data-lang="el">Ελληνικό</h3>
+                    <p class="project-desc" data-lang="en">Large-scale construction at the Elliniko development</p>
+                    <p class="project-desc" data-lang="el">Κατασκευή μεγάλης κλίμακας στην ανάπτυξη του Ελληνικού</p>
                 </div>
             </div>
             <div class="project-card" onclick="openLightbox('ELLINIKO%20Construction%202.jpg')">
                 <img src="ELLINIKO%20Construction%202.jpg" alt="Elliniko Construction Phase 2" loading="lazy">
                 <div class="project-info">
-                    <span class="project-tag">Commercial</span>
-                    <h3>Elliniko Residential Progress</h3>
-                    <p class="project-desc">Structural works and reinforced concrete</p>
-                </div>
-            </div>
-            <div class="project-card" onclick="openLightbox('ELLINIKO%20Construction%203.jpg')">
-                <img src="ELLINIKO%20Construction%203.jpg" alt="Elliniko Construction Phase 3" loading="lazy">
-                <div class="project-info">
-                    <span class="project-tag">Commercial</span>
-                    <h3>Elliniko — Phase III</h3>
-                    <p class="project-desc">Vertical construction and formwork</p>
+                    <span class="project-tag" data-lang="en">Commercial</span>
+                    <span class="project-tag" data-lang="el">Εμπορικό</span>
+                    <h3 data-lang="en">Elliniko Residential Progress</h3>
+                    <h3 data-lang="el">Ελληνικό — Εξέλιξη Οικιστικού</h3>
+                    <p class="project-desc" data-lang="en">Structural works and reinforced concrete</p>
+                    <p class="project-desc" data-lang="el">Δομικές εργασίες και οπλισμένο σκυρόδεμα</p>
                 </div>
             </div>
             <div class="project-card" onclick="openLightbox('ELLINIKO%20Construction%204.jpg')">
                 <img src="ELLINIKO%20Construction%204.jpg" alt="Elliniko Construction Phase 4" loading="lazy">
                 <div class="project-info">
-                    <span class="project-tag">Commercial</span>
-                    <h3>Elliniko Overview</h3>
-                    <p class="project-desc">Infrastructure and site development</p>
+                    <span class="project-tag" data-lang="en">Commercial</span>
+                    <span class="project-tag" data-lang="el">Εμπορικό</span>
+                    <h3 data-lang="en">Elliniko Overview</h3>
+                    <h3 data-lang="el">Ελληνικό — Επισκόπηση</h3>
+                    <p class="project-desc" data-lang="en">Infrastructure and site development</p>
+                    <p class="project-desc" data-lang="el">Υποδομές και ανάπτυξη εργοταξίου</p>
                 </div>
             </div>
             <div class="project-card" onclick="openLightbox('ELLINIKO5.jpg')">
                 <img src="ELLINIKO5.jpg" alt="Elliniko Overview" loading="lazy">
                 <div class="project-info">
-                    <span class="project-tag">Commercial</span>
-                    <h3>Elliniko Residential Building Overview</h3>
-                    <p class="project-desc">Aerial view of the Elliniko project site</p>
+                    <span class="project-tag" data-lang="en">Commercial</span>
+                    <span class="project-tag" data-lang="el">Εμπορικό</span>
+                    <h3 data-lang="en">Elliniko Residential Building Overview</h3>
+                    <h3 data-lang="el">Ελληνικό — Επισκόπηση Οικιστικού Κτιρίου</h3>
+                    <p class="project-desc" data-lang="en">Aerial view of the Elliniko project site</p>
+                    <p class="project-desc" data-lang="el">Αεροφωτογραφία του εργοταξίου Ελληνικού</p>
                 </div>
             </div>
         </div>
@@ -1775,10 +1812,10 @@
             </div>
         </div>
         <div class="footer-bottom" data-lang="en">
-            <p>&copy; 2026 Paschalidis Construction. All rights reserved.</p>
+            <p>&copy; 2026 Paschalidis Group. All rights reserved.</p>
         </div>
         <div class="footer-bottom" data-lang="el">
-            <p>&copy; 2026 Paschalidis Construction. Με επιφύλαξη παντός δικαιώματος.</p>
+            <p>&copy; 2026 Paschalidis Group. Με επιφύλαξη παντός δικαιώματος.</p>
         </div>
     </footer>
 

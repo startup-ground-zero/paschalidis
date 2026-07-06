@@ -1,38 +1,137 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 140" width="400" height="140">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&amp;family=Inter:wght@600&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&amp;family=Inter:wght@600;700&amp;display=swap');
     </style>
   </defs>
   
   <!-- Gold background -->
-  <rect x="0" y="0" width="400" height="140" fill="#f5c500" rx="0"/>
+  <rect x="0" y="0" width="400" height="140" fill="#f5c500"/>
   
   <!-- Top hazard stripe -->
-  <pattern id="hazard" patternUnits="userSpaceOnUse" width="20" height="12" patternTransform="rotate(0)">
-    <rect width="10" height="12" fill="#1a1a3e"/>
-    <rect x="10" width="10" height="12" fill="#f5c500"/>
-  </pattern>
-  <rect x="0" y="0" width="400" height="12" fill="url(#hazard)"/>
-  
-  <!-- Bottom hazard stripe -->
-  <rect x="0" y="128" width="400" height="12" fill="url(#hazard)"/>
-  
-  <!-- Construction building icon -->
-  <g transform="translate(40, 30)">
-    <!-- Building outline -->
-    <rect x="0" y="15" width="65" height="70" fill="#1a1a3e" rx="2"/>
-    <!-- Π (Pi) shape cutout - pillars and beam -->
-    <rect x="10" y="25" width="12" height="50" fill="#f5c500"/>
-    <rect x="43" y="25" width="12" height="50" fill="#f5c500"/>
-    <rect x="10" y="25" width="45" height="10" fill="#f5c500"/>
-    <!-- Roof/top accent -->
-    <polygon points="32.5,5 65,15 0,15" fill="#1a1a3e"/>
+  <g>
+    <rect x="0" y="0" width="400" height="12" fill="#1a1a3e"/>
+    <rect x="0" y="0" width="12" height="12" fill="#f5c500"/>
+    <rect x="24" y="0" width="12" height="12" fill="#f5c500"/>
+    <rect x="48" y="0" width="12" height="12" fill="#f5c500"/>
+    <rect x="72" y="0" width="12" height="12" fill="#f5c500"/>
+    <rect x="96" y="0" width="12" height="12" fill="#f5c500"/>
+    <rect x="120" y="0" width="12" height="12" fill="#f5c500"/>
+    <rect x="144" y="0" width="12" height="12" fill="#f5c500"/>
+    <rect x="168" y="0" width="12" height="12" fill="#f5c500"/>
+    <rect x="192" y="0" width="12" height="12" fill="#f5c500"/>
+    <rect x="216" y="0" width="12" height="12" fill="#f5c500"/>
+    <rect x="240" y="0" width="12" height="12" fill="#f5c500"/>
+    <rect x="264" y="0" width="12" height="12" fill="#f5c500"/>
+    <rect x="288" y="0" width="12" height="12" fill="#f5c500"/>
+    <rect x="312" y="0" width="12" height="12" fill="#f5c500"/>
+    <rect x="336" y="0" width="12" height="12" fill="#f5c500"/>
+    <rect x="360" y="0" width="12" height="12" fill="#f5c500"/>
+    <rect x="384" y="0" width="12" height="12" fill="#f5c500"/>
   </g>
   
-  <!-- Company name in Greek script -->
-  <text x="125" y="75" font-family="'Dancing Script', cursive" font-size="36" font-weight="700" fill="#1a1a1a">Πασχαλίδης</text>
+  <!-- Bottom hazard stripe -->
+  <g>
+    <rect x="0" y="128" width="400" height="12" fill="#1a1a3e"/>
+    <rect x="0" y="128" width="12" height="12" fill="#f5c500"/>
+    <rect x="24" y="128" width="12" height="12" fill="#f5c500"/>
+    <rect x="48" y="128" width="12" height="12" fill="#f5c500"/>
+    <rect x="72" y="128" width="12" height="12" fill="#f5c500"/>
+    <rect x="96" y="128" width="12" height="12" fill="#f5c500"/>
+    <rect x="120" y="128" width="12" height="12" fill="#f5c500"/>
+    <rect x="144" y="128" width="12" height="12" fill="#f5c500"/>
+    <rect x="168" y="128" width="12" height="12" fill="#f5c500"/>
+    <rect x="192" y="128" width="12" height="12" fill="#f5c500"/>
+    <rect x="216" y="128" width="12" height="12" fill="#f5c500"/>
+    <rect x="240" y="128" width="12" height="12" fill="#f5c500"/>
+    <rect x="264" y="128" width="12" height="12" fill="#f5c500"/>
+    <rect x="288" y="128" width="12" height="12" fill="#f5c500"/>
+    <rect x="312" y="128" width="12" height="12" fill="#f5c500"/>
+    <rect x="336" y="128" width="12" height="12" fill="#f5c500"/>
+    <rect x="360" y="128" width="12" height="12" fill="#f5c500"/>
+    <rect x="384" y="128" width="12" height="12" fill="#f5c500"/>
+  </g>
+  
+  <!-- 3 Buildings silhouette (background, subtle) - positioned next to the crane -->
+  <g opacity="0.13" fill="#1a1a3e" stroke="none">
+    <!-- Building 1: Shorter, directly next to crane -->
+    <rect x="48" y="58" width="55" height="70"/>
+    <rect x="48" y="67" width="55" height="2" fill="#f5c500"/>
+    <rect x="48" y="77" width="55" height="2" fill="#f5c500"/>
+    <rect x="48" y="87" width="55" height="2" fill="#f5c500"/>
+    <rect x="48" y="97" width="55" height="2" fill="#f5c500"/>
+    <rect x="48" y="107" width="55" height="2" fill="#f5c500"/>
+    <rect x="48" y="117" width="55" height="2" fill="#f5c500"/>
+    <!-- Rebar -->
+    <rect x="56" y="48" width="2" height="10"/>
+    <rect x="66" y="50" width="2" height="8"/>
+    <rect x="76" y="47" width="2" height="11"/>
+    <rect x="86" y="49" width="2" height="9"/>
+    
+    <!-- Building 2: Taller, behind -->
+    <rect x="108" y="35" width="65" height="93"/>
+    <rect x="108" y="44" width="65" height="2" fill="#f5c500"/>
+    <rect x="108" y="54" width="65" height="2" fill="#f5c500"/>
+    <rect x="108" y="64" width="65" height="2" fill="#f5c500"/>
+    <rect x="108" y="74" width="65" height="2" fill="#f5c500"/>
+    <rect x="108" y="84" width="65" height="2" fill="#f5c500"/>
+    <rect x="108" y="94" width="65" height="2" fill="#f5c500"/>
+    <rect x="108" y="104" width="65" height="2" fill="#f5c500"/>
+    <rect x="108" y="114" width="65" height="2" fill="#f5c500"/>
+    <!-- Rebar -->
+    <rect x="118" y="23" width="2" height="12"/>
+    <rect x="133" y="25" width="2" height="10"/>
+    <rect x="148" y="22" width="2" height="13"/>
+    <rect x="163" y="26" width="2" height="9"/>
+    
+    <!-- Building 3: Medium, right side -->
+    <rect x="310" y="48" width="60" height="80"/>
+    <rect x="310" y="58" width="60" height="2" fill="#f5c500"/>
+    <rect x="310" y="68" width="60" height="2" fill="#f5c500"/>
+    <rect x="310" y="78" width="60" height="2" fill="#f5c500"/>
+    <rect x="310" y="88" width="60" height="2" fill="#f5c500"/>
+    <rect x="310" y="98" width="60" height="2" fill="#f5c500"/>
+    <rect x="310" y="108" width="60" height="2" fill="#f5c500"/>
+    <rect x="310" y="118" width="60" height="2" fill="#f5c500"/>
+    <!-- Rebar -->
+    <rect x="320" y="38" width="2" height="10"/>
+    <rect x="335" y="40" width="2" height="8"/>
+    <rect x="350" y="37" width="2" height="11"/>
+    <rect x="360" y="39" width="2" height="9"/>
+  </g>
+  
+  <!-- Construction crane (foreground, left - next to buildings) -->
+  <g transform="translate(12, 12)" fill="none" stroke="#1a1a3e" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Crane tower -->
+    <line x1="28" y1="114" x2="28" y2="14"/>
+    <!-- Tower base -->
+    <line x1="16" y1="114" x2="40" y2="114"/>
+    <line x1="20" y1="114" x2="28" y2="88"/>
+    <line x1="36" y1="114" x2="28" y2="88"/>
+    <!-- Cross-bracing -->
+    <line x1="24" y1="62" x2="32" y2="44"/>
+    <line x1="32" y1="62" x2="24" y2="44"/>
+    <!-- Boom (jib extending over the buildings) -->
+    <line x1="28" y1="14" x2="95" y2="14"/>
+    <!-- Counter-jib -->
+    <line x1="28" y1="14" x2="10" y2="14"/>
+    <!-- Counterweight -->
+    <rect x="4" y="14" width="11" height="8" fill="#1a1a3e" stroke="none" rx="1"/>
+    <!-- Mast head -->
+    <line x1="28" y1="14" x2="28" y2="5"/>
+    <!-- Pendant cables -->
+    <line x1="28" y1="5" x2="95" y2="14"/>
+    <line x1="28" y1="5" x2="10" y2="14"/>
+    <!-- Hoist line (dropping toward building) -->
+    <line x1="78" y1="14" x2="78" y2="40"/>
+    <!-- Hook -->
+    <circle cx="78" cy="43" r="2.5" fill="#1a1a3e" stroke="none"/>
+    <path d="M75 46 Q78 53 81 46" stroke-width="2.2"/>
+  </g>
+  
+  <!-- Company name in Greek script (foreground) -->
+  <text x="130" y="78" font-family="'Dancing Script', cursive" font-size="40" font-weight="700" fill="#1a1a1a">Πασχαλίδης</text>
   
   <!-- Subline -->
-  <text x="125" y="100" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#1a1a3e" letter-spacing="3">ΤΕΧΝΙΚΗ ΕΤΑΙΡΕΙΑ</text>
+  <text x="130" y="106" font-family="'Inter', sans-serif" font-size="13" font-weight="700" fill="#1a1a3e" letter-spacing="4">ΤΕΧΝΙΚΗ ΕΤΑΙΡΕΙΑ</text>
 </svg>

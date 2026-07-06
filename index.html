@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="el">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -119,6 +119,7 @@
         body.lang-el span[data-lang="el"] { display: inline !important; }
         span[data-lang="el"] { display: none !important; }
         body.lang-el span[data-lang="en"] { display: none !important; }
+        body.lang-el .preloader-text[data-lang="el"] { display: block !important; }
         .project-desc[data-lang="el"] { display: none !important; }
         body.lang-el .project-desc[data-lang="el"] { display: block !important; }
         body.lang-el .project-desc[data-lang="en"] { display: none !important; }
@@ -983,7 +984,7 @@
         }
     </style>
 </head>
-<body>
+<body class="lang-el">
 
     <!-- Skip Nav -->
     <a href="#main" class="skip-nav">Skip to main content</a>
@@ -993,8 +994,11 @@
         <div class="preloader-logo">
             <img src="logo_greek.svg" alt="Paschalidis Group">
         </div>
-        <div class="preloader-text" aria-hidden="true">
+        <div class="preloader-text" aria-hidden="true" data-lang="en">
             <span style="animation-delay:.1s">P</span><span style="animation-delay:.15s">A</span><span style="animation-delay:.2s">S</span><span style="animation-delay:.25s">C</span><span style="animation-delay:.3s">H</span><span style="animation-delay:.35s">A</span><span style="animation-delay:.4s">L</span><span style="animation-delay:.45s">I</span><span style="animation-delay:.5s">D</span><span style="animation-delay:.55s">I</span><span style="animation-delay:.6s">S</span><span style="animation-delay:.65s">&nbsp;</span><span style="animation-delay:.7s">G</span><span style="animation-delay:.75s">R</span><span style="animation-delay:.8s">O</span><span style="animation-delay:.85s">U</span><span style="animation-delay:.9s">P</span>
+        </div>
+        <div class="preloader-text" aria-hidden="true" data-lang="el">
+            <span style="animation-delay:.1s">Π</span><span style="animation-delay:.15s">Α</span><span style="animation-delay:.2s">Σ</span><span style="animation-delay:.25s">Χ</span><span style="animation-delay:.3s">Α</span><span style="animation-delay:.35s">Λ</span><span style="animation-delay:.4s">Ι</span><span style="animation-delay:.45s">Δ</span><span style="animation-delay:.5s">Η</span><span style="animation-delay:.55s">Σ</span><span style="animation-delay:.6s">&nbsp;</span><span style="animation-delay:.65s">G</span><span style="animation-delay:.7s">R</span><span style="animation-delay:.75s">O</span><span style="animation-delay:.8s">U</span><span style="animation-delay:.85s">P</span>
         </div>
     </div>
 
@@ -1014,7 +1018,7 @@
             <li><a href="#projects" data-lang="en">Projects</a><a href="#projects" data-lang="el">Έργα</a></li>
             <li><a href="#process" data-lang="en">Process</a><a href="#process" data-lang="el">Διαδικασία</a></li>
             <li><a href="#contact" data-lang="en">Contact</a><a href="#contact" data-lang="el">Επικοινωνία</a></li>
-            <li><a href="#" class="nav-lang" id="langToggle" onclick="toggleLang(event)">ΕΛ</a></li>
+            <li><a href="#" class="nav-lang" id="langToggle" onclick="toggleLang(event)">EN</a></li>
         </ul>
     </nav>
 
@@ -1026,7 +1030,6 @@
             <div class="hero-slide" style="background-image:url('foundation_parking_Glyfada_III.jpg')"></div>
             <div class="hero-slide" style="background-image:url('ELLINIKO%20Construction.jpg')"></div>
             <div class="hero-slide" style="background-image:url('ELLINIKO%20Construction%202.jpg')"></div>
-            <div class="hero-slide" style="background-image:url('ELLINIKO%20Construction%203.jpg')"></div>
             <div class="hero-slide" style="background-image:url('ELLINIKO%20Construction%204.jpg')"></div>
             <div class="hero-slide" style="background-image:url('ELLINIKO5.jpg')"></div>
         </div>
@@ -1045,14 +1048,14 @@
             <p class="hero-sub" data-lang="el">Τέσσερις δεκαετίες διαμόρφωσης του ελληνικού τοπίου μέσω μηχανικής ακρίβειας, αδιαπραγμάτευτης ποιότητας και δέσμευσης σε διαχρονικό σχεδιασμό.</p>
             <div class="hero-cta" data-lang="en">
                 <a href="#contact" class="btn-gold">
-                    Start Your Project
+                    Contact Us
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
                 <a href="#projects" class="btn-ghost">View Portfolio</a>
             </div>
             <div class="hero-cta" data-lang="el">
                 <a href="#contact" class="btn-gold">
-                    Ξεκινήστε το Έργο σας
+                    Επικοινωνήστε
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
                 <a href="#projects" class="btn-ghost">Δείτε τα Έργα μας</a>
@@ -1639,21 +1642,22 @@
                         <input type="tel" id="phone" name="phone" placeholder="+30 210 123 4567" required>
                     </div>
                     <div class="form-field">
-                        <label for="project-type">Project Type</label>
-                        <select id="project-type" name="project_type" required>
+                        <label for="project-type">Request Type</label>
+                        <select id="project-type" name="request_type" required>
                             <option value="">Select type</option>
-                            <option value="Commercial">Commercial</option>
-                            <option value="Residential">Residential</option>
-                            <option value="Industrial">Industrial</option>
-                            <option value="Infrastructure">Infrastructure</option>
-                            <option value="Green Energy">Green Energy</option>
+                            <option value="Commercial">Commercial Project</option>
+                            <option value="Residential">Residential Project</option>
+                            <option value="Industrial">Industrial Project</option>
+                            <option value="Infrastructure">Infrastructure Project</option>
+                            <option value="Green Energy">Green Energy Project</option>
+                            <option value="Job Request">Job Request</option>
                             <option value="Other">Other</option>
                         </select>
                     </div>
                 </div>
                 <div class="form-field">
-                    <label for="message">Tell Us About Your Project</label>
-                    <textarea id="message" name="message" placeholder="Describe your project, goals, and timeline..." required></textarea>
+                    <label for="message">Tell Us About Your Request</label>
+                    <textarea id="message" name="message" placeholder="Describe your project or job interest, goals, and timeline..." required></textarea>
                 </div>
                 <button type="submit" class="submit-btn" id="submitBtn">Send Inquiry</button>
             </form>
@@ -1708,21 +1712,22 @@
                         <input type="tel" id="phone-el" name="phone" placeholder="+30 210 123 4567" required>
                     </div>
                     <div class="form-field">
-                        <label for="project-type-el">Τύπος Έργου</label>
-                        <select id="project-type-el" name="project_type" required>
+                        <label for="project-type-el">Τύπος Αιτήματος</label>
+                        <select id="project-type-el" name="request_type" required>
                             <option value="">Επιλέξτε τύπο</option>
-                            <option value="Commercial">Εμπορικό</option>
-                            <option value="Residential">Οικιστικό</option>
-                            <option value="Industrial">Βιομηχανικό</option>
-                            <option value="Infrastructure">Υποδομές</option>
-                            <option value="Green Energy">Πράσινη Ενέργεια</option>
+                            <option value="Commercial">Εμπορικό Έργο</option>
+                            <option value="Residential">Οικιστικό Έργο</option>
+                            <option value="Industrial">Βιομηχανικό Έργο</option>
+                            <option value="Infrastructure">Έργο Υποδομής</option>
+                            <option value="Green Energy">Έργο Πράσινης Ενέργειας</option>
+                            <option value="Job Request">Αίτηση Εργασίας</option>
                             <option value="Other">Άλλο</option>
                         </select>
                     </div>
                 </div>
                 <div class="form-field">
-                    <label for="message-el">Πείτε μας για το Έργο σας</label>
-                    <textarea id="message-el" name="message" placeholder="Περιγράψτε το έργο σας, τους στόχους και το χρονοδιάγραμμα..." required></textarea>
+                    <label for="message-el">Πείτε μας για το Αίτημά σας</label>
+                    <textarea id="message-el" name="message" placeholder="Περιγράψτε το έργο ή το ενδιαφέρον σας, τους στόχους και το χρονοδιάγραμμα..." required></textarea>
                 </div>
                 <button type="submit" class="submit-btn" id="submitBtnEl">Αποστολή</button>
             </form>

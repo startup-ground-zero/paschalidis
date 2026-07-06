@@ -96,6 +96,27 @@
 
         ::selection { background: var(--gold); color: var(--black); }
 
+        /* Language toggle — hide Greek by default, show on toggle */
+        [data-lang="el"] { display: none !important; }
+        body.lang-el [data-lang="el"] { display: block !important; }
+        body.lang-el [data-lang="en"] { display: none !important; }
+
+        /* Restore correct display types when active */
+        body.lang-el .hero-cta[data-lang="el"],
+        body.lang-el .process-grid[data-lang="el"],
+        body.lang-el .contact-grid[data-lang="el"],
+        body.lang-el .footer-grid[data-lang="el"],
+        body.lang-el .stats[data-lang="el"],
+        body.lang-el .cert-row[data-lang="el"],
+        body.lang-el .careers-cta[data-lang="el"] { display: grid !important; }
+
+        body.lang-el .marquee-track[data-lang="el"],
+        body.lang-el .footer-bottom[data-lang="el"],
+        body.lang-el .social-links[data-lang="el"] { display: flex !important; }
+
+        body.lang-el .nav-links a[data-lang="el"] { display: block !important; }
+        body.lang-el button[data-lang="el"] { display: inline-block !important; }
+
         img { display: block; max-width: 100%; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
 
         a { color: inherit; text-decoration: none; }
@@ -957,7 +978,7 @@
     <!-- Preloader -->
     <div class="preloader" id="preloader">
         <div class="preloader-logo">
-            <img src="logo_greek.jpg" alt="Paschalidis Group">
+            <img src="logo_greek.svg" alt="Paschalidis Group">
         </div>
         <div class="preloader-text" aria-hidden="true">
             <span style="animation-delay:.1s">P</span><span style="animation-delay:.15s">A</span><span style="animation-delay:.2s">S</span><span style="animation-delay:.25s">C</span><span style="animation-delay:.3s">H</span><span style="animation-delay:.35s">A</span><span style="animation-delay:.4s">L</span><span style="animation-delay:.45s">I</span><span style="animation-delay:.5s">D</span><span style="animation-delay:.55s">I</span><span style="animation-delay:.6s">S</span><span style="animation-delay:.65s">&nbsp;</span><span style="animation-delay:.7s">G</span><span style="animation-delay:.75s">R</span><span style="animation-delay:.8s">O</span><span style="animation-delay:.85s">U</span><span style="animation-delay:.9s">P</span>
@@ -969,18 +990,18 @@
 
     <!-- Navigation -->
     <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
-        <a href="index.html" class="nav-logo"><img src="logo_greek.jpg" alt="Paschalidis Construction"></a>
+        <a href="index.html" class="nav-logo"><img src="logo_greek.svg" alt="Paschalidis Construction"></a>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
             <span></span><span></span><span></span>
         </button>
         <ul class="nav-links" id="navLinks">
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#process">Process</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="index.html" class="nav-lang">EL</a></li>
-            <li><a href="#contact" class="nav-contact-btn">Get a Quote</a></li>
+            <li><a href="#about" data-lang="en">About</a><a href="#about" data-lang="el">Σχετικά</a></li>
+            <li><a href="#services" data-lang="en">Services</a><a href="#services" data-lang="el">Υπηρεσίες</a></li>
+            <li><a href="#green-energy" data-lang="en">Green Energy</a><a href="#green-energy" data-lang="el">Πράσινη Ενέργεια</a></li>
+            <li><a href="#projects" data-lang="en">Projects</a><a href="#projects" data-lang="el">Έργα</a></li>
+            <li><a href="#process" data-lang="en">Process</a><a href="#process" data-lang="el">Διαδικασία</a></li>
+            <li><a href="#contact" data-lang="en">Contact</a><a href="#contact" data-lang="el">Επικοινωνία</a></li>
+            <li><a href="#" class="nav-lang" id="langToggle" onclick="toggleLang(event)">ΕΛ</a></li>
         </ul>
     </nav>
 
@@ -1000,18 +1021,29 @@
         <div class="hero-overlay"></div>
         <div class="hero-grain"></div>
         <div class="hero-content">
-            <div class="hero-tag">Est. 1985 — Athens, Greece</div>
+            <div class="hero-tag" data-lang="en">Est. 1985 — Athens, Greece</div>
+            <div class="hero-tag" data-lang="el">Από το 1985 — Αθήνα, Ελλάδα</div>
             <h1 class="hero-title">
-                <span class="line"><span>We Build</span></span>
-                <span class="line"><span>With <em>Purpose</em></span></span>
+                <span class="line" data-lang="en"><span>We Build</span></span>
+                <span class="line" data-lang="en"><span>With <em>Purpose</em></span></span>
+                <span class="line" data-lang="el"><span>Χτίζουμε</span></span>
+                <span class="line" data-lang="el"><span>Με <em>Σκοπό</em></span></span>
             </h1>
-            <p class="hero-sub">Four decades of shaping Greece's landscape through precision engineering, uncompromising quality, and a commitment to enduring design.</p>
-            <div class="hero-cta">
+            <p class="hero-sub" data-lang="en">Four decades of shaping Greece's landscape through precision engineering, uncompromising quality, and a commitment to enduring design.</p>
+            <p class="hero-sub" data-lang="el">Τέσσερις δεκαετίες διαμόρφωσης του ελληνικού τοπίου μέσω μηχανικής ακρίβειας, αδιαπραγμάτευτης ποιότητας και δέσμευσης σε διαχρονικό σχεδιασμό.</p>
+            <div class="hero-cta" data-lang="en">
                 <a href="#contact" class="btn-gold">
                     Start Your Project
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
                 <a href="#projects" class="btn-ghost">View Portfolio</a>
+            </div>
+            <div class="hero-cta" data-lang="el">
+                <a href="#contact" class="btn-gold">
+                    Ξεκινήστε το Έργο σας
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="#projects" class="btn-ghost">Δείτε τα Έργα μας</a>
             </div>
         </div>
         <div class="hero-scroll" aria-hidden="true">
@@ -1022,15 +1054,29 @@
 
     <!-- Marquee -->
     <div class="marquee" aria-hidden="true">
-        <div class="marquee-track">
+        <div class="marquee-track" data-lang="en">
             <span class="marquee-item">Commercial Construction</span>
             <span class="marquee-item">Residential Projects</span>
             <span class="marquee-item">Industrial Facilities</span>
             <span class="marquee-item">Infrastructure</span>
+            <span class="marquee-item">Green Energy</span>
             <span class="marquee-item">Commercial Construction</span>
             <span class="marquee-item">Residential Projects</span>
             <span class="marquee-item">Industrial Facilities</span>
             <span class="marquee-item">Infrastructure</span>
+            <span class="marquee-item">Green Energy</span>
+        </div>
+        <div class="marquee-track" data-lang="el">
+            <span class="marquee-item">Εμπορικές Κατασκευές</span>
+            <span class="marquee-item">Οικιστικά Έργα</span>
+            <span class="marquee-item">Βιομηχανικές Εγκαταστάσεις</span>
+            <span class="marquee-item">Υποδομές</span>
+            <span class="marquee-item">Πράσινη Ενέργεια</span>
+            <span class="marquee-item">Εμπορικές Κατασκευές</span>
+            <span class="marquee-item">Οικιστικά Έργα</span>
+            <span class="marquee-item">Βιομηχανικές Εγκαταστάσεις</span>
+            <span class="marquee-item">Υποδομές</span>
+            <span class="marquee-item">Πράσινη Ενέργεια</span>
         </div>
     </div>
 
@@ -1038,17 +1084,27 @@
 
     <!-- About -->
     <section class="section section-warm" id="about">
-        <div class="section-eyebrow reveal">About Us</div>
+        <div class="section-eyebrow reveal" data-lang="en">About Us</div>
+        <div class="section-eyebrow reveal" data-lang="el">Σχετικά με εμάς</div>
         <div class="about-grid">
             <div class="about-left">
-                <h2 class="section-heading reveal">
+                <h2 class="section-heading reveal" data-lang="en">
                     Crafting landmarks<br>that define <em>generations</em>
                 </h2>
-                <p class="about-text reveal">
+                <h2 class="section-heading reveal" data-lang="el">
+                    Δημιουργούμε ορόσημα<br>που ορίζουν <em>γενιές</em>
+                </h2>
+                <p class="about-text reveal" data-lang="en">
                     Paschalidis Construction has been a cornerstone of Greece's construction industry for over four decades. We combine the discipline of traditional craftsmanship with the efficiency of modern engineering to deliver projects that stand the test of time.
                 </p>
-                <p class="about-text reveal">
+                <p class="about-text reveal" data-lang="el">
+                    Η Paschalidis Construction αποτελεί ακρογωνιαίο λίθο της ελληνικής κατασκευαστικής βιομηχανίας για πάνω από τέσσερις δεκαετίες. Συνδυάζουμε την πειθαρχία της παραδοσιακής τεχνογνωσίας με την αποτελεσματικότητα της σύγχρονης μηχανικής για να παραδώσουμε έργα που αντέχουν στον χρόνο.
+                </p>
+                <p class="about-text reveal" data-lang="en">
                     From residential buildings and luxury developments to large-scale commercial complexes and critical infrastructure, our commitment to quality, safety, and client satisfaction remains unwavering. We don't simply build structures — we create landmarks that define communities and endure for generations.
+                </p>
+                <p class="about-text reveal" data-lang="el">
+                    Από κατοικίες και πολυτελείς αναπτύξεις έως εμπορικά συγκροτήματα μεγάλης κλίμακας και κρίσιμες υποδομές, η δέσμευσή μας στην ποιότητα, την ασφάλεια και την ικανοποίηση του πελάτη παραμένει αταλάντευτη. Δεν χτίζουμε απλά κτίρια — δημιουργούμε ορόσημα που ορίζουν κοινότητες και αντέχουν για γενιές.
                 </p>
             </div>
             <div class="about-right reveal">
@@ -1064,7 +1120,7 @@
     </section>
 
     <!-- Stats -->
-    <div class="stats section-dark" aria-label="Company statistics">
+    <div class="stats section-dark" aria-label="Company statistics" data-lang="en">
         <div class="stat-item reveal">
             <div class="stat-number"><span class="counter" data-target="4000">0</span>+</div>
             <div class="stat-label">Projects Delivered</div>
@@ -1082,14 +1138,35 @@
             <div class="stat-label">ISO Certifications</div>
         </div>
     </div>
+    <div class="stats section-dark" aria-label="Στατιστικά εταιρείας" data-lang="el">
+        <div class="stat-item reveal">
+            <div class="stat-number"><span class="counter" data-target="4000">0</span>+</div>
+            <div class="stat-label">Ολοκληρωμένα Έργα</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-1">
+            <div class="stat-number"><span class="counter" data-target="500">0</span>+</div>
+            <div class="stat-label">Εξωτερικό Προσωπικό</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-2">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Ικανοποίηση Πελατών</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-3">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Πιστοποιήσεις ISO</div>
+        </div>
+    </div>
 
     <!-- Services -->
     <section class="section section-warm" id="services" style="padding-top:clamp(50px,8vh,100px);padding-bottom:clamp(50px,8vh,100px);">
-        <div class="section-eyebrow reveal">Services</div>
-        <h2 class="section-heading reveal" style="text-shadow: 0 1px 3px rgba(255,255,255,.4);">What we <em>do</em></h2>
-        <p class="section-desc reveal" style="margin-top:1rem; font-weight:500; text-shadow: 0 1px 2px rgba(255,255,255,.4);">Comprehensive construction solutions — from concept to completion, across every scale and sector.</p>
+        <div class="section-eyebrow reveal" data-lang="en">Services</div>
+        <div class="section-eyebrow reveal" data-lang="el">Υπηρεσίες</div>
+        <h2 class="section-heading reveal" style="text-shadow: 0 1px 3px rgba(255,255,255,.4);" data-lang="en">What we <em>do</em></h2>
+        <h2 class="section-heading reveal" style="text-shadow: 0 1px 3px rgba(255,255,255,.4);" data-lang="el">Τι <em>κάνουμε</em></h2>
+        <p class="section-desc reveal" style="margin-top:1rem; font-weight:500; text-shadow: 0 1px 2px rgba(255,255,255,.4);" data-lang="en">Comprehensive construction solutions — from concept to completion, across every scale and sector.</p>
+        <p class="section-desc reveal" style="margin-top:1rem; font-weight:500; text-shadow: 0 1px 2px rgba(255,255,255,.4);" data-lang="el">Ολοκληρωμένες κατασκευαστικές λύσεις — από τη σύλληψη έως την παράδοση, σε κάθε κλίμακα και τομέα.</p>
 
-        <div class="services-list">
+        <div class="services-list" data-lang="en">
             <div class="service-row reveal">
                 <span class="service-num">01</span>
                 <div class="service-info">
@@ -1122,6 +1199,105 @@
                 </div>
                 <div class="service-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
             </div>
+            <div class="service-row reveal">
+                <span class="service-num">05</span>
+                <div class="service-info">
+                    <h3>Green Energy</h3>
+                    <p>Solar installations, energy-efficient design, and sustainable building solutions for a greener future.</p>
+                </div>
+                <div class="service-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+            </div>
+        </div>
+        <div class="services-list" data-lang="el">
+            <div class="service-row reveal">
+                <span class="service-num">01</span>
+                <div class="service-info">
+                    <h3>Εμπορικές Κατασκευές</h3>
+                    <p>Κτίρια γραφείων, εμπορικά κέντρα και εμπορικά συγκροτήματα σχεδιασμένα για λειτουργικότητα και διαρκή αντίκτυπο.</p>
+                </div>
+                <div class="service-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+            </div>
+            <div class="service-row reveal">
+                <span class="service-num">02</span>
+                <div class="service-info">
+                    <h3>Οικιστικά Έργα</h3>
+                    <p>Πολυτελείς κατοικίες, συγκροτήματα διαμερισμάτων και οικιστικές κοινότητες με σχολαστική προσοχή σε κάθε λεπτομέρεια.</p>
+                </div>
+                <div class="service-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+            </div>
+            <div class="service-row reveal">
+                <span class="service-num">03</span>
+                <div class="service-info">
+                    <h3>Βιομηχανικές Εγκαταστάσεις</h3>
+                    <p>Αποθήκες, εργοστάσια και βιομηχανικά συγκροτήματα σχεδιασμένα για μέγιστη αποδοτικότητα και ασφάλεια.</p>
+                </div>
+                <div class="service-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+            </div>
+            <div class="service-row reveal">
+                <span class="service-num">04</span>
+                <div class="service-info">
+                    <h3>Υποδομές</h3>
+                    <p>Δρόμοι, γέφυρες και δημόσια έργα που ενισχύουν τη συνδεσιμότητα και εξυπηρετούν κοινότητες σε όλη τη χώρα.</p>
+                </div>
+                <div class="service-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+            </div>
+            <div class="service-row reveal">
+                <span class="service-num">05</span>
+                <div class="service-info">
+                    <h3>Πράσινη Ενέργεια</h3>
+                    <p>Φωτοβολταϊκές εγκαταστάσεις, ενεργειακά αποδοτικός σχεδιασμός και βιώσιμες κατασκευαστικές λύσεις για ένα πράσινο μέλλον.</p>
+                </div>
+                <div class="service-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Green Energy -->
+    <section class="section section-dark" id="green-energy">
+        <div class="section-eyebrow reveal" data-lang="en">Green Energy</div>
+        <div class="section-eyebrow reveal" data-lang="el">Πράσινη Ενέργεια</div>
+        <h2 class="section-heading reveal" style="color:var(--white);" data-lang="en">Sustainable <em>future</em></h2>
+        <h2 class="section-heading reveal" style="color:var(--white);" data-lang="el">Βιώσιμο <em>μέλλον</em></h2>
+        <p class="section-desc reveal" style="margin-top:1rem;" data-lang="en">We integrate renewable energy solutions into modern construction — delivering energy-efficient buildings that reduce environmental impact and operating costs.</p>
+        <p class="section-desc reveal" style="margin-top:1rem;" data-lang="el">Ενσωματώνουμε λύσεις ανανεώσιμης ενέργειας στη σύγχρονη κατασκευή — παραδίδοντας ενεργειακά αποδοτικά κτίρια που μειώνουν τις περιβαλλοντικές επιπτώσεις και το λειτουργικό κόστος.</p>
+
+        <div class="process-grid">
+            <div class="process-item reveal" style="border-color: rgba(255,255,255,.08);">
+                <div class="step-num" style="color:var(--gold);">
+                    <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                </div>
+                <h3 style="color:var(--white);" data-lang="en">Solar Energy Systems</h3>
+                <h3 style="color:var(--white);" data-lang="el">Φωτοβολταϊκά Συστήματα</h3>
+                <p style="color:rgba(255,255,255,.75);" data-lang="en">Photovoltaic installations for commercial and residential buildings, maximizing energy production and long-term savings.</p>
+                <p style="color:rgba(255,255,255,.75);" data-lang="el">Εγκαταστάσεις φωτοβολταϊκών για εμπορικά και οικιστικά κτίρια, μεγιστοποιώντας την παραγωγή ενέργειας και την μακροπρόθεσμη εξοικονόμηση.</p>
+            </div>
+            <div class="process-item reveal reveal-delay-1" style="border-color: rgba(255,255,255,.08);">
+                <div class="step-num" style="color:var(--gold);">
+                    <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="12" y2="12"/><line x1="15" y1="15" x2="12" y2="12"/></svg>
+                </div>
+                <h3 style="color:var(--white);" data-lang="en">Energy-Efficient Design</h3>
+                <h3 style="color:var(--white);" data-lang="el">Ενεργειακά Αποδοτικός Σχεδιασμός</h3>
+                <p style="color:rgba(255,255,255,.75);" data-lang="en">Advanced thermal insulation, smart ventilation, and energy management systems that minimize consumption.</p>
+                <p style="color:rgba(255,255,255,.75);" data-lang="el">Προηγμένη θερμομόνωση, έξυπνος εξαερισμός και συστήματα διαχείρισης ενέργειας που ελαχιστοποιούν την κατανάλωση.</p>
+            </div>
+            <div class="process-item reveal reveal-delay-2" style="border-color: rgba(255,255,255,.08);">
+                <div class="step-num" style="color:var(--gold);">
+                    <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                </div>
+                <h3 style="color:var(--white);" data-lang="en">Green Building Certification</h3>
+                <h3 style="color:var(--white);" data-lang="el">Πιστοποίηση Πράσινου Κτιρίου</h3>
+                <p style="color:rgba(255,255,255,.75);" data-lang="en">LEED and KENAK-certified construction practices ensuring the highest environmental standards.</p>
+                <p style="color:rgba(255,255,255,.75);" data-lang="el">Κατασκευαστικές πρακτικές πιστοποιημένες LEED και ΚΕΝΑΚ, που εξασφαλίζουν τα υψηλότερα περιβαλλοντικά πρότυπα.</p>
+            </div>
+            <div class="process-item reveal reveal-delay-3" style="border-color: rgba(255,255,255,.08);">
+                <div class="step-num" style="color:var(--gold);">
+                    <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 10h-4V4a2 2 0 0 0-4 0v6H6l6 8 6-8z"/><line x1="6" y1="22" x2="18" y2="22"/></svg>
+                </div>
+                <h3 style="color:var(--white);" data-lang="en">Heat Pump &amp; Geothermal</h3>
+                <h3 style="color:var(--white);" data-lang="el">Αντλίες Θερμότητας &amp; Γεωθερμία</h3>
+                <p style="color:rgba(255,255,255,.75);" data-lang="en">Modern heating and cooling systems powered by renewable sources for optimal comfort and efficiency.</p>
+                <p style="color:rgba(255,255,255,.75);" data-lang="el">Σύγχρονα συστήματα θέρμανσης και ψύξης που τροφοδοτούνται από ανανεώσιμες πηγές για βέλτιστη άνεση και αποδοτικότητα.</p>
+            </div>
         </div>
     </section>
 
@@ -1129,8 +1305,10 @@
     <section class="section section-dark" id="projects">
         <div class="projects-header">
             <div>
-                <div class="section-eyebrow reveal">Portfolio</div>
-                <h2 class="section-heading reveal" style="color:var(--white);">Featured <em>projects</em></h2>
+                <div class="section-eyebrow reveal" data-lang="en">Portfolio</div>
+                <div class="section-eyebrow reveal" data-lang="el">Χαρτοφυλάκιο</div>
+                <h2 class="section-heading reveal" style="color:var(--white);" data-lang="en">Featured <em>projects</em></h2>
+                <h2 class="section-heading reveal" style="color:var(--white);" data-lang="el">Επιλεγμένα <em>έργα</em></h2>
             </div>
         </div>
 
@@ -1234,11 +1412,14 @@
         </div>
     </section>
     <section class="section section-warm" id="process">
-        <div class="section-eyebrow reveal">How We Work</div>
-        <h2 class="section-heading reveal">Our <em>process</em></h2>
-        <p class="section-desc reveal" style="margin-top:1.5rem;">A proven methodology that transforms vision into reality — with clarity at every phase.</p>
+        <div class="section-eyebrow reveal" data-lang="en">How We Work</div>
+        <div class="section-eyebrow reveal" data-lang="el">Πώς Εργαζόμαστε</div>
+        <h2 class="section-heading reveal" data-lang="en">Our <em>process</em></h2>
+        <h2 class="section-heading reveal" data-lang="el">Η <em>διαδικασία</em> μας</h2>
+        <p class="section-desc reveal" style="margin-top:1.5rem;" data-lang="en">A proven methodology that transforms vision into reality — with clarity at every phase.</p>
+        <p class="section-desc reveal" style="margin-top:1.5rem;" data-lang="el">Μια δοκιμασμένη μεθοδολογία που μετατρέπει το όραμα σε πραγματικότητα — με σαφήνεια σε κάθε φάση.</p>
 
-        <div class="process-grid">
+        <div class="process-grid" data-lang="en">
             <div class="process-item reveal">
                 <div class="step-num">01</div>
                 <h3>Consultation &amp; Design</h3>
@@ -1260,14 +1441,38 @@
                 <p>Thorough inspections, complete documentation, handover training, and ongoing warranty support.</p>
             </div>
         </div>
+        <div class="process-grid" data-lang="el">
+            <div class="process-item reveal">
+                <div class="step-num">01</div>
+                <h3>Συμβουλευτική &amp; Σχεδιασμός</h3>
+                <p>Κατανόηση του οράματός σας, καθορισμός απαιτήσεων και δημιουργία λεπτομερών αρχιτεκτονικών σχεδίων.</p>
+            </div>
+            <div class="process-item reveal reveal-delay-1">
+                <div class="step-num">02</div>
+                <h3>Σχεδιασμός &amp; Αδειοδότηση</h3>
+                <p>Διαφανής κοστολόγηση, ρεαλιστικά χρονοδιαγράμματα και εξασφάλιση όλων των απαραίτητων αδειών.</p>
+            </div>
+            <div class="process-item reveal reveal-delay-2">
+                <div class="step-num">03</div>
+                <h3>Κατασκευή</h3>
+                <p>Σύγχρονος εξοπλισμός, υλικά πρώτης ποιότητας και αυστηρός ποιοτικός έλεγχος σε κάθε φάση.</p>
+            </div>
+            <div class="process-item reveal reveal-delay-3">
+                <div class="step-num">04</div>
+                <h3>Παράδοση &amp; Υποστήριξη</h3>
+                <p>Ενδελεχείς επιθεωρήσεις, πλήρης τεκμηρίωση, εκπαίδευση παράδοσης και συνεχής υποστήριξη εγγύησης.</p>
+            </div>
+        </div>
     </section>
 
     <!-- Certifications -->
     <section class="section section-dark" id="certifications">
-        <div class="section-eyebrow reveal">Standards</div>
-        <h2 class="section-heading reveal" style="color:var(--white);">Certified <em>excellence</em></h2>
+        <div class="section-eyebrow reveal" data-lang="en">Standards</div>
+        <div class="section-eyebrow reveal" data-lang="el">Πρότυπα</div>
+        <h2 class="section-heading reveal" style="color:var(--white);" data-lang="en">Certified <em>excellence</em></h2>
+        <h2 class="section-heading reveal" style="color:var(--white);" data-lang="el">Πιστοποιημένη <em>αριστεία</em></h2>
 
-        <div class="cert-row">
+        <div class="cert-row" data-lang="en">
             <div class="cert-item reveal">
                 <div class="cert-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
                 <h3>ISO 9001:2015</h3>
@@ -1289,10 +1494,32 @@
                 <p>Technical Companies Association</p>
             </div>
         </div>
+        <div class="cert-row" data-lang="el">
+            <div class="cert-item reveal">
+                <div class="cert-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                <h3>ISO 9001:2015</h3>
+                <p>Διαχείριση Ποιότητας</p>
+            </div>
+            <div class="cert-item reveal reveal-delay-1">
+                <div class="cert-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                <h3>ISO 14001:2015</h3>
+                <p>Περιβαλλοντική Διαχείριση</p>
+            </div>
+            <div class="cert-item reveal reveal-delay-2">
+                <div class="cert-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                <h3>ISO 45001:2018</h3>
+                <p>Υγεία &amp; Ασφάλεια στην Εργασία</p>
+            </div>
+            <div class="cert-item reveal reveal-delay-3">
+                <div class="cert-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                <h3>Μέλος ΣΑΤΕ</h3>
+                <p>Σύνδεσμος Τεχνικών Εταιρειών</p>
+            </div>
+        </div>
     </section>
 
     <!-- Careers CTA -->
-    <div class="careers-cta">
+    <div class="careers-cta" data-lang="en">
         <div class="careers-cta-left">
             <div class="section-eyebrow reveal">Careers</div>
             <h2 class="section-heading reveal">Join a team<br>that builds <em>legacies</em></h2>
@@ -1304,14 +1531,29 @@
         </div>
         <div class="careers-cta-right" role="img" aria-label="Construction workers at Glyfada foundation site"></div>
     </div>
+    <div class="careers-cta" data-lang="el">
+        <div class="careers-cta-left">
+            <div class="section-eyebrow reveal">Καριέρα</div>
+            <h2 class="section-heading reveal">Γίνε μέρος μιας ομάδας<br>που χτίζει <em>κληρονομιές</em></h2>
+            <p class="section-desc reveal">Ανταγωνιστικές αμοιβές, συνεχής επαγγελματική ανάπτυξη και η ευκαιρία να εργαστείτε σε εμβληματικά έργα σε όλη την Ελλάδα.</p>
+            <a href="#contact" class="btn-gold reveal">
+                Επικοινωνήστε
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+        <div class="careers-cta-right" role="img" aria-label="Εργάτες κατασκευής στο εργοτάξιο Γλυφάδας"></div>
+    </div>
 
     <!-- Contact -->
     <section class="section section-dark" id="contact">
-        <div class="section-eyebrow reveal">Contact</div>
-        <h2 class="section-heading reveal" style="color:var(--white);">Let's build <em>together</em></h2>
-        <p class="section-desc reveal" style="margin-top:1rem;">Tell us about your project. We'll get back to you within 24 hours.</p>
+        <div class="section-eyebrow reveal" data-lang="en">Contact</div>
+        <div class="section-eyebrow reveal" data-lang="el">Επικοινωνία</div>
+        <h2 class="section-heading reveal" style="color:var(--white);" data-lang="en">Let's build <em>together</em></h2>
+        <h2 class="section-heading reveal" style="color:var(--white);" data-lang="el">Ας χτίσουμε <em>μαζί</em></h2>
+        <p class="section-desc reveal" style="margin-top:1rem;" data-lang="en">Tell us about your project. We'll get back to you within 24 hours.</p>
+        <p class="section-desc reveal" style="margin-top:1rem;" data-lang="el">Πείτε μας για το έργο σας. Θα επικοινωνήσουμε μαζί σας εντός 24 ωρών.</p>
 
-        <div class="contact-grid">
+        <div class="contact-grid" data-lang="en">
             <div class="contact-details reveal">
                 <div class="contact-block">
                     <h4>Office</h4>
@@ -1367,6 +1609,7 @@
                             <option value="Residential">Residential</option>
                             <option value="Industrial">Industrial</option>
                             <option value="Infrastructure">Infrastructure</option>
+                            <option value="Green Energy">Green Energy</option>
                             <option value="Other">Other</option>
                         </select>
                     </div>
@@ -1376,6 +1619,75 @@
                     <textarea id="message" name="message" placeholder="Describe your project, goals, and timeline..." required></textarea>
                 </div>
                 <button type="submit" class="submit-btn" id="submitBtn">Send Inquiry</button>
+            </form>
+        </div>
+
+        <div class="contact-grid" data-lang="el">
+            <div class="contact-details reveal">
+                <div class="contact-block">
+                    <h4>Γραφεία</h4>
+                    <p>Αθήνα, Ελλάδα</p>
+                </div>
+                <div class="contact-block">
+                    <h4>Τηλέφωνο</h4>
+                    <p><a href="tel:+302101234567">+30 210 123 4567</a></p>
+                </div>
+                <div class="contact-block">
+                    <h4>Email</h4>
+                    <p><a href="mailto:info@paschalidis.gr">info@paschalidis.gr</a></p>
+                </div>
+                <div class="contact-block">
+                    <h4>Ωράριο</h4>
+                    <p>Δευ–Παρ: 8:00 – 18:00<br>Σάβ: 9:00 – 14:00</p>
+                </div>
+
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+                    <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                    <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48"/></svg></a>
+                </div>
+            </div>
+
+            <form class="contact-form reveal" action="https://formsubmit.co/info@paschalidis.gr" method="POST" id="contactFormEl">
+                <input type="hidden" name="_subject" value="Νέο αίτημα — Ιστοσελίδα PASCHALIDIS">
+                <input type="hidden" name="_captcha" value="true">
+                <input type="hidden" name="_template" value="table">
+                <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="name-el">Όνομα</label>
+                        <input type="text" id="name-el" name="name" placeholder="Γιάννης Παπαδόπουλος" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="email-el">Email</label>
+                        <input type="email" id="email-el" name="email" placeholder="giannis@example.com" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="phone-el">Τηλέφωνο</label>
+                        <input type="tel" id="phone-el" name="phone" placeholder="+30 210 123 4567" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="project-type-el">Τύπος Έργου</label>
+                        <select id="project-type-el" name="project_type" required>
+                            <option value="">Επιλέξτε τύπο</option>
+                            <option value="Commercial">Εμπορικό</option>
+                            <option value="Residential">Οικιστικό</option>
+                            <option value="Industrial">Βιομηχανικό</option>
+                            <option value="Infrastructure">Υποδομές</option>
+                            <option value="Green Energy">Πράσινη Ενέργεια</option>
+                            <option value="Other">Άλλο</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label for="message-el">Πείτε μας για το Έργο σας</label>
+                    <textarea id="message-el" name="message" placeholder="Περιγράψτε το έργο σας, τους στόχους και το χρονοδιάγραμμα..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn" id="submitBtnEl">Αποστολή</button>
             </form>
         </div>
     </section>
@@ -1390,7 +1702,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-grid">
+        <div class="footer-grid" data-lang="en">
             <div>
                 <div class="footer-logo">Paschalidis</div>
                 <p class="footer-brand-text">Premier construction company in Greece. Four decades of landmark projects defined by precision, quality, and enduring design.</p>
@@ -1402,6 +1714,7 @@
                     <li><a href="#services">Residential</a></li>
                     <li><a href="#services">Industrial</a></li>
                     <li><a href="#services">Infrastructure</a></li>
+                    <li><a href="#green-energy">Green Energy</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -1425,9 +1738,47 @@
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom">
+        <div class="footer-grid" data-lang="el">
+            <div>
+                <div class="footer-logo">Paschalidis</div>
+                <p class="footer-brand-text">Κορυφαία κατασκευαστική εταιρεία στην Ελλάδα. Τέσσερις δεκαετίες εμβληματικών έργων με ακρίβεια, ποιότητα και διαχρονικό σχεδιασμό.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Υπηρεσίες</h4>
+                <ul>
+                    <li><a href="#services">Εμπορικά</a></li>
+                    <li><a href="#services">Οικιστικά</a></li>
+                    <li><a href="#services">Βιομηχανικά</a></li>
+                    <li><a href="#services">Υποδομές</a></li>
+                    <li><a href="#green-energy">Πράσινη Ενέργεια</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Εταιρεία</h4>
+                <ul>
+                    <li><a href="#about">Σχετικά</a></li>
+                    <li><a href="#projects">Έργα</a></li>
+                    <li><a href="#certifications">Πιστοποιήσεις</a></li>
+                    <li><a href="#contact">Καριέρα</a></li>
+                    <li><a href="#contact">Επικοινωνία</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Επικοινωνία</h4>
+                <ul>
+                    <li><a href="tel:+302101234567">+30 210 123 4567</a></li>
+                    <li><a href="mailto:info@paschalidis.gr">info@paschalidis.gr</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom" data-lang="en">
             <p>&copy; 2026 Paschalidis Construction. All rights reserved.</p>
-            <a href="index.html">Ελληνικά</a>
+        </div>
+        <div class="footer-bottom" data-lang="el">
+            <p>&copy; 2026 Paschalidis Construction. Με επιφύλαξη παντός δικαιώματος.</p>
         </div>
     </footer>
 
@@ -1438,16 +1789,35 @@
 
     <!-- Cookie Consent -->
     <div class="cookie-bar" id="cookieBar">
-        <p>We use cookies to enhance your experience. By continuing, you accept our <a href="#">Cookie Policy</a>.</p>
+        <p data-lang="en">We use cookies to enhance your experience. By continuing, you accept our <a href="#">Cookie Policy</a>.</p>
+        <p data-lang="el">Χρησιμοποιούμε cookies για τη βελτίωση της εμπειρίας σας. Συνεχίζοντας, αποδέχεστε την <a href="#">Πολιτική Cookies</a>.</p>
         <div class="cookie-btns">
-            <button class="cookie-accept" onclick="acceptCookies()">Accept</button>
-            <button class="cookie-decline" onclick="declineCookies()">Decline</button>
+            <button class="cookie-accept" onclick="acceptCookies()" data-lang="en">Accept</button>
+            <button class="cookie-accept" onclick="acceptCookies()" data-lang="el">Αποδοχή</button>
+            <button class="cookie-decline" onclick="declineCookies()" data-lang="en">Decline</button>
+            <button class="cookie-decline" onclick="declineCookies()" data-lang="el">Απόρριψη</button>
         </div>
     </div>
 
     <script>
     (function(){
         'use strict';
+
+        // Language toggle
+        window.toggleLang = function(e) {
+            e.preventDefault();
+            var body = document.body;
+            var btn = document.getElementById('langToggle');
+            if (body.classList.contains('lang-el')) {
+                body.classList.remove('lang-el');
+                btn.textContent = 'ΕΛ';
+                document.documentElement.lang = 'en';
+            } else {
+                body.classList.add('lang-el');
+                btn.textContent = 'EN';
+                document.documentElement.lang = 'el';
+            }
+        };
 
         // Preloader
         window.addEventListener('load', function(){
@@ -1583,6 +1953,13 @@
             form.addEventListener('submit', function(){
                 var btn = document.getElementById('submitBtn');
                 btn.textContent = 'SENDING...'; btn.disabled = true;
+            });
+        }
+        var formEl = document.getElementById('contactFormEl');
+        if(formEl){
+            formEl.addEventListener('submit', function(){
+                var btn = document.getElementById('submitBtnEl');
+                btn.textContent = 'ΑΠΟΣΤΟΛΗ...'; btn.disabled = true;
             });
         }
 

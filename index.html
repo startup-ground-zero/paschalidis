@@ -1886,35 +1886,13 @@
         };
 
         // Preloader
-        window.addEventListener('load', function(){
+        document.addEventListener('DOMContentLoaded', function(){
             setTimeout(function(){
                 document.getElementById('preloader').classList.add('done');
-                // Start box-by-box reveal
                 var grid = document.getElementById('revealGrid');
-                var boxes = [];
-                for (var i = 0; i < 18; i++) {
-                    var box = document.createElement('div');
-                    box.className = 'reveal-box';
-                    grid.appendChild(box);
-                    boxes.push(box);
-                }
-                // Reveal boxes one by one from bottom-left to top-right
-                var order = [
-                    12, 13, 14, 15, 16, 17,
-                    6, 7, 8, 9, 10, 11,
-                    0, 1, 2, 3, 4, 5
-                ];
-                order.forEach(function(idx, i) {
-                    setTimeout(function() {
-                        boxes[idx].classList.add('open');
-                    }, i * 80);
-                });
-                // Remove grid after animation completes
-                setTimeout(function() {
-                    grid.classList.add('hidden');
-                }, 18 * 80 + 600);
+                grid.classList.add('hidden');
                 document.querySelector('.hero').classList.add('loaded');
-            }, 1000);
+            }, 350);
         });
 
         // Nav scroll

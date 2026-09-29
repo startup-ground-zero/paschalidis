@@ -1885,6 +1885,43 @@
             }
         };
 
+        document.querySelectorAll('.footer-grid[data-lang]').forEach(function(footerGrid){
+            var links = footerGrid.dataset.lang === 'en'
+                ? [['#about', 'About'], ['vision-culture.html', 'Vision & Culture'], ['services.html', 'Services'], ['green-energy.html', 'Green Energy'], ['projects.html', 'Projects'], ['#process', 'Process'], ['#contact', 'Contact']]
+                : [['#about', 'Σχετικά'], ['vision-culture.html', 'Όραμα & Κουλτούρα'], ['services.html', 'Υπηρεσίες'], ['green-energy.html', 'Πράσινη Ενέργεια'], ['projects.html', 'Έργα'], ['#process', 'Διαδικασία'], ['#contact', 'Επικοινωνία']];
+            var headings = footerGrid.dataset.lang === 'en' ? ['Company', 'Explore'] : ['Εταιρεία', 'Περιήγηση'];
+            Array.prototype.forEach.call(footerGrid.querySelectorAll('.footer-col'), function(column){
+                var heading = column.querySelector('h4');
+                if(heading && (heading.textContent.trim() === 'Services' || heading.textContent.trim() === 'Υπηρεσίες')) column.remove();
+            });
+            var columns = footerGrid.querySelectorAll('.footer-col');
+            var companyColumn = Array.prototype.find.call(columns, function(column){
+                var heading = column.querySelector('h4');
+                return heading && (heading.textContent.trim() === 'Company' || heading.textContent.trim() === 'Εταιρεία');
+            });
+            var createListItems = function(items){
+                return items.map(function(item){
+                    var listItem = document.createElement('li');
+                    var link = document.createElement('a');
+                    link.href = item[0];
+                    link.textContent = item[1];
+                    listItem.appendChild(link);
+                    return listItem;
+                });
+            };
+            companyColumn.querySelector('h4').textContent = headings[0];
+            companyColumn.querySelector('ul').replaceChildren.apply(companyColumn.querySelector('ul'), createListItems(links.slice(0, 4)));
+            var exploreColumn = document.createElement('div');
+            exploreColumn.className = 'footer-col';
+            var exploreHeading = document.createElement('h4');
+            exploreHeading.textContent = headings[1];
+            var exploreList = document.createElement('ul');
+            exploreList.replaceChildren.apply(exploreList, createListItems(links.slice(4)));
+            exploreColumn.appendChild(exploreHeading);
+            exploreColumn.appendChild(exploreList);
+            companyColumn.parentNode.insertBefore(exploreColumn, companyColumn.nextSibling);
+        });
+
         // Preloader
         document.addEventListener('DOMContentLoaded', function(){
             setTimeout(function(){

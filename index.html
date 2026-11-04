@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PASCHALIDIS — Construction Excellence Since 1985</title>
-    <meta name="description" content="PASCHALIDIS Group — Premier construction group in Greece. 40+ years delivering landmark commercial, residential & infrastructure projects with uncompromising quality.">
-    <meta name="keywords" content="construction company Greece, Paschalidis, commercial construction, residential projects, infrastructure, Athens builder">
+    <title>PASCHALIDIS — Κατασκευές από το 1985 | Construction Since 1985</title>
+    <meta name="description" content="Όμιλος Πασχαλίδη — κατασκευαστικός όμιλος στην Ελλάδα. Πάνω από 40 χρόνια εμπορικά, οικιστικά έργα και υποδομές με αδιαπραγμάτευτη ποιότητα. | Paschalidis Group — construction group in Greece, 40+ years of commercial, residential and infrastructure projects.">
+    <meta name="keywords" content="κατασκευαστική εταιρεία, Πασχαλίδης, κατασκευές Αθήνα, construction company Greece, Paschalidis, commercial construction, residential projects, infrastructure">
     <meta name="author" content="Paschalidis Group">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://paschalidis.gr/en/">
+    <link rel="canonical" href="https://paschalidis.gr/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="PASCHALIDIS — Construction Group">
-    <meta property="og:description" content="Premier construction group in Greece — 40+ years of landmark projects.">
-    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Paschalidis Group">
+    <meta property="og:url" content="https://paschalidis.gr/">
+    <meta property="og:title" content="PASCHALIDIS — Όμιλος Πασχαλίδη | Construction Group">
+    <meta property="og:description" content="Κατασκευαστικός όμιλος στην Ελλάδα — πάνω από 40 χρόνια εμβληματικών έργων. Construction group in Greece — 40+ years of landmark projects.">
+    <meta property="og:locale" content="el_GR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="theme-color" content="#0c0c0c">
-    <link rel="icon" type="image/svg+xml" href="logo_greek.svg">
-    <meta property="og:image" content="ELLINIKO%20Construction%204.jpg">
-    <meta property="og:image:width" content="2016">
-    <meta property="og:image:height" content="1134">
+    <link rel="icon" type="image/svg+xml" href="logo-greek.svg">
+    <meta property="og:image" content="https://paschalidis.gr/elliniko-construction-4.jpg">
+    <meta property="og:image:width" content="1800">
+    <meta property="og:image:height" content="1012">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,972 +37,24 @@
         "email": "info@groupg.gr",
         "address": {"@type": "PostalAddress", "streetAddress": "Pergamou 5", "addressLocality": "Nea Smyrni", "postalCode": "17121", "addressCountry": "GR"},
         "foundingDate": "1985",
-        "description": "Premier construction group in Greece"
+        "description": "Κατασκευαστικός όμιλος στην Ελλάδα — Construction group in Greece",
+        "image": "https://paschalidis.gr/elliniko-construction-4.jpg",
+        "knowsLanguage": ["el", "en"]
     }
     </script>
 
-    <style>
-        /* =============================================
-           PASCHALIDIS — Top-Tier Construction Website
-           Design: Editorial / Cinematic / Minimal
-           ============================================= */
-
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-        :root {
-            --black: #0c0c0c;
-            --dark: #141414;
-            --dark-2: #1a1a1a;
-            --dark-3: #222;
-            --grey-900: #0a0a0a;
-            --grey-800: #151515;
-            --grey-700: #1a1a1a;
-            --grey-600: #2a2a2a;
-            --grey-500: #333;
-            --grey-400: #444;
-            --grey-300: #555;
-            --grey-200: #777;
-            --grey-100: #eee;
-            --cream: #f0ece4;
-            --warm-white: #e8e6e1;
-            --white: #fefefe;
-            --gold: #f5c500;
-            --gold-light: #f7d230;
-            --gold-dark: #d4a900;
-
-            --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
-            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-
-            --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-            --ease-smooth: cubic-bezier(0.76, 0, 0.24, 1);
-
-            --nav-h: 80px;
-            --section-pad: clamp(80px, 12vh, 160px);
-            --side-pad: clamp(24px, 6vw, 120px);
-        }
-
-        html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); }
-
-        body {
-            font-family: var(--font-body);
-            color: var(--grey-900);
-            background-color: #d9d6d0;
-            background-image: url('cement.jpg');
-            background-size: 800px auto;
-            background-repeat: repeat;
-            background-attachment: fixed;
-            line-height: 1.6;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        ::selection { background: var(--gold); color: var(--black); }
-
-        /* Language toggle — hide Greek by default, show on toggle */
-        [data-lang="el"] { display: none !important; }
-        body.lang-el [data-lang="el"] { display: block !important; }
-        body.lang-el [data-lang="en"] { display: none !important; }
-
-        /* Restore correct display types when active */
-        body.lang-el .hero-cta[data-lang="el"],
-        body.lang-el .process-grid[data-lang="el"],
-        body.lang-el .contact-grid[data-lang="el"],
-        body.lang-el .footer-grid[data-lang="el"],
-        body.lang-el .stats[data-lang="el"],
-        body.lang-el .cert-row[data-lang="el"],
-        body.lang-el .careers-cta[data-lang="el"] { display: grid !important; }
-
-        body.lang-el .marquee-track[data-lang="el"],
-        body.lang-el .footer-bottom[data-lang="el"],
-        body.lang-el .social-links[data-lang="el"] { display: flex !important; }
-
-        body.lang-el .nav-links a[data-lang="el"] { display: block !important; }
-        body.lang-el button[data-lang="el"] { display: inline-block !important; }
-        body.lang-el span[data-lang="el"] { display: inline !important; }
-        span[data-lang="el"] { display: none !important; }
-        body.lang-el span[data-lang="en"] { display: none !important; }
-        body.lang-el .preloader-text[data-lang="el"] { display: block !important; }
-        .project-desc[data-lang="el"] { display: none !important; }
-        body.lang-el .project-desc[data-lang="el"] { display: block !important; }
-        body.lang-el .project-desc[data-lang="en"] { display: none !important; }
-        body.lang-el .project-card:hover .project-desc[data-lang="el"] { display: block !important; }
-
-        img { display: block; max-width: 100%; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
-
-        a { color: inherit; text-decoration: none; }
-
-        .skip-nav {
-            position: absolute; top: -100%; left: 50%; transform: translateX(-50%);
-            background: var(--gold); color: var(--black); padding: 12px 24px;
-            border-radius: 0 0 8px 8px; z-index: 9999; font-weight: 600;
-        }
-        .skip-nav:focus { top: 0; }
-
-        /* ===== PRELOADER ===== */
-        .preloader {
-            position: fixed; inset: 0; background: var(--black); z-index: 10000;
-            display: flex; align-items: center; justify-content: center;
-            flex-direction: column; gap: 1.5rem;
-            padding: 20px;
-            transition: opacity .4s ease, visibility 0s .4s;
-        }
-        .preloader.done {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-        }
-        .preloader-text {
-            font-family: var(--font-heading); font-size: clamp(1.2rem, 3vw, 2.5rem);
-            color: var(--gold); letter-spacing: clamp(4px, 1.5vw, 12px); text-transform: uppercase;
-            text-align: center;
-            opacity: 0;
-            animation: preloaderFadeIn .5s var(--ease-smooth) .1s forwards;
-        }
-        .preloader-text span {
-            display: inline-block;
-        }
-        .preloader-logo {
-            opacity: 0;
-            animation: preloaderFadeIn .5s var(--ease-smooth) 0s forwards;
-        }
-        .preloader-logo img { height: 100px; width: auto; }
-        @keyframes preloaderFadeIn {
-            0% { opacity: 0; transform: scale(0.9); }
-            100% { opacity: 1; transform: scale(1); }
-        }
-
-        /* Box reveal overlay */
-        .reveal-grid {
-            position: fixed; inset: 0; z-index: 9999;
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            pointer-events: none;
-        }
-        .reveal-grid.hidden { display: none; }
-        .reveal-box {
-            background: var(--black);
-            transition: transform .5s cubic-bezier(0.645, 0.045, 0.355, 1);
-            transform: scaleY(1);
-            transform-origin: top center;
-        }
-        .reveal-box.open {
-            transform: scaleY(0);
-        }
-
-        /* ===== NAVIGATION ===== */
-        .nav {
-            position: fixed; top: 0; width: 100%; z-index: 1000;
-            padding: 0 var(--side-pad); height: var(--nav-h);
-            display: flex; align-items: center; justify-content: space-between;
-            transition: background .5s var(--ease), box-shadow .5s var(--ease), backdrop-filter .5s;
-            background: rgba(12,12,12,.92); backdrop-filter: blur(30px) saturate(180%);
-        }
-        .nav.scrolled {
-            background: rgba(12,12,12,.92); backdrop-filter: blur(30px) saturate(180%);
-            box-shadow: 0 1px 0 rgba(255,255,255,.05);
-        }
-
-        .nav-logo {
-            display: flex; align-items: center;
-            transition: opacity .3s;
-        }
-        .nav-logo img { height: 40px; width: auto; }
-        .nav-logo:hover { opacity: .7; }
-
-        .nav-links { display: flex; gap: clamp(1.5rem, 3vw, 3rem); list-style: none; align-items: center; }
-        .nav-links a {
-            font-size: .75rem; font-weight: 500; color: rgba(255,255,255,.85);
-            letter-spacing: 2px; text-transform: uppercase; transition: color .3s;
-            position: relative;
-        }
-        .nav-links a:hover { color: var(--gold); }
-        .nav-links .nav-contact-btn {
-            color: var(--black); background: var(--gold); padding: 10px 24px;
-            border-radius: 0; font-weight: 600; transition: all .3s;
-        }
-        .nav-links .nav-contact-btn:hover { background: var(--gold-light); transform: translateY(-1px); }
-        .nav-lang { color: rgba(255,255,255,.7) !important; border: 1px solid rgba(255,255,255,.35); padding: 6px 14px; border-radius: 4px; }
-        .nav-lang:hover { color: var(--gold) !important; border-color: var(--gold); }
-
-        /* Hamburger */
-        .nav-toggle {
-            display: none; background: none; border: none; cursor: pointer;
-            width: 32px; height: 24px; position: relative; z-index: 1001;
-        }
-        .nav-toggle span {
-            display: block; width: 100%; height: 1.5px; background: var(--gold);
-            position: absolute; left: 0; transition: all .4s var(--ease-smooth);
-        }
-        .nav-toggle span:nth-child(1) { top: 0; }
-        .nav-toggle span:nth-child(2) { top: 50%; transform: translateY(-50%); }
-        .nav-toggle span:nth-child(3) { bottom: 0; }
-        .nav-toggle.active span:nth-child(1) { top: 50%; transform: translateY(-50%) rotate(45deg); }
-        .nav-toggle.active span:nth-child(2) { opacity: 0; }
-        .nav-toggle.active span:nth-child(3) { bottom: 50%; transform: translateY(50%) rotate(-45deg); }
-
-        /* ===== HERO ===== */
-        .hero {
-            height: 100vh; min-height: 700px; position: relative;
-            display: flex; align-items: flex-end;
-            padding: 0 var(--side-pad) clamp(60px, 10vh, 120px);
-            background: var(--black); overflow: hidden;
-        }
-        .hero-slides {
-            position: absolute; inset: 0;
-        }
-        .hero-slide {
-            position: absolute; inset: 0;
-            background-size: cover; background-position: center;
-            opacity: 0; transform: scale(1.03);
-            transition: opacity 1.5s var(--ease-smooth), transform 8s linear;
-            image-rendering: -webkit-optimize-contrast;
-        }
-        .hero-slide.active {
-            opacity: 1; transform: scale(1);
-        }
-        .hero-overlay {
-            position: absolute; inset: 0;
-            background: linear-gradient(180deg,
-                rgba(12,12,12,.15) 0%,
-                rgba(12,12,12,.05) 30%,
-                rgba(12,12,12,.35) 70%,
-                rgba(12,12,12,.7) 100%
-            );
-        }
-        /* Film grain overlay */
-        .hero-grain {
-            position: absolute; inset: 0; opacity: .015; pointer-events: none;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
-        }
-
-        .hero-content { position: relative; z-index: 2; max-width: 900px; }
-
-        .hero-tag {
-            display: inline-block; font-size: .9rem; font-weight: 600;
-            color: #000; letter-spacing: 4px; text-transform: uppercase;
-            margin-bottom: 2rem; opacity: 0; transform: translateY(20px);
-        }
-        .hero.loaded .hero-tag { opacity: 1; transform: translateY(0); transition: all 1s var(--ease-out) .6s; }
-
-        .hero-title {
-            font-family: var(--font-heading); font-weight: 400;
-            font-size: clamp(3rem, 7.5vw, 7rem); line-height: 1;
-            color: var(--white); letter-spacing: -1px;
-            margin-bottom: 2rem;
-        }
-        .hero-title .line {
-            display: block; overflow: hidden;
-        }
-        .hero-title .line span {
-            display: block; transform: translateY(110%);
-        }
-        .hero.loaded .hero-title .line span {
-            transform: translateY(0);
-            transition: transform 1.2s var(--ease-out);
-        }
-        .hero.loaded .hero-title .line:nth-child(2) span { transition-delay: .15s; }
-        .hero.loaded .hero-title .line:nth-child(3) span { transition-delay: .3s; }
-
-        .hero-title em {
-            font-style: italic; color: var(--gold); font-weight: 500;
-        }
-
-        .hero-sub {
-            font-size: clamp(.9rem, 1.3vw, 1.15rem); color: rgba(255,255,255,.8);
-            max-width: 500px; line-height: 1.8; font-weight: 300;
-            opacity: 0; transform: translateY(20px);
-        }
-        .hero.loaded .hero-sub { opacity: 1; transform: translateY(0); transition: all 1s var(--ease-out) .8s; }
-
-        .hero-cta {
-            margin-top: 3rem; display: flex; gap: 1rem; align-items: center;
-            opacity: 0; transform: translateY(20px);
-        }
-        .hero.loaded .hero-cta { opacity: 1; transform: translateY(0); transition: all 1s var(--ease-out) 1s; }
-
-        .btn-gold {
-            display: inline-flex; align-items: center; gap: 10px;
-            padding: 16px 36px; background: var(--gold); color: var(--black);
-            font-size: .8rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
-            border: none; border-radius: 0; cursor: pointer; font-family: var(--font-body);
-            transition: all .4s var(--ease);
-        }
-        .btn-gold:hover { background: var(--gold-light); letter-spacing: 3px; }
-        .btn-gold svg { width: 16px; height: 16px; transition: transform .3s; }
-        .btn-gold:hover svg { transform: translateX(4px); }
-
-        .btn-ghost {
-            display: inline-flex; align-items: center; gap: 8px;
-            padding: 16px 32px; background: transparent; color: rgba(255,255,255,.6);
-            font-size: .8rem; font-weight: 500; letter-spacing: 2px; text-transform: uppercase;
-            border: 1px solid rgba(255,255,255,.15); cursor: pointer; font-family: var(--font-body);
-            transition: all .4s var(--ease); text-decoration: none;
-        }
-        .btn-ghost:hover { color: var(--gold); border-color: var(--gold); }
-
-        /* Scroll indicator */
-        .hero-scroll {
-            position: absolute; bottom: 40px; right: var(--side-pad);
-            display: flex; flex-direction: column; align-items: center; gap: 12px;
-            color: rgba(255,255,255,.3); z-index: 2;
-        }
-        .hero-scroll span {
-            font-size: .6rem; letter-spacing: 3px; text-transform: uppercase;
-            writing-mode: vertical-rl;
-        }
-        .scroll-line {
-            width: 1px; height: 60px; background: rgba(255,255,255,.15);
-            position: relative; overflow: hidden;
-        }
-        .scroll-line::after {
-            content: ''; position: absolute; top: -100%; left: 0;
-            width: 100%; height: 100%; background: var(--gold);
-            animation: scrollLine 2s var(--ease) infinite;
-        }
-        @keyframes scrollLine { 0% { top: -100%; } 100% { top: 100%; } }
-
-
-        /* ===== REVEAL ANIMATIONS ===== */
-        .reveal {
-            opacity: 0; transform: translateY(60px);
-            transition: opacity 1s var(--ease-out), transform 1s var(--ease-out);
-        }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-        .reveal-delay-1 { transition-delay: .1s; }
-        .reveal-delay-2 { transition-delay: .2s; }
-        .reveal-delay-3 { transition-delay: .3s; }
-        .reveal-delay-4 { transition-delay: .4s; }
-
-
-        /* ===== MARQUEE ===== */
-        .marquee {
-            padding: 28px 0; background: var(--black); overflow: hidden;
-            border-bottom: 1px solid rgba(255,255,255,.05);
-        }
-        .marquee-track {
-            display: flex; gap: 80px; animation: marqueeScroll 30s linear infinite;
-            width: max-content;
-        }
-        .marquee-item {
-            font-family: var(--font-heading); font-size: clamp(.85rem, 1.2vw, 1.1rem);
-            color: rgba(255,255,255,.9); white-space: nowrap; display: flex; align-items: center; gap: 80px;
-            letter-spacing: 3px; text-transform: uppercase;
-        }
-        .marquee-item::after {
-            content: ''; width: 6px; height: 6px; background: var(--gold);
-            border-radius: 50%; flex-shrink: 0;
-        }
-        @keyframes marqueeScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-
-
-        /* ===== SECTION SHARED ===== */
-        .section { padding: var(--section-pad) var(--side-pad); }
-        .section-dark { background: var(--black); color: var(--white); }
-        .section-cream { background: var(--cream); }
-        .section-warm { background: transparent; }
-
-        .section-eyebrow {
-            font-size: .75rem; font-weight: 700; color: var(--gold);
-            letter-spacing: 4px; text-transform: uppercase; margin-bottom: 1.5rem;
-            display: flex; align-items: center; gap: 16px;
-            text-shadow: 0 1px 3px rgba(0,0,0,.4);
-        }
-        .section-eyebrow::before {
-            content: ''; width: 40px; height: 2px; background: var(--gold);
-        }
-        .section-warm .section-eyebrow {
-            color: #000;
-            text-shadow: none;
-        }
-        .section-warm .section-eyebrow::before {
-            background: #000;
-        }
-
-        .section-heading {
-            font-family: var(--font-heading); font-weight: 400;
-            font-size: clamp(2.2rem, 5vw, 4.5rem); line-height: 1.1;
-            letter-spacing: -1px;
-        }
-        .section-heading em { 
-            font-style: italic; color: var(--black); 
-            background: linear-gradient(to top, var(--gold) 85%, transparent 85%);
-            padding: 0 .15em;
-        }
-
-        .section-desc {
-            font-size: clamp(.95rem, 1.1vw, 1.1rem); line-height: 1.9;
-            color: var(--black); max-width: 560px; font-weight: 400;
-        }
-        .section-dark .section-desc { color: rgba(255,255,255,.75); }
-
-
-        /* ===== ABOUT ===== */
-        .about-grid {
-            display: grid; grid-template-columns: 1fr 1fr;
-            gap: clamp(40px, 6vw, 100px); align-items: start;
-        }
-        .about-left { padding-top: 20px; }
-        .about-right { position: relative; }
-
-        .about-img-wrapper {
-            position: relative; overflow: hidden; aspect-ratio: 4/5;
-        }
-        .about-img-wrapper img {
-            width: 100%; height: 100%; object-fit: cover;
-            transition: transform .8s var(--ease-smooth);
-            image-rendering: -webkit-optimize-contrast;
-        }
-        .about-img-wrapper:hover img { transform: scale(1.02); }
-
-        .about-experience-badge {
-            position: absolute; bottom: -1px; right: -1px;
-            background: var(--gold); padding: clamp(20px, 3vw, 40px);
-            display: flex; flex-direction: column;
-        }
-        .about-experience-badge .num {
-            font-family: var(--font-heading); font-size: clamp(2.5rem, 4vw, 4rem);
-            font-weight: 800; color: var(--black); line-height: 1;
-        }
-        .about-experience-badge .label {
-            font-size: .65rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
-            color: var(--black); opacity: .6; margin-top: 4px;
-        }
-
-        .about-text {
-            margin-top: 2rem; font-size: 1.2rem; line-height: 2;
-            color: #000; text-align: justify; font-weight: 500;
-        }
-        .about-text + .about-text { margin-top: 1.5rem; }
-
-
-        /* ===== STATS ===== */
-        .stats {
-            display: grid; grid-template-columns: repeat(4, 1fr);
-            border-top: 1px solid rgba(255,255,255,.08);
-            border-bottom: 1px solid rgba(255,255,255,.08);
-        }
-        .stat-item {
-            padding: clamp(40px, 5vh, 70px) var(--side-pad);
-            border-right: 1px solid rgba(255,255,255,.08);
-            text-align: center;
-        }
-        .stat-item:last-child { border-right: none; }
-        .stat-number {
-            font-family: var(--font-heading); font-size: clamp(2.5rem, 5vw, 4.5rem);
-            font-weight: 400; color: var(--gold); line-height: 1;
-            margin-bottom: .5rem;
-        }
-        .stat-label {
-            font-size: .7rem; font-weight: 500; letter-spacing: 3px;
-            text-transform: uppercase; color: rgba(255,255,255,.7);
-        }
-
-
-        /* ===== SERVICES ===== */
-        .services-list { margin-top: clamp(24px, 4vh, 50px); }
-        .service-row {
-            display: grid; grid-template-columns: 60px 1fr auto;
-            align-items: center; gap: clamp(20px, 3vw, 50px);
-            padding: clamp(18px, 2.5vh, 30px) 0;
-            border-bottom: 1px solid var(--grey-200);
-            cursor: default; transition: all .4s var(--ease);
-            position: relative;
-        }
-        .service-row:first-child { border-top: 1px solid var(--grey-200); }
-        .service-row:hover { padding-left: 20px; }
-
-        .service-num {
-            font-family: var(--font-heading); font-size: 1.3rem;
-            color: #000; font-weight: 600;
-        }
-        .service-row:hover .service-num { color: var(--gold); }
-
-        .service-info h3 {
-            font-family: var(--font-heading); font-size: clamp(1.8rem, 3.2vw, 2.8rem);
-            font-weight: 700; color: #000; line-height: 1.3;
-            transition: color .3s;
-            text-shadow: 0 1px 2px rgba(255,255,255,.5);
-        }
-        .service-row:hover .service-info h3 { color: var(--gold); }
-
-        .service-info p {
-            font-size: 1.15rem; color: #000; margin-top: .4rem;
-            max-width: 500px; line-height: 1.7; font-weight: 500;
-            text-shadow: 0 1px 2px rgba(255,255,255,.4);
-        }
-
-        .service-arrow {
-            width: 50px; height: 50px; border-radius: 50%;
-            border: 1px solid var(--grey-200); display: flex;
-            align-items: center; justify-content: center;
-            transition: all .4s var(--ease); flex-shrink: 0;
-        }
-        .service-arrow svg { width: 18px; height: 18px; color: var(--grey-400); fill: none; stroke: currentColor; stroke-width: 1.5; transition: all .3s; }
-        .service-row:hover .service-arrow { background: var(--gold); border-color: var(--gold); }
-        .service-row:hover .service-arrow svg { color: var(--black); transform: rotate(-45deg); }
-
-
-        /* ===== PROJECTS ===== */
-        .projects-header {
-            display: flex; justify-content: space-between; align-items: flex-end;
-            margin-bottom: clamp(40px, 5vh, 60px); flex-wrap: wrap; gap: 2rem;
-        }
-
-        .projects-grid {
-            display: grid; grid-template-columns: 1.2fr .8fr;
-            gap: 20px;
-        }
-        .project-card {
-            position: relative; overflow: hidden; cursor: pointer;
-            background: var(--dark-3); aspect-ratio: 16/10;
-        }
-        .project-card:first-child {
-            grid-row: 1 / 4; aspect-ratio: auto;
-        }
-        .project-card img {
-            width: 100%; height: 100%; object-fit: cover;
-            transition: transform .8s var(--ease-smooth);
-            image-rendering: -webkit-optimize-contrast;
-        }
-        .project-card:hover img { transform: scale(1.03); }
-
-        .project-info {
-            position: absolute; inset: 0;
-            background: linear-gradient(0deg, rgba(12,12,12,.8) 0%, transparent 50%);
-            display: flex; flex-direction: column; justify-content: flex-end;
-            align-items: flex-start;
-            padding: clamp(16px, 2vw, 28px);
-            transition: background .4s;
-        }
-        .project-card:hover .project-info {
-            background: linear-gradient(0deg, rgba(12,12,12,.9) 0%, rgba(12,12,12,.2) 60%);
-        }
-        .project-tag {
-            font-size: .55rem; font-weight: 600; letter-spacing: 3px;
-            text-transform: uppercase; color: var(--gold); margin-bottom: .4rem;
-        }
-        .project-info h3 {
-            font-family: var(--font-heading); font-size: clamp(1.1rem, 2vw, 1.6rem);
-            color: var(--white); font-weight: 400; line-height: 1.2;
-        }
-        .project-desc {
-            font-size: .75rem; color: rgba(255,255,255,.8); margin-top: .4rem;
-            transform: translateY(10px); opacity: 0;
-            transition: all .5s var(--ease-out);
-            font-weight: 300;
-        }
-        .project-card:hover .project-desc { transform: translateY(0); opacity: 1; }
-
-
-        /* ===== PROCESS ===== */
-        .process-grid {
-            display: grid; grid-template-columns: repeat(4, 1fr);
-            gap: 0; margin-top: clamp(40px, 6vh, 80px);
-        }
-        .process-item {
-            padding: clamp(30px, 4vw, 50px);
-            border-right: 1px solid rgba(0,0,0,.1);
-            transition: background .4s;
-            position: relative;
-        }
-        .process-item:last-child { border-right: none; }
-        .process-item:hover { background: rgba(0,0,0,.03); }
-
-        .process-item .step-num {
-            font-family: var(--font-heading); font-size: clamp(3rem, 5vw, 5rem);
-            color: var(--black); font-weight: 800; line-height: 1;
-            margin-bottom: 1.5rem; transition: all .4s;
-            background: var(--gold); display: inline-block; padding: 4px 16px;
-        }
-        .process-item:hover .step-num { background: var(--gold-light); }
-
-        .green-icon {
-            color: var(--gold); margin-bottom: 1.5rem;
-        }
-        .green-icon svg { width: 48px; height: 48px; }
-        .section-warm .green-icon { color: var(--black); }
-
-        .process-item h3 {
-            font-family: var(--font-heading); font-size: 1.5rem;
-            color: #000; font-weight: 700; margin-bottom: .8rem;
-            text-shadow: 0 1px 2px rgba(255,255,255,.4);
-        }
-        .process-item p {
-            font-size: 1.05rem; color: #000; line-height: 1.7;
-            font-weight: 500; text-shadow: 0 1px 2px rgba(255,255,255,.3);
-        }
-
-
-        /* ===== TESTIMONIAL ===== */
-        .testimonial-section {
-            display: grid; grid-template-columns: 1fr 1fr; min-height: 80vh;
-        }
-        .testimonial-left {
-            background: var(--cream); padding: var(--section-pad) var(--side-pad);
-            display: flex; flex-direction: column; justify-content: center;
-        }
-        .testimonial-quote {
-            font-family: var(--font-heading); font-size: clamp(1.5rem, 2.5vw, 2.2rem);
-            font-weight: 400; font-style: italic; line-height: 1.6;
-            color: var(--grey-900); margin: 2rem 0;
-            position: relative;
-        }
-        .testimonial-quote::before {
-            content: '"'; font-family: var(--font-heading); font-size: 8rem;
-            color: var(--gold); opacity: .2; position: absolute;
-            top: -50px; left: -10px; line-height: 1;
-        }
-        .testimonial-author-name {
-            font-size: .85rem; font-weight: 600; color: var(--grey-900);
-            letter-spacing: 1px; margin-top: 2rem;
-        }
-        .testimonial-author-role {
-            font-size: .8rem; color: var(--gold); font-weight: 500;
-            margin-top: .2rem;
-        }
-        .testimonial-right {
-            background: url('Mitilini%20Airport.jpg') center/cover no-repeat;
-            position: relative;
-            image-rendering: -webkit-optimize-contrast;
-        }
-        .testimonial-right::after {
-            content: ''; position: absolute; inset: 0;
-            background: rgba(12,12,12,.1);
-        }
-
-
-        /* ===== CERTIFICATIONS ===== */
-        .cert-row {
-            display: grid; grid-template-columns: repeat(4, 1fr);
-            gap: 0; margin-top: clamp(40px, 6vh, 80px);
-        }
-        .cert-item {
-            padding: clamp(30px, 3vw, 50px);
-            border-right: 1px solid rgba(255,255,255,.08);
-            text-align: center; transition: background .3s;
-        }
-        .cert-item:last-child { border-right: none; }
-        .cert-item:hover { background: rgba(255,255,255,.04); }
-        .cert-icon {
-            width: 48px; height: 48px; margin: 0 auto 1.2rem;
-            border: 1.5px solid var(--gold); border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-        }
-        .cert-icon svg { width: 20px; height: 20px; color: var(--gold); fill: none; stroke: currentColor; stroke-width: 2; }
-        .cert-item h3 {
-            font-family: var(--font-heading); font-size: 1.1rem;
-            font-weight: 500; color: var(--white); margin-bottom: .3rem;
-        }
-        .cert-item p { font-size: .8rem; color: rgba(255,255,255,.7); }
-
-
-        /* ===== CAREERS CTA ===== */
-        .careers-cta {
-            display: grid; grid-template-columns: 1fr 1fr;
-            min-height: 50vh; overflow: hidden;
-        }
-        .careers-cta-left {
-            background: transparent; padding: var(--section-pad) var(--side-pad);
-            display: flex; flex-direction: column; justify-content: center;
-        }
-        .careers-cta-left .section-heading { color: var(--black); text-shadow: 0 1px 2px rgba(255,255,255,.4); }
-        .careers-cta-left .section-desc { margin-top: 1.5rem; color: #1a1a1a; font-weight: 500; text-shadow: 0 1px 2px rgba(255,255,255,.3); }
-        .careers-cta-left .section-eyebrow { color: #000; text-shadow: none; }
-        .careers-cta-left .section-eyebrow::before { background: #000; }
-        .careers-cta-left .btn-gold { margin-top: 2.5rem; }
-
-        .careers-cta-right {
-            background: url('foundation_parking_Glyfada_II.jpg') center/cover no-repeat;
-            position: relative;
-            image-rendering: -webkit-optimize-contrast;
-        }
-        .careers-cta-right::after {
-            content: ''; position: absolute; inset: 0;
-            background: rgba(12,12,12,.08);
-        }
-
-
-        /* ===== CONTACT ===== */
-        .contact-grid {
-            display: grid; grid-template-columns: 1fr 1.3fr;
-            gap: clamp(40px, 6vw, 100px); align-items: start;
-            margin-top: clamp(40px, 5vh, 60px);
-        }
-
-        .contact-details { padding-top: 10px; }
-        .contact-block { margin-bottom: 2.5rem; }
-        .contact-block h4 {
-            font-size: .85rem; font-weight: 600; letter-spacing: 3px;
-            text-transform: uppercase; color: var(--gold); margin-bottom: .8rem;
-        }
-        .contact-block p, .contact-block a {
-            font-size: 1.1rem; color: rgba(255,255,255,.85);
-            line-height: 1.8; transition: color .3s;
-        }
-        .contact-block a:hover { color: var(--gold); }
-
-        .social-links { display: flex; gap: 12px; margin-top: 2rem; }
-        .social-links a {
-            width: 44px; height: 44px; border: 1px solid rgba(255,255,255,.1);
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            transition: all .3s;
-        }
-        .social-links a:hover { border-color: var(--gold); background: var(--gold); }
-        .social-links a svg { width: 16px; height: 16px; fill: rgba(255,255,255,.5); transition: fill .3s; }
-        .social-links a:hover svg { fill: var(--black); }
-
-        /* Form */
-        .contact-form { display: flex; flex-direction: column; gap: 1.5rem; }
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-        .form-field { display: flex; flex-direction: column; }
-        .form-field label {
-            font-size: .85rem; font-weight: 600; letter-spacing: 2px;
-            text-transform: uppercase; color: var(--white);
-            margin-bottom: .6rem;
-        }
-        .form-field input, .form-field textarea, .form-field select {
-            padding: 14px 0; background: transparent;
-            border: none; border-bottom: 1px solid rgba(255,255,255,.1);
-            color: var(--white); font-size: 1.1rem; font-family: var(--font-body);
-            transition: border-color .3s; outline: none;
-        }
-        .form-field select {
-            cursor: pointer; appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%23c5a55a' d='M5 6L0 0h10z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat; background-position: right 4px center;
-        }
-        .form-field select option { background: var(--dark); color: var(--white); }
-        .form-field input::placeholder, .form-field textarea::placeholder { color: rgba(255,255,255,.2); }
-        .form-field input:focus, .form-field textarea:focus, .form-field select:focus {
-            border-bottom-color: var(--gold);
-        }
-        .form-field textarea { min-height: 100px; resize: vertical; }
-
-        .submit-btn {
-            align-self: flex-start; padding: 18px 48px;
-            background: var(--gold); color: var(--black); border: none;
-            font-size: .8rem; font-weight: 600; letter-spacing: 3px;
-            text-transform: uppercase; cursor: pointer; font-family: var(--font-body);
-            transition: all .4s var(--ease); margin-top: 1rem;
-        }
-        .submit-btn:hover { background: var(--gold-light); letter-spacing: 4px; }
-        .submit-btn:disabled { opacity: .4; cursor: not-allowed; }
-
-
-        /* ===== MAP ===== */
-        .map-container {
-            width: 100%; max-width: 900px; height: 550px; background: var(--dark-3);
-            margin: clamp(40px, 5vh, 60px) auto 0;
-        }
-        .map-container iframe { width: 100%; height: 100%; border: none; filter: grayscale(.8) contrast(1.1); }
-
-
-        /* ===== FOOTER ===== */
-        .footer {
-            background: var(--gold); padding: 38px var(--side-pad) 20px;
-            border-top: none;
-        }
-        .footer-grid {
-            display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: clamp(20px, 3vw, 42px);
-        }
-        .footer-brand-text {
-            font-size: .82rem; color: rgba(0,0,0,.7);
-            line-height: 1.55; margin-top: .75rem; max-width: 280px;
-        }
-        .footer-logo {
-            font-family: var(--font-heading); font-size: .95rem;
-            color: var(--black); letter-spacing: 5px; text-transform: uppercase;
-            font-weight: 700;
-        }
-
-        .footer-col h4 {
-            font-size: .68rem; font-weight: 800; color: rgba(0,0,0,.85);
-            letter-spacing: 2px; text-transform: uppercase; margin-bottom: .75rem;
-        }
-        .footer-col ul { list-style: none; }
-        .footer-col li { margin-bottom: .35rem; }
-        .footer-col a {
-            font-size: .8rem; color: rgba(0,0,0,.8);
-            transition: color .3s;
-        }
-        .footer-col a:hover { color: var(--black); }
-
-        .footer-bottom {
-            margin-top: 26px; padding-top: 15px;
-            border-top: 1px solid rgba(0,0,0,.1);
-            display: flex; justify-content: space-between; align-items: center;
-            flex-wrap: wrap; gap: 1rem;
-        }
-        .footer-bottom p {
-            font-size: .68rem; color: rgba(0,0,0,.5);
-            letter-spacing: .7px;
-        }
-        .footer-bottom a { color: rgba(0,0,0,.5); transition: color .3s; font-size: .75rem; }
-        .footer-bottom a:hover { color: var(--black); }
-
-
-        /* ===== BACK TO TOP ===== */
-        .back-top {
-            position: fixed; bottom: 30px; right: 30px;
-            width: 48px; height: 48px; background: var(--gold);
-            display: flex; align-items: center; justify-content: center;
-            cursor: pointer; border: none; z-index: 900;
-            opacity: 0; visibility: hidden; transform: translateY(20px);
-            transition: all .4s var(--ease);
-        }
-        .back-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
-        .back-top:hover { background: var(--gold-light); }
-        .back-top svg { width: 18px; height: 18px; fill: none; stroke: var(--black); stroke-width: 2; }
-
-        /* ===== COOKIE ===== */
-        .cookie-bar {
-            position: fixed; bottom: 0; left: 0; right: 0;
-            background: rgba(12,12,12,.95); backdrop-filter: blur(20px);
-            padding: 20px var(--side-pad);
-            display: none; align-items: center; justify-content: space-between;
-            gap: 2rem; z-index: 1500;
-            border-top: 1px solid rgba(197,165,90,.15);
-        }
-        .cookie-bar.show { display: flex; }
-        .cookie-bar p { font-size: .8rem; color: rgba(255,255,255,.8); }
-        .cookie-bar p a { color: var(--gold); text-decoration: underline; }
-        .cookie-btns { display: flex; gap: .5rem; flex-shrink: 0; }
-        .cookie-accept {
-            padding: 10px 24px; background: var(--gold); color: var(--black);
-            border: none; font-size: .75rem; font-weight: 600;
-            letter-spacing: 1px; text-transform: uppercase; cursor: pointer;
-            font-family: var(--font-body); transition: background .3s;
-        }
-        .cookie-accept:hover { background: var(--gold-light); }
-        .cookie-decline {
-            padding: 10px 24px; background: transparent;
-            color: rgba(255,255,255,.4); border: 1px solid rgba(255,255,255,.1);
-            font-size: .75rem; cursor: pointer; font-family: var(--font-body);
-            transition: all .3s; text-transform: uppercase; letter-spacing: 1px;
-        }
-        .cookie-decline:hover { color: var(--white); border-color: rgba(255,255,255,.3); }
-
-        /* ===== LIGHTBOX ===== */
-        .lightbox {
-            display: none; position: fixed; inset: 0;
-            background: rgba(12,12,12,.97); z-index: 2000;
-            align-items: center; justify-content: center;
-            backdrop-filter: blur(20px);
-        }
-        .lightbox.active { display: flex; }
-        .lightbox img { max-width: 90%; max-height: 90%; object-fit: contain; image-rendering: -webkit-optimize-contrast; }
-        .lightbox-close {
-            position: absolute; top: 30px; right: 30px;
-            width: 48px; height: 48px; background: transparent;
-            border: 1px solid rgba(255,255,255,.2); display: flex;
-            align-items: center; justify-content: center;
-            cursor: pointer; color: var(--white); font-size: 1.5rem;
-            transition: all .3s;
-        }
-        .lightbox-close:hover { border-color: var(--gold); color: var(--gold); }
-
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 1024px) {
-            .about-grid { grid-template-columns: 1fr; gap: 40px; }
-            .about-right { order: -1; }
-            .about-img-wrapper { aspect-ratio: 16/10; }
-
-            .stats { grid-template-columns: repeat(2, 1fr); }
-            .stat-item:nth-child(2) { border-right: none; }
-
-            .projects-grid { grid-template-columns: 1fr; }
-            .project-card:first-child { grid-row: auto; aspect-ratio: 16/10; }
-            .project-card { aspect-ratio: 16/10; }
-
-            .process-grid { grid-template-columns: repeat(2, 1fr); }
-            .process-item { border-bottom: 1px solid rgba(0,0,0,.1); }
-            .process-item:nth-child(even) { border-right: none; }
-
-            .testimonial-section { grid-template-columns: 1fr; }
-            .testimonial-right { min-height: 50vh; }
-
-            .cert-row { grid-template-columns: repeat(2, 1fr); }
-            .cert-item:nth-child(2) { border-right: none; }
-            .cert-item { border-bottom: 1px solid rgba(255,255,255,.08); }
-
-            .careers-cta { grid-template-columns: 1fr; }
-            .careers-cta-right { min-height: 50vh; }
-
-            .contact-grid { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr 1fr; }
-        }
-
-        @media (max-width: 768px) {
-            :root { --nav-h: 70px; }
-
-            .nav-toggle { display: block; }
-            .nav-links {
-                position: fixed; top: 0; right: -100%;
-                width: 100%; max-width: 360px; height: 100vh;
-                background: var(--black); flex-direction: column;
-                padding: 120px 40px 40px; gap: 0;
-                transition: right .5s var(--ease-smooth);
-                border-left: 1px solid rgba(255,255,255,.05);
-            }
-            .nav-links.open { right: 0; }
-            .nav-links li {
-                border-bottom: 1px solid rgba(255,255,255,.05);
-                width: 100%;
-            }
-            .nav-links a {
-                display: block; padding: 18px 0; font-size: .85rem; color: rgba(255,255,255,.5);
-            }
-            .nav-lang { border: none !important; padding: 18px 0 !important; }
-            .nav-links .nav-contact-btn {
-                margin-top: 20px; text-align: center; display: block;
-            }
-
-            .hero { align-items: flex-end; text-align: center; padding-bottom: 60px; }
-            .hero-content { max-width: 100%; }
-            .hero-sub { margin: 0 auto; }
-            .hero-cta { justify-content: center; flex-wrap: wrap; }
-            .hero-scroll { display: none; }
-
-            .stats { grid-template-columns: 1fr 1fr; }
-            .stat-item { padding: 30px 20px; }
-
-            .service-row { grid-template-columns: 40px 1fr; gap: 16px; }
-            .service-arrow { display: none; }
-
-            .process-grid { grid-template-columns: 1fr; }
-            .process-item { border-right: none !important; }
-
-            .cert-row { grid-template-columns: 1fr; }
-            .cert-item { border-right: none !important; }
-
-            .form-row { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr; }
-            .footer-bottom { flex-direction: column; text-align: center; }
-            .cookie-bar { flex-direction: column; text-align: center; }
-        }
-
-        @media (max-width: 480px) {
-            .hero-title { font-size: 2.5rem; }
-            .btn-gold, .btn-ghost { width: 100%; justify-content: center; }
-            .stat-item { padding: 24px 16px; }
-        }
-    </style>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body class="lang-el">
     <script>try{if(localStorage.getItem('site-lang')==='en')document.body.classList.remove('lang-el');}catch(e){}</script>
 
     <!-- Skip Nav -->
-    <a href="#main" class="skip-nav">Skip to main content</a>
+    <a href="#main" class="skip-nav"><span data-lang="en">Skip to main content</span><span data-lang="el">Παράλειψη στο κύριο περιεχόμενο</span></a>
 
     <!-- Preloader -->
     <div class="preloader" id="preloader">
         <div class="preloader-logo">
-            <img src="original_logo.jpg" alt="Paschalidis Technical Company">
+            <img src="original-logo.jpg" alt="Paschalidis Technical Company">
         </div>
         <div class="preloader-text" aria-hidden="true" data-lang="en">
             <span style="animation-delay:.1s">P</span><span style="animation-delay:.15s">A</span><span style="animation-delay:.2s">S</span><span style="animation-delay:.25s">C</span><span style="animation-delay:.3s">H</span><span style="animation-delay:.35s">A</span><span style="animation-delay:.4s">L</span><span style="animation-delay:.45s">I</span><span style="animation-delay:.5s">D</span><span style="animation-delay:.55s">I</span><span style="animation-delay:.6s">S</span><span style="animation-delay:.65s">&nbsp;</span><span style="animation-delay:.7s">G</span><span style="animation-delay:.75s">R</span><span style="animation-delay:.8s">O</span><span style="animation-delay:.85s">U</span><span style="animation-delay:.9s">P</span>
@@ -1012,12 +68,13 @@
     <div class="reveal-grid" id="revealGrid"></div>
 
     <!-- Navigation -->
-    <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
-        <a href="index.html" class="nav-logo"><img src="original_logo.jpg" alt="Paschalidis Technical Company"></a>
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+    <nav class="nav" id="nav" role="navigation" aria-label="Main navigation" data-aria-en="Main navigation" data-aria-el="Κύρια πλοήγηση">
+        <a href="index.html" class="nav-logo"><img src="original-logo.jpg" alt="Paschalidis Technical Company"></a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" data-aria-en="Toggle menu" data-aria-el="Εναλλαγή μενού" aria-expanded="false">
             <span></span><span></span><span></span>
         </button>
         <ul class="nav-links" id="navLinks">
+            <li><a href="#home" data-lang="en">Home</a><a href="#home" data-lang="el">Αρχική</a></li>
             <li><a href="#about" data-lang="en">About</a><a href="#about" data-lang="el">Σχετικά</a></li>
             <li><a href="vision-culture.html" data-lang="en">Vision &amp; Culture</a><a href="vision-culture.html" data-lang="el">Όραμα &amp; Κουλτούρα</a></li>
             <li><a href="services.html" data-lang="en">Services</a><a href="services.html" data-lang="el">Υπηρεσίες</a></li>
@@ -1032,13 +89,13 @@
     <!-- Hero -->
     <section class="hero" id="home" role="banner">
         <div class="hero-slides" aria-hidden="true">
-            <div class="hero-slide active" style="background-image:url('foundation_parking_Glyfada_I.jpg')"></div>
-            <div class="hero-slide" style="background-image:url('foundation_parking_Glyfada_II.jpg')"></div>
-            <div class="hero-slide" style="background-image:url('foundation_parking_Glyfada_III.jpg')"></div>
-            <div class="hero-slide" style="background-image:url('ELLINIKO%20Construction.jpg')"></div>
-            <div class="hero-slide" style="background-image:url('ELLINIKO%20Construction%202.jpg')"></div>
-            <div class="hero-slide" style="background-image:url('ELLINIKO%20Construction%204.jpg')"></div>
-            <div class="hero-slide" style="background-image:url('ELLINIKO5.jpg')"></div>
+            <div class="hero-slide active" style="background-image:url('foundation-parking-glyfada-1.jpg')"></div>
+            <div class="hero-slide" style="background-image:url('foundation-parking-glyfada-2.jpg')"></div>
+            <div class="hero-slide" style="background-image:url('foundation-parking-glyfada-3.jpg')"></div>
+            <div class="hero-slide" style="background-image:url('elliniko-construction.jpg')"></div>
+            <div class="hero-slide" style="background-image:url('elliniko-construction-2.jpg')"></div>
+            <div class="hero-slide" style="background-image:url('elliniko-construction-4.jpg')"></div>
+            <div class="hero-slide" style="background-image:url('elliniko-5.jpg')"></div>
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-grain"></div>
@@ -1121,7 +178,7 @@
                     Paschalidis Group has been a cornerstone of Greece's construction industry for over four decades. We combine the discipline of traditional craftsmanship with the efficiency of modern engineering to deliver projects that stand the test of time.
                 </p>
                 <p class="about-text reveal" data-lang="el">
-                    Η Paschalidis Group αποτελεί ακρογωνιαίο λίθο της ελληνικής κατασκευαστικής βιομηχανίας για πάνω από τέσσερις δεκαετίες. Συνδυάζουμε την πειθαρχία της παραδοσιακής τεχνογνωσίας με την αποτελεσματικότητα της σύγχρονης μηχανικής για να παραδώσουμε έργα που αντέχουν στον χρόνο.
+                    Ο Όμιλος Πασχαλίδη αποτελεί ακρογωνιαίο λίθο της ελληνικής κατασκευαστικής βιομηχανίας για πάνω από τέσσερις δεκαετίες. Συνδυάζουμε την πειθαρχία της παραδοσιακής τεχνογνωσίας με την αποτελεσματικότητα της σύγχρονης μηχανικής για να παραδώσουμε έργα που αντέχουν στον χρόνο.
                 </p>
                 <p class="about-text reveal" data-lang="en">
                     From residential buildings and luxury developments to large-scale commercial complexes and critical infrastructure, our commitment to quality, safety, and client satisfaction remains unwavering. We don't simply build structures — we create landmarks that define communities and endure for generations.
@@ -1132,7 +189,7 @@
             </div>
             <div class="about-right reveal">
                 <div class="about-img-wrapper">
-                    <img src="ELLINIKO%20Construction%204.jpg" alt="Paschalidis Group — Elliniko project" loading="lazy">
+                    <img src="elliniko-construction-4.jpg" alt="Paschalidis Group — Elliniko project" loading="lazy">
                     <div class="about-experience-badge">
                         <span class="num">40+</span>
                         <span class="label" data-lang="en">Years</span>
@@ -1181,284 +238,6 @@
         </div>
     </div>
 
-    <!-- Services -->
-    <section class="section section-warm" id="services" hidden>
-        <div class="section-eyebrow reveal" data-lang="en">Services</div>
-        <div class="section-eyebrow reveal" data-lang="el">Υπηρεσίες</div>
-        <h2 class="section-heading reveal" style="text-shadow: 0 1px 3px rgba(255,255,255,.4);" data-lang="en">What we <em>do</em></h2>
-        <h2 class="section-heading reveal" style="text-shadow: 0 1px 3px rgba(255,255,255,.4);" data-lang="el">Τι <em>κάνουμε</em></h2>
-        <p class="section-desc reveal" style="margin-top:1rem; font-weight:500; text-shadow: 0 1px 2px rgba(255,255,255,.4);" data-lang="en">Comprehensive construction solutions — from concept to completion, across every scale and sector.</p>
-        <p class="section-desc reveal" style="margin-top:1rem; font-weight:500; text-shadow: 0 1px 2px rgba(255,255,255,.4);" data-lang="el">Ολοκληρωμένες κατασκευαστικές λύσεις — από τη σύλληψη έως την παράδοση, σε κάθε κλίμακα και τομέα.</p>
-
-        <div class="services-list" data-lang="en">
-            <div class="service-row reveal">
-                <span class="service-num">01</span>
-                <div class="service-info">
-                    <h3>Commercial Construction</h3>
-                    <p>Office buildings, shopping centers, and commercial complexes designed for functionality and lasting impact.</p>
-                </div>
-                <div class="service-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-            </div>
-            <div class="service-row reveal">
-                <span class="service-num">02</span>
-                <div class="service-info">
-                    <h3>Residential Projects</h3>
-                    <p>Luxury homes, apartment complexes, and residential communities built with meticulous attention to every detail.</p>
-                </div>
-                <div class="service-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-            </div>
-            <div class="service-row reveal">
-                <span class="service-num">03</span>
-                <div class="service-info">
-                    <h3>Industrial Facilities</h3>
-                    <p>Warehouses, factories, and industrial complexes engineered for maximum efficiency and safety.</p>
-                </div>
-                <div class="service-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-            </div>
-            <div class="service-row reveal">
-                <span class="service-num">04</span>
-                <div class="service-info">
-                    <h3>Infrastructure</h3>
-                    <p>Roads, bridges, and public works that strengthen connectivity and serve communities across the nation.</p>
-                </div>
-                <div class="service-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-            </div>
-            <div class="service-row reveal">
-                <span class="service-num">05</span>
-                <div class="service-info">
-                    <h3>Green Energy</h3>
-                    <p>Solar installations, energy-efficient design, and sustainable building solutions for a greener future.</p>
-                </div>
-                <div class="service-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-            </div>
-        </div>
-        <div class="services-list" data-lang="el">
-            <div class="service-row reveal">
-                <span class="service-num">01</span>
-                <div class="service-info">
-                    <h3>Εμπορικές Κατασκευές</h3>
-                    <p>Κτίρια γραφείων, εμπορικά κέντρα και εμπορικά συγκροτήματα σχεδιασμένα για λειτουργικότητα και διαρκή αντίκτυπο.</p>
-                </div>
-                <div class="service-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-            </div>
-            <div class="service-row reveal">
-                <span class="service-num">02</span>
-                <div class="service-info">
-                    <h3>Οικιστικά Έργα</h3>
-                    <p>Πολυτελείς κατοικίες, συγκροτήματα διαμερισμάτων και οικιστικές κοινότητες με σχολαστική προσοχή σε κάθε λεπτομέρεια.</p>
-                </div>
-                <div class="service-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-            </div>
-            <div class="service-row reveal">
-                <span class="service-num">03</span>
-                <div class="service-info">
-                    <h3>Βιομηχανικές Εγκαταστάσεις</h3>
-                    <p>Αποθήκες, εργοστάσια και βιομηχανικά συγκροτήματα σχεδιασμένα για μέγιστη αποδοτικότητα και ασφάλεια.</p>
-                </div>
-                <div class="service-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-            </div>
-            <div class="service-row reveal">
-                <span class="service-num">04</span>
-                <div class="service-info">
-                    <h3>Υποδομές</h3>
-                    <p>Δρόμοι, γέφυρες και δημόσια έργα που ενισχύουν τη συνδεσιμότητα και εξυπηρετούν κοινότητες σε όλη τη χώρα.</p>
-                </div>
-                <div class="service-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-            </div>
-            <div class="service-row reveal">
-                <span class="service-num">05</span>
-                <div class="service-info">
-                    <h3>Πράσινη Ενέργεια</h3>
-                    <p>Φωτοβολταϊκές εγκαταστάσεις, ενεργειακά αποδοτικός σχεδιασμός και βιώσιμες κατασκευαστικές λύσεις για ένα πράσινο μέλλον.</p>
-                </div>
-                <div class="service-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Green Energy -->
-    <section class="section section-dark" id="green-energy" hidden>
-        <div class="section-eyebrow reveal" data-lang="en">Green Energy</div>
-        <div class="section-eyebrow reveal" data-lang="el">Πράσινη Ενέργεια</div>
-        <h2 class="section-heading reveal" style="color:var(--white);" data-lang="en">Building a <em>greener</em> tomorrow</h2>
-        <h2 class="section-heading reveal" style="color:var(--white);" data-lang="el">Χτίζουμε ένα πιο <em>πράσινο</em> αύριο</h2>
-        <p class="section-desc reveal" style="margin-top:1rem;" data-lang="en">At Paschalidis Group, sustainability is built into every project. We adopt environmentally responsible practices and energy-efficient technologies to minimize our footprint and deliver buildings ready for the future.</p>
-        <p class="section-desc reveal" style="margin-top:1rem;" data-lang="el">Στην Πασχαλίδης Group, η βιωσιμότητα είναι ενσωματωμένη σε κάθε έργο. Υιοθετούμε περιβαλλοντικά υπεύθυνες πρακτικές και ενεργειακά αποδοτικές τεχνολογίες για να ελαχιστοποιήσουμε το αποτύπωμά μας και να παραδώσουμε κτίρια έτοιμα για το μέλλον.</p>
-
-        <div class="process-grid">
-            <div class="process-item reveal" style="border-color: rgba(255,255,255,.08);">
-                <div class="green-icon">
-                    <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-                </div>
-                <h3 style="color:var(--white);" data-lang="en">Energy-Efficient Buildings</h3>
-                <h3 style="color:var(--white);" data-lang="el">Ενεργειακά Αποδοτικά Κτίρια</h3>
-                <p style="color:rgba(255,255,255,.75);" data-lang="en">All our projects meet or exceed KENAK energy performance standards, with advanced insulation and high-efficiency systems as standard.</p>
-                <p style="color:rgba(255,255,255,.75);" data-lang="el">Όλα τα έργα μας πληρούν ή υπερβαίνουν τα ενεργειακά πρότυπα ΚΕΝΑΚ, με προηγμένη μόνωση και συστήματα υψηλής απόδοσης ως βάση.</p>
-            </div>
-            <div class="process-item reveal reveal-delay-1" style="border-color: rgba(255,255,255,.08);">
-                <div class="green-icon">
-                    <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v6l3-3"/><path d="M12 8l-3-3"/><rect x="3" y="10" width="18" height="12" rx="2"/><line x1="7" y1="15" x2="7" y2="15.01"/><line x1="12" y1="15" x2="12" y2="15.01"/><line x1="17" y1="15" x2="17" y2="15.01"/></svg>
-                </div>
-                <h3 style="color:var(--white);" data-lang="en">Reduced Environmental Impact</h3>
-                <h3 style="color:var(--white);" data-lang="el">Μειωμένο Περιβαλλοντικό Αποτύπωμα</h3>
-                <p style="color:rgba(255,255,255,.75);" data-lang="en">Responsible waste management, recycled materials, and eco-conscious site practices across all our construction projects.</p>
-                <p style="color:rgba(255,255,255,.75);" data-lang="el">Υπεύθυνη διαχείριση αποβλήτων, ανακυκλωμένα υλικά και οικολογικά συνειδητές πρακτικές σε όλα τα εργοτάξιά μας.</p>
-            </div>
-            <div class="process-item reveal reveal-delay-2" style="border-color: rgba(255,255,255,.08);">
-                <div class="green-icon">
-                    <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                </div>
-                <h3 style="color:var(--white);" data-lang="en">Heat Pump Ready</h3>
-                <h3 style="color:var(--white);" data-lang="el">Έτοιμα για Αντλίες Θερμότητας</h3>
-                <p style="color:rgba(255,255,255,.75);" data-lang="en">Our buildings are designed and built to integrate modern heat pump systems, eliminating fossil fuel dependence for heating and cooling.</p>
-                <p style="color:rgba(255,255,255,.75);" data-lang="el">Τα κτίριά μας σχεδιάζονται και κατασκευάζονται για ενσωμάτωση αντλιών θερμότητας, εξαλείφοντας την εξάρτηση από ορυκτά καύσιμα.</p>
-            </div>
-            <div class="process-item reveal reveal-delay-3" style="border-color: rgba(255,255,255,.08);">
-                <div class="green-icon">
-                    <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg>
-                </div>
-                <h3 style="color:var(--white);" data-lang="en">ISO 14001 Certified</h3>
-                <h3 style="color:var(--white);" data-lang="el">Πιστοποίηση ISO 14001</h3>
-                <p style="color:rgba(255,255,255,.75);" data-lang="en">Our environmental management system is ISO 14001:2015 certified, ensuring systematic control and continuous improvement of our green practices.</p>
-                <p style="color:rgba(255,255,255,.75);" data-lang="el">Το σύστημα περιβαλλοντικής διαχείρισής μας είναι πιστοποιημένο ISO 14001:2015, εξασφαλίζοντας συστηματικό έλεγχο και συνεχή βελτίωση των πράσινων πρακτικών μας.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects -->
-    <section class="section section-dark" id="projects" hidden>
-        <div class="projects-header">
-            <div>
-                <div class="section-eyebrow reveal" data-lang="en">Projects</div>
-                <div class="section-eyebrow reveal" data-lang="el">Έργα</div>
-                <h2 class="section-heading reveal" style="color:var(--white);" data-lang="en">Featured <em>projects</em></h2>
-                <h2 class="section-heading reveal" style="color:var(--white);" data-lang="el">Επιλεγμένα <em>έργα</em></h2>
-            </div>
-        </div>
-
-        <div class="projects-grid reveal">
-            <div class="project-card" onclick="openLightbox('foundation_parking_Glyfada.jpg')">
-                <img src="foundation_parking_Glyfada.jpg" alt="Foundation & Parking — Glyfada" loading="lazy">
-                <div class="project-info">
-                    <span class="project-tag" data-lang="en">Residential</span>
-                    <span class="project-tag" data-lang="el">Οικιστικό</span>
-                    <h3 data-lang="en">Foundation &amp; Parking — Glyfada</h3>
-                    <h3 data-lang="el">Θεμελίωση &amp; Parking — Γλυφάδα</h3>
-                    <p class="project-desc" data-lang="en">Foundation and underground parking construction</p>
-                    <p class="project-desc" data-lang="el">Κατασκευή θεμελίωσης και υπόγειου parking</p>
-                </div>
-            </div>
-            <div class="project-card" onclick="openLightbox('Mitilini%20Airport.jpg')">
-                <img src="Mitilini%20Airport.jpg" alt="Mytilene Airport" loading="lazy">
-                <div class="project-info">
-                    <span class="project-tag" data-lang="en">Infrastructure</span>
-                    <span class="project-tag" data-lang="el">Υποδομές</span>
-                    <h3 data-lang="en">Mytilene Airport</h3>
-                    <h3 data-lang="el">Αεροδρόμιο Μυτιλήνης</h3>
-                    <p class="project-desc" data-lang="en">Modern airport terminal construction</p>
-                    <p class="project-desc" data-lang="el">Κατασκευή σύγχρονου αεροσταθμού</p>
-                </div>
-            </div>
-            <div class="project-card" onclick="openLightbox('Mitilini%20Airport%20Overview.jpg')">
-                <img src="Mitilini%20Airport%20Overview.jpg" alt="Mytilene Airport Overview" loading="lazy">
-                <div class="project-info">
-                    <span class="project-tag" data-lang="en">Infrastructure</span>
-                    <span class="project-tag" data-lang="el">Υποδομές</span>
-                    <h3 data-lang="en">Airport — Overview</h3>
-                    <h3 data-lang="el">Αεροδρόμιο — Επισκόπηση</h3>
-                    <p class="project-desc" data-lang="en">Full-scope airport construction project</p>
-                    <p class="project-desc" data-lang="el">Ολοκληρωμένο έργο κατασκευής αεροδρομίου</p>
-                </div>
-            </div>
-            <div class="project-card" onclick="openLightbox('River%20West.jpg')">
-                <img src="River%20West.jpg" alt="River West Shopping Center" loading="lazy">
-                <div class="project-info">
-                    <span class="project-tag" data-lang="en">Commercial</span>
-                    <span class="project-tag" data-lang="el">Εμπορικό</span>
-                    <h3>River West</h3>
-                    <p class="project-desc" data-lang="en">Shopping center expansion — 20,000 m³ reinforced concrete</p>
-                    <p class="project-desc" data-lang="el">Επέκταση εμπορικού κέντρου — 20.000 m³ οπλισμένο σκυρόδεμα</p>
-                </div>
-            </div>
-            <div class="project-card" onclick="openLightbox('foundation_parking_Glyfada_I.jpg')">
-                <img src="foundation_parking_Glyfada_I.jpg" alt="Glyfada Parking Construction" loading="lazy">
-                <div class="project-info">
-                    <span class="project-tag" data-lang="en">Residential</span>
-                    <span class="project-tag" data-lang="el">Οικιστικό</span>
-                    <h3 data-lang="en">Glyfada Parking Foundation</h3>
-                    <h3 data-lang="el">Θεμελίωση Parking Γλυφάδας</h3>
-                    <p class="project-desc" data-lang="en">Reinforced concrete foundation works</p>
-                    <p class="project-desc" data-lang="el">Εργασίες θεμελίωσης οπλισμένου σκυροδέματος</p>
-                </div>
-            </div>
-            <div class="project-card" onclick="openLightbox('foundation_parking_Glyfada_II.jpg')">
-                <img src="foundation_parking_Glyfada_II.jpg" alt="Glyfada Parking Progress" loading="lazy">
-                <div class="project-info">
-                    <span class="project-tag" data-lang="en">Residential</span>
-                    <span class="project-tag" data-lang="el">Οικιστικό</span>
-                    <h3 data-lang="en">Glyfada Parking Construction Progress</h3>
-                    <h3 data-lang="el">Εξέλιξη Κατασκευής Parking Γλυφάδας</h3>
-                    <p class="project-desc" data-lang="en">Structural framework and formwork installation</p>
-                    <p class="project-desc" data-lang="el">Εγκατάσταση δομικού σκελετού και ξυλοτύπων</p>
-                </div>
-            </div>
-            <div class="project-card" onclick="openLightbox('foundation_parking_Glyfada_III.jpg')">
-                <img src="foundation_parking_Glyfada_III.jpg" alt="Glyfada Parking Overview" loading="lazy">
-                <div class="project-info">
-                    <span class="project-tag" data-lang="en">Residential</span>
-                    <span class="project-tag" data-lang="el">Οικιστικό</span>
-                    <h3 data-lang="en">Glyfada Parking Overview</h3>
-                    <h3 data-lang="el">Επισκόπηση Parking Γλυφάδας</h3>
-                    <p class="project-desc" data-lang="en">Underground parking facility overview</p>
-                    <p class="project-desc" data-lang="el">Επισκόπηση υπόγειου σταθμού αυτοκινήτων</p>
-                </div>
-            </div>
-            <div class="project-card" onclick="openLightbox('ELLINIKO%20Construction.jpg')">
-                <img src="ELLINIKO%20Construction.jpg" alt="Elliniko Construction" loading="lazy">
-                <div class="project-info">
-                    <span class="project-tag" data-lang="en">Commercial</span>
-                    <span class="project-tag" data-lang="el">Εμπορικό</span>
-                    <h3 data-lang="en">Elliniko</h3>
-                    <h3 data-lang="el">Ελληνικό</h3>
-                    <p class="project-desc" data-lang="en">Large-scale construction at the Elliniko development</p>
-                    <p class="project-desc" data-lang="el">Κατασκευή μεγάλης κλίμακας στην ανάπτυξη του Ελληνικού</p>
-                </div>
-            </div>
-            <div class="project-card" onclick="openLightbox('ELLINIKO%20Construction%202.jpg')">
-                <img src="ELLINIKO%20Construction%202.jpg" alt="Elliniko Construction Phase 2" loading="lazy">
-                <div class="project-info">
-                    <span class="project-tag" data-lang="en">Commercial</span>
-                    <span class="project-tag" data-lang="el">Εμπορικό</span>
-                    <h3 data-lang="en">Elliniko Residential Progress</h3>
-                    <h3 data-lang="el">Ελληνικό — Εξέλιξη Οικιστικού</h3>
-                    <p class="project-desc" data-lang="en">Structural works and reinforced concrete</p>
-                    <p class="project-desc" data-lang="el">Δομικές εργασίες και οπλισμένο σκυρόδεμα</p>
-                </div>
-            </div>
-            <div class="project-card" onclick="openLightbox('ELLINIKO%20Construction%204.jpg')">
-                <img src="ELLINIKO%20Construction%204.jpg" alt="Elliniko Construction Phase 4" loading="lazy">
-                <div class="project-info">
-                    <span class="project-tag" data-lang="en">Commercial</span>
-                    <span class="project-tag" data-lang="el">Εμπορικό</span>
-                    <h3 data-lang="en">Elliniko Overview</h3>
-                    <h3 data-lang="el">Ελληνικό — Επισκόπηση</h3>
-                    <p class="project-desc" data-lang="en">Infrastructure and site development</p>
-                    <p class="project-desc" data-lang="el">Υποδομές και ανάπτυξη εργοταξίου</p>
-                </div>
-            </div>
-            <div class="project-card" onclick="openLightbox('ELLINIKO5.jpg')">
-                <img src="ELLINIKO5.jpg" alt="Elliniko Overview" loading="lazy">
-                <div class="project-info">
-                    <span class="project-tag" data-lang="en">Commercial</span>
-                    <span class="project-tag" data-lang="el">Εμπορικό</span>
-                    <h3 data-lang="en">Elliniko Residential Building Overview</h3>
-                    <h3 data-lang="el">Ελληνικό — Επισκόπηση Οικιστικού Κτιρίου</h3>
-                    <p class="project-desc" data-lang="en">Aerial view of the Elliniko project site</p>
-                    <p class="project-desc" data-lang="el">Αεροφωτογραφία του εργοταξίου Ελληνικού</p>
-                </div>
-            </div>
-        </div>
-    </section>
     <section class="section section-warm" id="process">
         <div class="section-eyebrow reveal" data-lang="en">How We Work</div>
         <div class="section-eyebrow reveal" data-lang="el">Πώς Εργαζόμαστε</div>
@@ -1593,7 +372,7 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
         </div>
-        <div class="careers-cta-right" role="img" aria-label="Construction workers at Glyfada foundation site"></div>
+        <div class="careers-cta-right" aria-hidden="true"></div>
     </div>
     <div class="careers-cta" data-lang="el">
         <div class="careers-cta-left">
@@ -1605,7 +384,7 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
         </div>
-        <div class="careers-cta-right" role="img" aria-label="Εργάτες κατασκευής στο εργοτάξιο Γλυφάδας"></div>
+        <div class="careers-cta-right" aria-hidden="true"></div>
     </div>
 
     <!-- Contact -->
@@ -1634,13 +413,6 @@
                 <div class="contact-block">
                     <h4>Hours</h4>
                     <p>Mon–Fri: 08:00 – 16:30</p>
-                </div>
-
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-                    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-                    <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-                    <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48"/></svg></a>
                 </div>
             </div>
 
@@ -1683,6 +455,7 @@
                     <label for="message">Tell Us About Your Request</label>
                     <textarea id="message" name="message" placeholder="Describe your project or job interest, goals, and timeline..." required></textarea>
                 </div>
+                <p class="form-note">By sending this form you agree to the processing of your details to reply to your request. See our <a href="privacy.html">Privacy &amp; Cookie Policy</a>.</p>
                 <button type="submit" class="submit-btn" id="submitBtn">Send Inquiry</button>
             </form>
         </div>
@@ -1704,13 +477,6 @@
                 <div class="contact-block">
                     <h4>Ωράριο</h4>
                     <p>Δευ–Παρ: 08:00 – 16:30</p>
-                </div>
-
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-                    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-                    <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-                    <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48"/></svg></a>
                 </div>
             </div>
 
@@ -1753,18 +519,13 @@
                     <label for="message-el">Πείτε μας για το Αίτημά σας</label>
                     <textarea id="message-el" name="message" placeholder="Περιγράψτε το έργο ή το ενδιαφέρον σας, τους στόχους και το χρονοδιάγραμμα..." required></textarea>
                 </div>
+                <p class="form-note">Στέλνοντας τη φόρμα αποδέχεστε την επεξεργασία των στοιχείων σας για την απάντηση στο αίτημά σας. Δείτε την <a href="privacy.html">Πολιτική Απορρήτου &amp; Cookies</a>.</p>
                 <button type="submit" class="submit-btn" id="submitBtnEl">Αποστολή</button>
             </form>
         </div>
     </section>
 
     </main>
-
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox" role="dialog" aria-label="Enlarged project image">
-        <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
-        <img id="lightbox-img" src="" alt="">
-    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -1774,23 +535,19 @@
                 <p class="footer-brand-text"><em>Built on experience. Driven by excellence.</em></p>
             </div>
             <div class="footer-col">
-                <h4>Services</h4>
-                <ul>
-                    <li><a href="services.html">Commercial</a></li>
-                    <li><a href="services.html">Residential</a></li>
-                    <li><a href="services.html">Industrial</a></li>
-                    <li><a href="services.html">Infrastructure</a></li>
-                    <li><a href="green-energy.html">Green Energy</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
                 <h4>Company</h4>
                 <ul>
                     <li><a href="#about">About</a></li>
                     <li><a href="vision-culture.html">Vision &amp; Culture</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="green-energy.html">Green Energy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
                     <li><a href="projects.html">Projects</a></li>
-                    <li><a href="#certifications">Certifications</a></li>
-                    <li><a href="#contact">Careers</a></li>
+                    <li><a href="#process">Process</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -1799,9 +556,6 @@
                 <ul>
                     <li><a href="tel:+302109327755">+30 210 932 7755</a></li>
                     <li><a href="mailto:info@groupg.gr">info@groupg.gr</a></li>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">LinkedIn</a></li>
-                    <li><a href="#">Instagram</a></li>
                 </ul>
             </div>
         </div>
@@ -1811,23 +565,19 @@
                 <p class="footer-brand-text"><em>Με θεμέλιο την εμπειρία. Με κινητήρια δύναμη την αριστεία.</em></p>
             </div>
             <div class="footer-col">
-                <h4>Υπηρεσίες</h4>
-                <ul>
-                    <li><a href="services.html">Εμπορικά</a></li>
-                    <li><a href="services.html">Οικιστικά</a></li>
-                    <li><a href="services.html">Βιομηχανικά</a></li>
-                    <li><a href="services.html">Υποδομές</a></li>
-                    <li><a href="green-energy.html">Πράσινη Ενέργεια</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
                 <h4>Εταιρεία</h4>
                 <ul>
                     <li><a href="#about">Σχετικά</a></li>
                     <li><a href="vision-culture.html">Όραμα &amp; Κουλτούρα</a></li>
+                    <li><a href="services.html">Υπηρεσίες</a></li>
+                    <li><a href="green-energy.html">Πράσινη Ενέργεια</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Περιήγηση</h4>
+                <ul>
                     <li><a href="projects.html">Έργα</a></li>
-                    <li><a href="#certifications">Πιστοποιήσεις</a></li>
-                    <li><a href="#contact">Καριέρα</a></li>
+                    <li><a href="#process">Διαδικασία</a></li>
                     <li><a href="#contact">Επικοινωνία</a></li>
                 </ul>
             </div>
@@ -1836,241 +586,34 @@
                 <ul>
                     <li><a href="tel:+302109327755">+30 210 932 7755</a></li>
                     <li><a href="mailto:info@groupg.gr">info@groupg.gr</a></li>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">LinkedIn</a></li>
-                    <li><a href="#">Instagram</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom" data-lang="en">
             <p>&copy; 2026 Paschalidis Group. All rights reserved.</p>
+            <a href="privacy.html">Privacy &amp; Cookie Policy</a>
         </div>
         <div class="footer-bottom" data-lang="el">
-            <p>&copy; 2026 Paschalidis Group. Με επιφύλαξη παντός δικαιώματος.</p>
+            <p>&copy; 2026 Όμιλος Πασχαλίδη. Με επιφύλαξη παντός δικαιώματος.</p>
+            <a href="privacy.html">Πολιτική Απορρήτου &amp; Cookies</a>
         </div>
     </footer>
 
     <!-- Back to Top -->
-    <button class="back-top" id="backTop" aria-label="Back to top">
+    <button class="back-top" id="backTop" aria-label="Back to top" data-aria-en="Back to top" data-aria-el="Επιστροφή προς τα επάνω">
         <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
     </button>
 
     <!-- Cookie Consent -->
     <div class="cookie-bar" id="cookieBar">
-        <p data-lang="en">We use cookies to enhance your experience. By continuing, you accept our <a href="#">Cookie Policy</a>.</p>
-        <p data-lang="el">Χρησιμοποιούμε cookies για τη βελτίωση της εμπειρίας σας. Συνεχίζοντας, αποδέχεστε την <a href="#">Πολιτική Cookies</a>.</p>
+        <p data-lang="en">This site only stores your language choice and this notice on your device. We use no tracking or advertising cookies. See our <a href="privacy.html">Privacy &amp; Cookie Policy</a>.</p>
+        <p data-lang="el">Αυτός ο ιστότοπος αποθηκεύει μόνο την επιλογή γλώσσας και την παρούσα ενημέρωση στη συσκευή σας. Δεν χρησιμοποιούμε cookies παρακολούθησης ή διαφήμισης. Δείτε την <a href="privacy.html">Πολιτική Απορρήτου &amp; Cookies</a>.</p>
         <div class="cookie-btns">
-            <button class="cookie-accept" onclick="acceptCookies()" data-lang="en">Accept</button>
-            <button class="cookie-accept" onclick="acceptCookies()" data-lang="el">Αποδοχή</button>
-            <button class="cookie-decline" onclick="declineCookies()" data-lang="en">Decline</button>
-            <button class="cookie-decline" onclick="declineCookies()" data-lang="el">Απόρριψη</button>
+            <button class="cookie-accept" onclick="acceptCookies()" data-lang="en">Got it</button>
+            <button class="cookie-accept" onclick="acceptCookies()" data-lang="el">Εντάξει</button>
         </div>
     </div>
 
-    <script>
-    (function(){
-        'use strict';
-
-        // Language toggle
-        function applyLang(isGreek) {
-            document.body.classList.toggle('lang-el', isGreek);
-            document.getElementById('langToggle').textContent = isGreek ? 'EN' : 'ΕΛ';
-            document.documentElement.lang = isGreek ? 'el' : 'en';
-        }
-        window.toggleLang = function(e) {
-            e.preventDefault();
-            var isGreek = !document.body.classList.contains('lang-el');
-            applyLang(isGreek);
-            try { localStorage.setItem('site-lang', isGreek ? 'el' : 'en'); } catch (err) {}
-        };
-        applyLang(document.body.classList.contains('lang-el'));
-
-        document.querySelectorAll('.footer-grid[data-lang]').forEach(function(footerGrid){
-            var links = footerGrid.dataset.lang === 'en'
-                ? [['#about', 'About'], ['vision-culture.html', 'Vision & Culture'], ['services.html', 'Services'], ['green-energy.html', 'Green Energy'], ['projects.html', 'Projects'], ['#process', 'Process'], ['#contact', 'Contact']]
-                : [['#about', 'Σχετικά'], ['vision-culture.html', 'Όραμα & Κουλτούρα'], ['services.html', 'Υπηρεσίες'], ['green-energy.html', 'Πράσινη Ενέργεια'], ['projects.html', 'Έργα'], ['#process', 'Διαδικασία'], ['#contact', 'Επικοινωνία']];
-            var headings = footerGrid.dataset.lang === 'en' ? ['Company', 'Explore'] : ['Εταιρεία', 'Περιήγηση'];
-            Array.prototype.forEach.call(footerGrid.querySelectorAll('.footer-col'), function(column){
-                var heading = column.querySelector('h4');
-                if(heading && (heading.textContent.trim() === 'Services' || heading.textContent.trim() === 'Υπηρεσίες')) column.remove();
-            });
-            var columns = footerGrid.querySelectorAll('.footer-col');
-            var companyColumn = Array.prototype.find.call(columns, function(column){
-                var heading = column.querySelector('h4');
-                return heading && (heading.textContent.trim() === 'Company' || heading.textContent.trim() === 'Εταιρεία');
-            });
-            var createListItems = function(items){
-                return items.map(function(item){
-                    var listItem = document.createElement('li');
-                    var link = document.createElement('a');
-                    link.href = item[0];
-                    link.textContent = item[1];
-                    listItem.appendChild(link);
-                    return listItem;
-                });
-            };
-            companyColumn.querySelector('h4').textContent = headings[0];
-            companyColumn.querySelector('ul').replaceChildren.apply(companyColumn.querySelector('ul'), createListItems(links.slice(0, 4)));
-            var exploreColumn = document.createElement('div');
-            exploreColumn.className = 'footer-col';
-            var exploreHeading = document.createElement('h4');
-            exploreHeading.textContent = headings[1];
-            var exploreList = document.createElement('ul');
-            exploreList.replaceChildren.apply(exploreList, createListItems(links.slice(4)));
-            exploreColumn.appendChild(exploreHeading);
-            exploreColumn.appendChild(exploreList);
-            companyColumn.parentNode.insertBefore(exploreColumn, companyColumn.nextSibling);
-        });
-
-        // Preloader
-        document.addEventListener('DOMContentLoaded', function(){
-            setTimeout(function(){
-                document.getElementById('preloader').classList.add('done');
-                var grid = document.getElementById('revealGrid');
-                grid.classList.add('hidden');
-                document.querySelector('.hero').classList.add('loaded');
-            }, 350);
-        });
-
-        // Nav scroll
-        var nav = document.getElementById('nav');
-        var backTop = document.getElementById('backTop');
-        var lastScroll = 0;
-
-        window.addEventListener('scroll', function(){
-            var y = window.scrollY;
-            nav.classList.toggle('scrolled', y > 60);
-            backTop.classList.toggle('visible', y > 600);
-            lastScroll = y;
-        }, {passive:true});
-
-        // Back to top
-        backTop.addEventListener('click', function(){
-            window.scrollTo({top:0, behavior:'smooth'});
-        });
-
-        // Mobile menu
-        var toggle = document.getElementById('navToggle');
-        var links = document.getElementById('navLinks');
-        toggle.addEventListener('click', function(){
-            var open = links.classList.toggle('open');
-            toggle.classList.toggle('active');
-            toggle.setAttribute('aria-expanded', open);
-            document.body.style.overflow = open ? 'hidden' : '';
-        });
-        document.querySelectorAll('.nav-links a').forEach(function(a){
-            a.addEventListener('click', function(){
-                links.classList.remove('open');
-                toggle.classList.remove('active');
-                toggle.setAttribute('aria-expanded','false');
-                document.body.style.overflow = '';
-            });
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(function(anchor){
-            anchor.addEventListener('click', function(e){
-                e.preventDefault();
-                var target = document.querySelector(this.getAttribute('href'));
-                if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
-            });
-        });
-
-        // Scroll reveal
-        var revealObs = new IntersectionObserver(function(entries){
-            entries.forEach(function(entry){
-                if(entry.isIntersecting) entry.target.classList.add('visible');
-            });
-        }, {threshold:0.08, rootMargin:'0px 0px -30px 0px'});
-
-        document.querySelectorAll('.reveal').forEach(function(el){ revealObs.observe(el); });
-
-        // Counter animation
-        function animateCounter(el, target){
-            var current = 0;
-            var increment = target / 50;
-            var timer = setInterval(function(){
-                current += increment;
-                if(current >= target){
-                    el.textContent = target;
-                    clearInterval(timer);
-                } else {
-                    el.textContent = Math.floor(current);
-                }
-            }, 30);
-        }
-        var statsObs = new IntersectionObserver(function(entries){
-            entries.forEach(function(entry){
-                if(entry.isIntersecting){
-                    document.querySelectorAll('.counter').forEach(function(c){
-                        animateCounter(c, parseInt(c.getAttribute('data-target')));
-                    });
-                    statsObs.unobserve(entry.target);
-                }
-            });
-        }, {threshold:0.4});
-        var statsEl = document.querySelector('.stats');
-        if(statsEl) statsObs.observe(statsEl);
-
-        // Lightbox
-        window.openLightbox = function(src){
-            var lb = document.getElementById('lightbox');
-            document.getElementById('lightbox-img').src = src;
-            lb.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        };
-        window.closeLightbox = function(){
-            document.getElementById('lightbox').classList.remove('active');
-            document.body.style.overflow = '';
-        };
-        document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeLightbox(); });
-        document.getElementById('lightbox').addEventListener('click', function(e){
-            if(e.target === this) closeLightbox();
-        });
-
-        // Form
-        var form = document.getElementById('contactForm');
-        if(form){
-            form.addEventListener('submit', function(){
-                var btn = document.getElementById('submitBtn');
-                btn.textContent = 'SENDING...'; btn.disabled = true;
-            });
-        }
-        var formEl = document.getElementById('contactFormEl');
-        if(formEl){
-            formEl.addEventListener('submit', function(){
-                var btn = document.getElementById('submitBtnEl');
-                btn.textContent = 'ΑΠΟΣΤΟΛΗ...'; btn.disabled = true;
-            });
-        }
-
-        // Cookies
-        if(!localStorage.getItem('cookies_accepted')){
-            setTimeout(function(){
-                document.getElementById('cookieBar').classList.add('show');
-            }, 2500);
-        }
-        window.acceptCookies = function(){
-            localStorage.setItem('cookies_accepted','true');
-            document.getElementById('cookieBar').classList.remove('show');
-        };
-        window.declineCookies = function(){
-            localStorage.setItem('cookies_accepted','declined');
-            document.getElementById('cookieBar').classList.remove('show');
-        };
-
-        // Hero slideshow
-        var slides = document.querySelectorAll('.hero-slide');
-        var currentSlide = 0;
-        if(slides.length > 1){
-            setInterval(function(){
-                slides[currentSlide].classList.remove('active');
-                currentSlide = (currentSlide + 1) % slides.length;
-                slides[currentSlide].classList.add('active');
-            }, 4000);
-        }
-
-    })();
-    </script>
+    <script src="index.js"></script>
 </body>
 </html>

@@ -2,6 +2,9 @@ function applyLanguage(isGreek) {
     document.body.classList.toggle('lang-el', isGreek);
     document.documentElement.lang = isGreek ? 'el' : 'en';
     document.querySelector('.language').textContent = isGreek ? 'EN' : 'ΕΛ';
+    document.querySelectorAll('[data-aria-en]').forEach((element) => {
+        element.setAttribute('aria-label', isGreek ? element.dataset.ariaEl : element.dataset.ariaEn);
+    });
 }
 
 function toggleLanguage() {
@@ -31,79 +34,35 @@ document.querySelectorAll('.page-links a').forEach((link) => {
     });
 });
 
+let lightboxOpener = null;
+
 function openImage(source, description) {
     const lightbox = document.querySelector('.lightbox');
     const image = lightbox.querySelector('img');
+    lightboxOpener = document.activeElement;
     image.src = source;
     image.alt = description;
     lightbox.classList.add('open');
+    lightbox.querySelector('.close').focus();
 }
 
 function closeImage() {
     document.querySelector('.lightbox').classList.remove('open');
+    if (lightboxOpener) lightboxOpener.focus();
 }
 
-function synchronizeCompanyFooter() {
-    const linksByLanguage = {
-        en: [
-            ['index.html#about', 'About'],
-            ['vision-culture.html', 'Vision & Culture'],
-            ['services.html', 'Services'],
-            ['green-energy.html', 'Green Energy'],
-            ['projects.html', 'Projects'],
-            ['index.html#process', 'Process'],
-            ['index.html#contact', 'Contact']
-        ],
-        el: [
-            ['index.html#about', 'Σχετικά'],
-            ['vision-culture.html', 'Όραμα & Κουλτούρα'],
-            ['services.html', 'Υπηρεσίες'],
-            ['green-energy.html', 'Πράσινη Ενέργεια'],
-            ['projects.html', 'Έργα'],
-            ['index.html#process', 'Διαδικασία'],
-            ['index.html#contact', 'Επικοινωνία']
-        ]
-    };
-    const headingsByLanguage = {
-        en: ['Company', 'Explore'],
-        el: ['Εταιρεία', 'Περιήγηση']
-    };
+document.addEventListener('keydown', (event) => {
+    const lightbox = document.querySelector('.lightbox');
+    if (event.key === 'Escape' && lightbox && lightbox.classList.contains('open')) closeImage();
+});
 
-    document.querySelectorAll('.footer-grid[data-lang]').forEach((footerGrid) => {
-        footerGrid.querySelectorAll('.footer-col').forEach((column) => {
-            if (['Services', 'Υπηρεσίες'].includes(column.querySelector('h4')?.textContent.trim())) {
-                column.remove();
-            }
-        });
-
-        const companyColumn = Array.from(footerGrid.querySelectorAll('.footer-col')).find((column) => {
-            return ['Company', 'Εταιρεία'].includes(column.querySelector('h4')?.textContent.trim());
-        });
-
-        if (!companyColumn) return;
-
-        const createListItems = (links) => links.map(([href, label]) => {
-            const item = document.createElement('li');
-            const link = document.createElement('a');
-            link.href = href;
-            link.textContent = label;
-            item.append(link);
-            return item;
-        });
-        const [companyHeading, exploreHeading] = headingsByLanguage[footerGrid.dataset.lang];
-        const companyLinks = linksByLanguage[footerGrid.dataset.lang];
-        companyColumn.querySelector('h4').textContent = companyHeading;
-        companyColumn.querySelector('ul').replaceChildren(...createListItems(companyLinks.slice(0, 4)));
-
-        const exploreColumn = document.createElement('div');
-        exploreColumn.className = 'footer-col';
-        const heading = document.createElement('h4');
-        heading.textContent = exploreHeading;
-        const list = document.createElement('ul');
-        list.replaceChildren(...createListItems(companyLinks.slice(4)));
-        exploreColumn.append(heading, list);
-        companyColumn.after(exploreColumn);
+document.querySelectorAll('.project[onclick]').forEach((card) => {
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('role', 'button');
+    card.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            card.click();
+        }
     });
-}
-
-synchronizeCompanyFooter();
+});

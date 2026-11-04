@@ -3,12 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vision &amp; Culture | Paschalidis Group</title>
-    <meta name="description" content="The vision, culture, and company details of Paschalidis Group.">
-    <link rel="icon" type="image/svg+xml" href="logo_greek.svg">
+    <title>Όραμα &amp; Κουλτούρα | Vision &amp; Culture — Paschalidis Group</title>
+    <meta name="description" content="Το όραμα, η κουλτούρα και οι εταιρείες του Ομίλου Πασχαλίδη. | The vision, culture and companies of Paschalidis Group.">
+    <link rel="canonical" href="https://paschalidis.gr/vision-culture.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Paschalidis Group">
+    <meta property="og:url" content="https://paschalidis.gr/vision-culture.html">
+    <meta property="og:title" content="Όραμα &amp; Κουλτούρα | Vision &amp; Culture — Paschalidis Group">
+    <meta property="og:description" content="Χτίζουμε με σκοπό, ακρίβεια και ευθύνη. Building with purpose, precision and responsibility.">
+    <meta property="og:image" content="https://paschalidis.gr/elliniko-construction-2.jpg">
+    <meta property="og:locale" content="el_GR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#0c0c0c">
+    <link rel="icon" type="image/svg+xml" href="logo-greek.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,800;1,400;1,500&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="subpages.css">
     <style>
         :root { --black:#0c0c0c; --dark:#161616; --gold:#f5c500; --gold-light:#f7d230; --cream:#f0ece4; --white:#fefefe; --muted:#b8b8b8; --heading:'Playfair Display', Georgia, serif; --body:'Inter', sans-serif; --side:clamp(24px, 7vw, 120px); }
         * { box-sizing:border-box; margin:0; }
@@ -19,18 +31,18 @@
         body.lang-el [data-lang="en"] { display:none; }
         body.lang-el [data-lang="el"] { display:block; }
         body.lang-el a[data-lang="el"] { display:inline; }
-        .nav { height:80px; padding:0 var(--side); display:flex; gap:26px; justify-content:space-between; align-items:center; background:rgba(12,12,12,.96); color:var(--white); position:fixed; inset:0 0 auto; z-index:10; }
+        .nav { height:80px; padding:0 var(--side); display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr); gap:26px; align-items:center; background:rgba(12,12,12,.97); color:var(--white); position:fixed; inset:0 0 auto; z-index:10; }
         .nav img { width:auto; height:40px; display:block; }
-        .page-links { align-items:center; display:flex; flex:1; gap:clamp(12px,1.6vw,26px); justify-content:center; list-style:none; min-width:0; }
+        .page-links { align-items:center; display:flex; gap:clamp(12px,1.6vw,26px); justify-content:center; list-style:none; }
         .page-links a { color:rgba(255,255,255,.82); font-size:.68rem; font-weight:600; letter-spacing:1.25px; text-transform:uppercase; white-space:nowrap; }
         .page-links a:hover, .page-links a[aria-current="page"] { color:var(--gold); }
         .language { font-size:.72rem; letter-spacing:1.8px; text-transform:uppercase; font-weight:600; }
-        .language { border:1px solid rgba(255,255,255,.35); background:transparent; color:var(--white); padding:7px 13px; cursor:pointer; }
+        .language { border:1px solid rgba(255,255,255,.35); background:transparent; color:var(--white); padding:7px 13px; cursor:pointer; justify-self:end; }
         .nav-toggle { background:transparent; border:0; cursor:pointer; display:none; height:32px; padding:4px; position:relative; width:32px; }
         .nav-toggle span { background:var(--gold); display:block; height:1.5px; left:4px; position:absolute; transition:transform .3s ease,opacity .3s ease; width:24px; }
         .nav-toggle span:nth-child(1) { top:8px; } .nav-toggle span:nth-child(2) { top:15px; } .nav-toggle span:nth-child(3) { top:22px; }
         .nav-toggle.active span:nth-child(1) { top:15px; transform:rotate(45deg); } .nav-toggle.active span:nth-child(2) { opacity:0; } .nav-toggle.active span:nth-child(3) { top:15px; transform:rotate(-45deg); }
-        .hero { min-height:72vh; padding:160px var(--side) 80px; display:flex; align-items:flex-end; position:relative; isolation:isolate; color:var(--white); background:#171717 url('ELLINIKO Construction 12.jpg') center/cover no-repeat; }
+        .hero { min-height:72vh; padding:160px var(--side) 80px; display:flex; align-items:flex-end; position:relative; isolation:isolate; color:var(--white); background:#171717 url('elliniko-construction-12.jpg') center/cover no-repeat; }
         .hero::before { content:''; position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg, rgba(12,12,12,.9), rgba(12,12,12,.45)); }
         .eyebrow { color:var(--gold); font-size:.73rem; font-weight:600; letter-spacing:3px; text-transform:uppercase; margin-bottom:22px; }
         h1 { max-width:900px; font:400 clamp(3.2rem, 7vw, 7rem)/.98 var(--heading); letter-spacing:0; }
@@ -80,17 +92,19 @@
         .footer-grid[data-lang="el"],.footer-bottom[data-lang="el"] { display:none; }
         body.lang-el .footer-grid[data-lang="el"] { display:grid; }
         body.lang-el .footer-bottom[data-lang="el"] { display:flex; }
+        @media (max-width:760px) { .nav { display:flex; justify-content:space-between; } }
         @media (max-width:1000px) { .nav { gap:14px; } .nav img { height:34px; } .page-links { gap:11px; } .page-links a { font-size:.61rem; letter-spacing:.9px; } .language { font-size:.62rem; padding:6px 8px; } }
         @media (max-width:760px) { .vision, .future, .contact { grid-template-columns:1fr; } .culture-grid,.footer-grid { grid-template-columns:1fr; } .company { grid-template-columns:1fr; gap:8px; } .nav img { height:30px; } .nav-toggle { display:block; } .page-links { align-items:stretch; background:var(--black); border-top:1px solid rgba(255,255,255,.1); flex-direction:column; gap:0; height:calc(100vh - 80px); justify-content:flex-start; overflow-y:auto; padding:24px var(--side); position:fixed; right:-100%; top:80px; transition:right .35s ease; width:min(360px,84vw); } .page-links.open { right:0; } .page-links li { border-bottom:1px solid rgba(255,255,255,.1); padding:16px 0; } .page-links a { font-size:.74rem; } .hero { min-height:620px; } .contact-info { grid-template-columns:1fr; gap:20px; } }
     </style>
 </head>
 <body>
-    <nav class="nav" aria-label="Main navigation">
-        <a href="index.html"><img src="original_logo.jpg" alt="Paschalidis Technical Company"></a>
-        <ul class="page-links"><li><a href="index.html#about" data-lang="en">About</a><a href="index.html#about" data-lang="el">Σχετικά</a></li><li><a href="vision-culture.html" aria-current="page" data-lang="en">Vision &amp; Culture</a><a href="vision-culture.html" aria-current="page" data-lang="el">Όραμα &amp; Κουλτούρα</a></li><li><a href="services.html" data-lang="en">Services</a><a href="services.html" data-lang="el">Υπηρεσίες</a></li><li><a href="green-energy.html" data-lang="en">Green Energy</a><a href="green-energy.html" data-lang="el">Πράσινη Ενέργεια</a></li><li><a href="projects.html" data-lang="en">Projects</a><a href="projects.html" data-lang="el">Έργα</a></li><li><a href="index.html#process" data-lang="en">Process</a><a href="index.html#process" data-lang="el">Διαδικασία</a></li><li><a href="index.html#contact" data-lang="en">Contact</a><a href="index.html#contact" data-lang="el">Επικοινωνία</a></li></ul><button class="nav-toggle" type="button" onclick="toggleNavigation(this)" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button><button class="language" type="button" onclick="toggleLanguage()" aria-label="Change language">ΕΛ</button>
+    <a href="#main" class="skip-nav"><span data-lang="en">Skip to main content</span><span data-lang="el">Παράλειψη στο κύριο περιεχόμενο</span></a>
+    <nav class="nav" aria-label="Main navigation" data-aria-en="Main navigation" data-aria-el="Κύρια πλοήγηση">
+        <a href="index.html"><img src="original-logo.jpg" alt="Paschalidis Technical Company"></a>
+        <ul class="page-links"><li><a href="index.html" data-lang="en">Home</a><a href="index.html" data-lang="el">Αρχική</a></li><li><a href="index.html#about" data-lang="en">About</a><a href="index.html#about" data-lang="el">Σχετικά</a></li><li><a href="vision-culture.html" aria-current="page" data-lang="en">Vision &amp; Culture</a><a href="vision-culture.html" aria-current="page" data-lang="el">Όραμα &amp; Κουλτούρα</a></li><li><a href="services.html" data-lang="en">Services</a><a href="services.html" data-lang="el">Υπηρεσίες</a></li><li><a href="green-energy.html" data-lang="en">Green Energy</a><a href="green-energy.html" data-lang="el">Πράσινη Ενέργεια</a></li><li><a href="projects.html" data-lang="en">Projects</a><a href="projects.html" data-lang="el">Έργα</a></li><li><a href="index.html#process" data-lang="en">Process</a><a href="index.html#process" data-lang="el">Διαδικασία</a></li><li><a href="index.html#contact" data-lang="en">Contact</a><a href="index.html#contact" data-lang="el">Επικοινωνία</a></li></ul><button class="nav-toggle" type="button" onclick="toggleNavigation(this)" aria-label="Toggle menu" data-aria-en="Toggle menu" data-aria-el="Εναλλαγή μενού" aria-expanded="false"><span></span><span></span><span></span></button><button class="language" type="button" onclick="toggleLanguage()" aria-label="Change language" data-aria-en="Change language" data-aria-el="Αλλαγή γλώσσας">ΕΛ</button>
     </nav>
 
-    <main>
+    <main id="main">
         <header class="hero">
             <div>
                 <p class="eyebrow" data-lang="en">Paschalidis Group</p>
@@ -163,7 +177,76 @@
         </section>
 
     </main>
-    <footer class="footer"><div class="footer-grid" data-lang="en"><div><div class="footer-logo">Paschalidis</div><p class="footer-brand-text"><em>Built on experience. Driven by excellence.</em></p></div><div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Commercial</a></li><li><a href="services.html">Residential</a></li><li><a href="services.html">Industrial</a></li><li><a href="services.html">Infrastructure</a></li><li><a href="green-energy.html">Green Energy</a></li></ul></div><div class="footer-col"><h4>Company</h4><ul><li><a href="index.html#about">About</a></li><li><a href="vision-culture.html">Vision &amp; Culture</a></li><li><a href="projects.html">Projects</a></li><li><a href="index.html#certifications">Certifications</a></li><li><a href="index.html#contact">Careers</a></li><li><a href="index.html#contact">Contact</a></li></ul></div><div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+302109327755">+30 210 932 7755</a></li><li><a href="mailto:info@groupg.gr">info@groupg.gr</a></li><li><a href="#">Facebook</a></li><li><a href="#">LinkedIn</a></li><li><a href="#">Instagram</a></li></ul></div></div><div class="footer-grid" data-lang="el"><div><div class="footer-logo">Paschalidis</div><p class="footer-brand-text"><em>Με θεμέλιο την εμπειρία. Με κινητήρια δύναμη την αριστεία.</em></p></div><div class="footer-col"><h4>Υπηρεσίες</h4><ul><li><a href="services.html">Εμπορικά</a></li><li><a href="services.html">Οικιστικά</a></li><li><a href="services.html">Βιομηχανικά</a></li><li><a href="services.html">Υποδομές</a></li><li><a href="green-energy.html">Πράσινη Ενέργεια</a></li></ul></div><div class="footer-col"><h4>Εταιρεία</h4><ul><li><a href="index.html#about">Σχετικά</a></li><li><a href="vision-culture.html">Όραμα &amp; Κουλτούρα</a></li><li><a href="projects.html">Έργα</a></li><li><a href="index.html#certifications">Πιστοποιήσεις</a></li><li><a href="index.html#contact">Καριέρα</a></li><li><a href="index.html#contact">Επικοινωνία</a></li></ul></div><div class="footer-col"><h4>Επικοινωνία</h4><ul><li><a href="tel:+302109327755">+30 210 932 7755</a></li><li><a href="mailto:info@groupg.gr">info@groupg.gr</a></li><li><a href="#">Facebook</a></li><li><a href="#">LinkedIn</a></li><li><a href="#">Instagram</a></li></ul></div></div><div class="footer-bottom" data-lang="en"><p>&copy; 2026 Paschalidis Group. All rights reserved.</p></div><div class="footer-bottom" data-lang="el"><p>&copy; 2026 Paschalidis Group. Με επιφύλαξη παντός δικαιώματος.</p></div></footer>
+    <footer class="footer">
+        <div class="footer-grid" data-lang="en">
+            <div>
+                <div class="footer-logo">Paschalidis</div>
+                <p class="footer-brand-text"><em>Built on experience. Driven by excellence.</em></p>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="vision-culture.html">Vision &amp; Culture</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="green-energy.html">Green Energy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="index.html#process">Process</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:+302109327755">+30 210 932 7755</a></li>
+                    <li><a href="mailto:info@groupg.gr">info@groupg.gr</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-grid" data-lang="el">
+            <div>
+                <div class="footer-logo">Paschalidis</div>
+                <p class="footer-brand-text"><em>Με θεμέλιο την εμπειρία. Με κινητήρια δύναμη την αριστεία.</em></p>
+            </div>
+            <div class="footer-col">
+                <h4>Εταιρεία</h4>
+                <ul>
+                    <li><a href="index.html#about">Σχετικά</a></li>
+                    <li><a href="vision-culture.html">Όραμα &amp; Κουλτούρα</a></li>
+                    <li><a href="services.html">Υπηρεσίες</a></li>
+                    <li><a href="green-energy.html">Πράσινη Ενέργεια</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Περιήγηση</h4>
+                <ul>
+                    <li><a href="projects.html">Έργα</a></li>
+                    <li><a href="index.html#process">Διαδικασία</a></li>
+                    <li><a href="index.html#contact">Επικοινωνία</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Επικοινωνία</h4>
+                <ul>
+                    <li><a href="tel:+302109327755">+30 210 932 7755</a></li>
+                    <li><a href="mailto:info@groupg.gr">info@groupg.gr</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom" data-lang="en">
+            <p>&copy; 2026 Paschalidis Group. All rights reserved.</p>
+            <a href="privacy.html">Privacy &amp; Cookie Policy</a>
+        </div>
+        <div class="footer-bottom" data-lang="el">
+            <p>&copy; 2026 Όμιλος Πασχαλίδη. Με επιφύλαξη παντός δικαιώματος.</p>
+            <a href="privacy.html">Πολιτική Απορρήτου &amp; Cookies</a>
+        </div>
+    </footer>
     <script src="subpages.js"></script>
 </body>
 </html>

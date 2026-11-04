@@ -990,6 +990,7 @@
     </style>
 </head>
 <body class="lang-el">
+    <script>try{if(localStorage.getItem('site-lang')==='en')document.body.classList.remove('lang-el');}catch(e){}</script>
 
     <!-- Skip Nav -->
     <a href="#main" class="skip-nav">Skip to main content</a>
@@ -1068,7 +1069,8 @@
             </div>
         </div>
         <div class="hero-scroll" aria-hidden="true">
-            <span>Scroll</span>
+            <span data-lang="en">Scroll</span>
+            <span data-lang="el">Κύλιση</span>
             <div class="scroll-line"></div>
         </div>
     </section>
@@ -1769,7 +1771,7 @@
         <div class="footer-grid" data-lang="en">
             <div>
                 <div class="footer-logo">Paschalidis</div>
-                <p class="footer-brand-text">Premier construction group in Greece. Four decades of landmark projects defined by precision, quality, and enduring design.</p>
+                <p class="footer-brand-text"><em>Built on experience. Driven by excellence.</em></p>
             </div>
             <div class="footer-col">
                 <h4>Services</h4>
@@ -1806,7 +1808,7 @@
         <div class="footer-grid" data-lang="el">
             <div>
                 <div class="footer-logo">Paschalidis</div>
-                <p class="footer-brand-text">Κορυφαία κατασκευαστική εταιρεία στην Ελλάδα. Τέσσερις δεκαετίες εμβληματικών έργων με ακρίβεια, ποιότητα και διαχρονικό σχεδιασμό.</p>
+                <p class="footer-brand-text"><em>Με θεμέλιο την εμπειρία. Με κινητήρια δύναμη την αριστεία.</em></p>
             </div>
             <div class="footer-col">
                 <h4>Υπηρεσίες</h4>
@@ -1870,20 +1872,18 @@
         'use strict';
 
         // Language toggle
+        function applyLang(isGreek) {
+            document.body.classList.toggle('lang-el', isGreek);
+            document.getElementById('langToggle').textContent = isGreek ? 'EN' : 'ΕΛ';
+            document.documentElement.lang = isGreek ? 'el' : 'en';
+        }
         window.toggleLang = function(e) {
             e.preventDefault();
-            var body = document.body;
-            var btn = document.getElementById('langToggle');
-            if (body.classList.contains('lang-el')) {
-                body.classList.remove('lang-el');
-                btn.textContent = 'ΕΛ';
-                document.documentElement.lang = 'en';
-            } else {
-                body.classList.add('lang-el');
-                btn.textContent = 'EN';
-                document.documentElement.lang = 'el';
-            }
+            var isGreek = !document.body.classList.contains('lang-el');
+            applyLang(isGreek);
+            try { localStorage.setItem('site-lang', isGreek ? 'el' : 'en'); } catch (err) {}
         };
+        applyLang(document.body.classList.contains('lang-el'));
 
         document.querySelectorAll('.footer-grid[data-lang]').forEach(function(footerGrid){
             var links = footerGrid.dataset.lang === 'en'

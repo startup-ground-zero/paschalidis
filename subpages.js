@@ -1,8 +1,18 @@
-function toggleLanguage() {
-    const isGreek = document.body.classList.toggle('lang-el');
+function applyLanguage(isGreek) {
+    document.body.classList.toggle('lang-el', isGreek);
     document.documentElement.lang = isGreek ? 'el' : 'en';
     document.querySelector('.language').textContent = isGreek ? 'EN' : 'ΕΛ';
 }
+
+function toggleLanguage() {
+    const isGreek = !document.body.classList.contains('lang-el');
+    applyLanguage(isGreek);
+    try { localStorage.setItem('site-lang', isGreek ? 'el' : 'en'); } catch (error) {}
+}
+
+let savedLanguage = null;
+try { savedLanguage = localStorage.getItem('site-lang'); } catch (error) {}
+applyLanguage(savedLanguage !== 'en');
 
 function toggleNavigation(button) {
     const menu = document.querySelector('.page-links');

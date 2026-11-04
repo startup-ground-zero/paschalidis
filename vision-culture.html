@@ -49,7 +49,12 @@
         .value-number { color:var(--gold); font-size:.75rem; letter-spacing:2px; font-weight:600; }
         .value h3 { margin:26px 0 12px; font:400 1.65rem var(--heading); }
         .value p { color:var(--muted); font-size:.9rem; }
+        .future { background:transparent; display:grid; grid-template-columns:minmax(0, 1fr) minmax(0, 1.1fr); gap:clamp(48px, 9vw, 150px); align-items:start; }
+        .future-copy p { font-size:1.05rem; max-width:620px; }
+        .future-copy p + p { margin-top:22px; }
+        .future-copy .quote { margin-top:34px; font-size:clamp(1.3rem, 2vw, 1.9rem); }
         .companies { background:transparent; }
+        .future + .companies { border-top:1px solid #a9a69f; }
         .companies-header { max-width:700px; }
         .company-list { margin-top:55px; border-top:1px solid #a9a69f; }
         .company { display:grid; grid-template-columns:1.3fr .8fr .7fr; gap:25px; padding:31px 0; border-bottom:1px solid #a9a69f; align-items:start; }
@@ -76,7 +81,7 @@
         body.lang-el .footer-grid[data-lang="el"] { display:grid; }
         body.lang-el .footer-bottom[data-lang="el"] { display:flex; }
         @media (max-width:1000px) { .nav { gap:14px; } .nav img { height:34px; } .page-links { gap:11px; } .page-links a { font-size:.61rem; letter-spacing:.9px; } .language { font-size:.62rem; padding:6px 8px; } }
-        @media (max-width:760px) { .vision, .contact { grid-template-columns:1fr; } .culture-grid,.footer-grid { grid-template-columns:1fr; } .company { grid-template-columns:1fr; gap:8px; } .nav img { height:30px; } .nav-toggle { display:block; } .page-links { align-items:stretch; background:var(--black); border-top:1px solid rgba(255,255,255,.1); flex-direction:column; gap:0; height:calc(100vh - 80px); justify-content:flex-start; overflow-y:auto; padding:24px var(--side); position:fixed; right:-100%; top:80px; transition:right .35s ease; width:min(360px,84vw); } .page-links.open { right:0; } .page-links li { border-bottom:1px solid rgba(255,255,255,.1); padding:16px 0; } .page-links a { font-size:.74rem; } .hero { min-height:620px; } .contact-info { grid-template-columns:1fr; gap:20px; } }
+        @media (max-width:760px) { .vision, .future, .contact { grid-template-columns:1fr; } .culture-grid,.footer-grid { grid-template-columns:1fr; } .company { grid-template-columns:1fr; gap:8px; } .nav img { height:30px; } .nav-toggle { display:block; } .page-links { align-items:stretch; background:var(--black); border-top:1px solid rgba(255,255,255,.1); flex-direction:column; gap:0; height:calc(100vh - 80px); justify-content:flex-start; overflow-y:auto; padding:24px var(--side); position:fixed; right:-100%; top:80px; transition:right .35s ease; width:min(360px,84vw); } .page-links.open { right:0; } .page-links li { border-bottom:1px solid rgba(255,255,255,.1); padding:16px 0; } .page-links a { font-size:.74rem; } .hero { min-height:620px; } .contact-info { grid-template-columns:1fr; gap:20px; } }
     </style>
 </head>
 <body>
@@ -125,6 +130,25 @@
             </div>
         </section>
 
+        <section class="future">
+            <div>
+                <p class="section-label" data-lang="en">Our future</p>
+                <p class="section-label" data-lang="el">Το μέλλον μας</p>
+                <h2 data-lang="en">The next generation of construction <em>starts today.</em></h2>
+                <h2 data-lang="el">Η επόμενη γενιά της κατασκευής <em>ξεκινά σήμερα.</em></h2>
+            </div>
+            <div class="future-copy">
+                <p data-lang="en">With a strong historical foundation, an organised operation and accumulated expertise, FAIR FACED is preparing for its next phase of growth.</p>
+                <p data-lang="el">Με ισχυρή ιστορική βάση, οργανωμένη επιχειρησιακή λειτουργία και συσσωρευμένη τεχνογνωσία, η FAIR FACED προετοιμάζεται για την επόμενη φάση ανάπτυξής της.</p>
+                <p data-lang="en">Our strategic priority is to strengthen our production capacity, further specialise in complex technical projects, and continuously upgrade our processes, our people and our equipment.</p>
+                <p data-lang="el">Στρατηγική μας προτεραιότητα είναι η ενίσχυση της παραγωγικής μας δυνατότητας, η περαιτέρω εξειδίκευση σε σύνθετα τεχνικά έργα και η συνεχής αναβάθμιση των διαδικασιών, των ανθρώπων και του εξοπλισμού μας.</p>
+                <p data-lang="en">For us, growth is not measured in financial terms alone. It is tied to the ability to take on greater responsibilities, to execute projects more effectively, and to create real value for our partners, our employees and society.</p>
+                <p data-lang="el">Η ανάπτυξη για εμάς δεν αποτιμάται αποκλειστικά σε οικονομικά μεγέθη. Συνδέεται με τη δυνατότητα ανάληψης μεγαλύτερων ευθυνών, την αποτελεσματικότερη εκτέλεση των έργων και τη δημιουργία ουσιαστικής αξίας για τους συνεργάτες, τους εργαζομένους και την κοινωνία.</p>
+                <blockquote class="quote" data-lang="en">We move forward with respect for our history and confidence in the capabilities of the next generation.</blockquote>
+                <blockquote class="quote" data-lang="el">Προχωρούμε με σεβασμό στην ιστορία μας και εμπιστοσύνη στις δυνατότητες της επόμενης γενιάς.</blockquote>
+            </div>
+        </section>
+
         <section class="companies">
             <div class="companies-header">
                 <p class="section-label" data-lang="en">The group</p>
@@ -133,13 +157,13 @@
                 <h2 data-lang="el">Οι εταιρείες πίσω από <em>το έργο μας.</em></h2>
             </div>
             <div class="company-list">
-                <article class="company"><h3>ΑΦΟΙ ΠΑΣΧΑΛΙΔΗ Ε.Ε.</h3><p data-lang="en">Construction Company for Building Works</p><p data-lang="el">Τεχνική Εταιρεία Οικοδομικών Έργων</p><span>ΑΦΜ 999436940</span></article>
-                <article class="company"><h3>ΠΑΣΧΑΛΙΔΗΣ FAIR-FACED ΤΕΧΝΙΚΗ Ι.Κ.Ε.</h3><p data-lang="en">Construction Company</p><p data-lang="el">Τεχνική Εταιρεία</p><span>ΑΦΜ 800754150</span></article>
+                <article class="company"><h3>ΑΦΟΙ ΠΑΣΧΑΛΙΔΗ Ε.Ε.</h3><p data-lang="en">Construction Company for Building Works</p><p data-lang="el">Τεχνική Εταιρεία Οικοδομικών Έργων</p><span data-lang="en">VAT No. 999436940</span><span data-lang="el">ΑΦΜ 999436940</span></article>
+                <article class="company"><h3>ΠΑΣΧΑΛΙΔΗΣ FAIR-FACED ΤΕΧΝΙΚΗ Ι.Κ.Ε.</h3><p data-lang="en">Construction Company</p><p data-lang="el">Τεχνική Εταιρεία</p><span data-lang="en">VAT No. 800754150</span><span data-lang="el">ΑΦΜ 800754150</span></article>
             </div>
         </section>
 
     </main>
-    <footer class="footer"><div class="footer-grid" data-lang="en"><div><div class="footer-logo">Paschalidis</div><p class="footer-brand-text">Premier construction group in Greece. Four decades of landmark projects defined by precision, quality, and enduring design.</p></div><div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Commercial</a></li><li><a href="services.html">Residential</a></li><li><a href="services.html">Industrial</a></li><li><a href="services.html">Infrastructure</a></li><li><a href="green-energy.html">Green Energy</a></li></ul></div><div class="footer-col"><h4>Company</h4><ul><li><a href="index.html#about">About</a></li><li><a href="vision-culture.html">Vision &amp; Culture</a></li><li><a href="projects.html">Projects</a></li><li><a href="index.html#certifications">Certifications</a></li><li><a href="index.html#contact">Careers</a></li><li><a href="index.html#contact">Contact</a></li></ul></div><div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+302109327755">+30 210 932 7755</a></li><li><a href="mailto:info@groupg.gr">info@groupg.gr</a></li><li><a href="#">Facebook</a></li><li><a href="#">LinkedIn</a></li><li><a href="#">Instagram</a></li></ul></div></div><div class="footer-grid" data-lang="el"><div><div class="footer-logo">Paschalidis</div><p class="footer-brand-text">Κορυφαία κατασκευαστική εταιρεία στην Ελλάδα. Τέσσερις δεκαετίες εμβληματικών έργων με ακρίβεια, ποιότητα και διαχρονικό σχεδιασμό.</p></div><div class="footer-col"><h4>Υπηρεσίες</h4><ul><li><a href="services.html">Εμπορικά</a></li><li><a href="services.html">Οικιστικά</a></li><li><a href="services.html">Βιομηχανικά</a></li><li><a href="services.html">Υποδομές</a></li><li><a href="green-energy.html">Πράσινη Ενέργεια</a></li></ul></div><div class="footer-col"><h4>Εταιρεία</h4><ul><li><a href="index.html#about">Σχετικά</a></li><li><a href="vision-culture.html">Όραμα &amp; Κουλτούρα</a></li><li><a href="projects.html">Έργα</a></li><li><a href="index.html#certifications">Πιστοποιήσεις</a></li><li><a href="index.html#contact">Καριέρα</a></li><li><a href="index.html#contact">Επικοινωνία</a></li></ul></div><div class="footer-col"><h4>Επικοινωνία</h4><ul><li><a href="tel:+302109327755">+30 210 932 7755</a></li><li><a href="mailto:info@groupg.gr">info@groupg.gr</a></li><li><a href="#">Facebook</a></li><li><a href="#">LinkedIn</a></li><li><a href="#">Instagram</a></li></ul></div></div><div class="footer-bottom" data-lang="en"><p>&copy; 2026 Paschalidis Group. All rights reserved.</p></div><div class="footer-bottom" data-lang="el"><p>&copy; 2026 Paschalidis Group. Με επιφύλαξη παντός δικαιώματος.</p></div></footer>
+    <footer class="footer"><div class="footer-grid" data-lang="en"><div><div class="footer-logo">Paschalidis</div><p class="footer-brand-text"><em>Built on experience. Driven by excellence.</em></p></div><div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Commercial</a></li><li><a href="services.html">Residential</a></li><li><a href="services.html">Industrial</a></li><li><a href="services.html">Infrastructure</a></li><li><a href="green-energy.html">Green Energy</a></li></ul></div><div class="footer-col"><h4>Company</h4><ul><li><a href="index.html#about">About</a></li><li><a href="vision-culture.html">Vision &amp; Culture</a></li><li><a href="projects.html">Projects</a></li><li><a href="index.html#certifications">Certifications</a></li><li><a href="index.html#contact">Careers</a></li><li><a href="index.html#contact">Contact</a></li></ul></div><div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+302109327755">+30 210 932 7755</a></li><li><a href="mailto:info@groupg.gr">info@groupg.gr</a></li><li><a href="#">Facebook</a></li><li><a href="#">LinkedIn</a></li><li><a href="#">Instagram</a></li></ul></div></div><div class="footer-grid" data-lang="el"><div><div class="footer-logo">Paschalidis</div><p class="footer-brand-text"><em>Με θεμέλιο την εμπειρία. Με κινητήρια δύναμη την αριστεία.</em></p></div><div class="footer-col"><h4>Υπηρεσίες</h4><ul><li><a href="services.html">Εμπορικά</a></li><li><a href="services.html">Οικιστικά</a></li><li><a href="services.html">Βιομηχανικά</a></li><li><a href="services.html">Υποδομές</a></li><li><a href="green-energy.html">Πράσινη Ενέργεια</a></li></ul></div><div class="footer-col"><h4>Εταιρεία</h4><ul><li><a href="index.html#about">Σχετικά</a></li><li><a href="vision-culture.html">Όραμα &amp; Κουλτούρα</a></li><li><a href="projects.html">Έργα</a></li><li><a href="index.html#certifications">Πιστοποιήσεις</a></li><li><a href="index.html#contact">Καριέρα</a></li><li><a href="index.html#contact">Επικοινωνία</a></li></ul></div><div class="footer-col"><h4>Επικοινωνία</h4><ul><li><a href="tel:+302109327755">+30 210 932 7755</a></li><li><a href="mailto:info@groupg.gr">info@groupg.gr</a></li><li><a href="#">Facebook</a></li><li><a href="#">LinkedIn</a></li><li><a href="#">Instagram</a></li></ul></div></div><div class="footer-bottom" data-lang="en"><p>&copy; 2026 Paschalidis Group. All rights reserved.</p></div><div class="footer-bottom" data-lang="el"><p>&copy; 2026 Paschalidis Group. Με επιφύλαξη παντός δικαιώματος.</p></div></footer>
     <script src="subpages.js"></script>
 </body>
 </html>
